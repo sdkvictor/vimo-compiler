@@ -1,3 +1,4 @@
+
 (*
 BNF File for compiler written in Go
 
@@ -146,3 +147,102 @@ CallFunction: id CallFunctionAux;
 CallFunctionAux: leftparenthesis Expression leftparenthesis
 			   | leftparenthesis Expression comma CallFunctionAux
 			   | leftparenthesis rightparenthesis;
+
+Varcte
+    : id
+    | cteint 
+    | ctefloat
+    | ctestring
+    | ListElem
+    | ctebool
+    | Attribute
+    ;
+
+Main
+    : void main leftparenthesis rightparenthesis Block
+    ;
+
+Tick
+    : void tick leftparenthesis rightparenthesis Block
+    ;
+
+SetColor
+    : leftparenthesis ctestring rightparenthesis
+    ;
+
+ListElem
+    : id '[' cteint ']'
+    ;
+
+SetSize
+    : setSize leftparenthesis cteint comma cteint rightparenthesis
+    ;
+
+SetPosition
+    : setPosition leftparenthesis cteint comma cteint rightparenthesis
+    ;
+
+Move
+    : move leftparenthesis cteint comma cteint rightparenthesis
+    ;
+
+SetText
+    : setText leftparenthesis ctestring rightparenthesis
+    ;
+
+Render
+    : render leftparenthesis rightparenthesis
+    ;
+
+KeyPressed 
+    : keyPressed leftparenthesis ctestring rightparenthesis
+    ;
+
+SetFontSize
+    : setFontSize leftparenthesis cteint rightparenthesis
+    ;
+
+Type 
+    : BasicType
+    | list '<' BasicType '>' 
+    ;
+
+Attribute 
+    : id dot id
+    ;
+
+LoadImage 
+    : loadImage leftparenthesis ctestring rightparenthesis
+    ;
+
+CheckCollision
+    : checkCollision leftparenthesis Object dot Object rightparenthesis
+    ;
+
+SetImage
+    : setImage leftparenthesis ctestring rightparenthesis
+    ;
+
+Pow 
+    : pow leftparenthesis ctefloat comma ctefloat rightparenthesis
+    ;
+
+SquareRoot
+    : squareRoot leftparenthesis ctefloat rightparenthesis
+    ;
+
+PredefinedFunction
+    : SetColor
+    | SetSize
+    | SetPosition
+    | Move
+    | SetText
+    | KeyPressed
+    | SetFontSize
+    | Render 
+    | LoadImage
+    | CheckCollision
+    | SetImage
+    | Pow
+    | SquareRoot
+    ;
