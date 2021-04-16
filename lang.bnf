@@ -1,4 +1,152 @@
-/*Syntax Part*/
+
+(*
+BNF File for compiler written in Go
+
+*Insert compiler name*
+
+Developed by:
+	- Moisés Fernández
+	- Víctor Villarreal
+*)
+
+# Lexical Part
+
+_letter: 'a' - 'z' | 'A' - 'Z';
+_digit: '0' - '9';
+_id : _letter {(_letter | _digit)};
+_integer: _digit {_digit};
+_float: _digit {_digit} '.' _digit {_digit};
+_string: '"' {_digit | _letter | ' '} '"';
+_true: 't' 'r' 'u' 'e';
+_false: 'f' 'a' 'l' 's' 'e';
+_boolean: _true | _false;
+
+!ws : ' ' | '\t' | '\n' | '\r';
+
+programa: 'p' 'r' 'o' 'g' 'r' 'a' 'm';
+inttype: 'i' 'n' 't';
+floattype: 'f' 'l' 'o' 'a' 't';
+stringtype: 's' 't' 'r' 'i' 'n' 'g';
+booltype: 'b' 'o' 'o' 'l';
+voidtype: 'v' 'o' 'i' 'd';
+squaretype: 's' 'q' 'u' 'a' 'r' 'e';
+circletype: 'c' 'i' 'r' 'c' 'l' 'e';
+imagetype: 'i' 'm' 'a' 'g' 'e';
+texttype: 't' 'e' 'x' 't';
+backgroundtype: 'b' 'a' 'c' 'k' 'g' 'r' 'o' 'u' 'n' 'd';
+if: 'i' 'f';
+else: 'e' 'l' 's' 'e';
+while: 'w' 'h' 'i' 'l' 'e';
+for: 'f' 'o' 'r';
+print: 'p' 'r' 'i' 'n' 't';
+return: 'r' 'e' 't' 'u' 'r' 'n';
+relop: '<' | '>' | '<' '=' | '>' '=' | '<' '>' | '=' '=';
+logicalop: '&' '&' | '|' '|';
+arithmeticop: '+' | '-' | '*' | '/' | '&';
+leftparenthesis: '(';
+rightparenthesis: ')';
+leftbracket: '{';
+rightbracket: '}';
+colon: ':';
+semicolon: ';';
+dot: '.';
+comma: ',';
+equals: '=';
+
+cteint: _integer;
+ctefloat: _float;
+ctestring: _string;
+ctebool: _boolean;
+id: _id;
+
+# Syntax Part
+Programa: program id semicolon Vars Functions Tick Main
+		| program id semicolon Tick Main
+        | program id semicolon Functions Tick Main;
+
+Vars: Type VarsAux;
+
+VarsAux: Ids semicolon Vars
+	   | Ids semicolon;
+
+Ids: id comma Ids
+   | id;
+
+Functions: FunctionsAux id leftparenthesis Vars rightparenthesis Block Functions
+		 | FunctionsAux id leftparenthesis Vars rightparenthesis Block;
+
+FunctionsAux: Type
+			| void;
+
+Block: leftbracket BlockAux;
+
+BlockAux: Statement rightbracket
+		| Statement BlockAux;
+
+Statement: Assign
+		 | Condition
+		 | Write
+		 | Return
+		 | For
+		 | While
+		 | CallFunction
+		 | PredefinedFunction;
+
+Expression: Exp
+		  | Exp Operations Exp;
+
+Operations: relop
+		  | logicalop;
+
+BasicType: inttype
+		 | floattype
+		 | booltype
+		 | stringtype
+		 | Object;
+
+Object: squaretype
+	  | circletype
+	  | imagetype
+	  | texttype
+	  | backgroundtype;
+
+Term: Factor 
+	| Factor '*' Factor
+	| Factor '/' Factor;
+
+Exp: Term
+   | Term '+' Term
+   | Term '-' Term;
+
+Factor: leftparenthesis Expression rightparenthesis
+      | '+' VarCte
+      | '-' VarCte
+      | VarCte;
+
+Assign: id equals Expression semicolon
+	  | Attribute equals Expression semicolon;
+
+Condition: if leftparenthesis Expression rightparenthesis Block semicolon
+         | if leftparenthesis Expression rightparenthesis else Block semicolon;
+
+Write: print leftparenthesis WriteAux rightparenthesis semicolon;
+        
+WriteAux: Expression comma WriteAux
+		| ctestring comma WriteAux
+        | Expression
+        | ctestring;
+
+Return: return Expression semicolon;
+
+For: for leftparenthesis Assign semicolon Expression semicolon Expression semicolon rightparenthesis Block;
+
+While: while leftparenthesis Expression rightparenthesis Block;
+
+CallFunction: id CallFunctionAux;
+
+CallFunctionAux: leftparenthesis Expression leftparenthesis
+			   | leftparenthesis Expression comma CallFunctionAux
+			   | leftparenthesis rightparenthesis;
 
 Varcte
     : id
