@@ -1,0 +1,23 @@
+# BNF File for compiler written in Go
+# *Insert compiler name*
+# Developed by:
+# 
+
+/* Lexical Part */
+
+_letter: 'a' - 'z' | 'A' - 'Z';
+_digit: '0' - '9';
+_id : _letter {(_letter | _digit)};
+_integer: _digit {_digit};
+_float: _digit {_digit} '.' _digit {_digit};
+_string: '"' {_digit | _letter | ' '} '"';
+!ws : ' ' | '\t' | '\n' | '\r';
+
+game 'g' 'a' 'm' 'e';
+inttype: 'i' 'n' 't';
+floattype: 'f' 'l' 'o' 'a' 't';
+stringtype: 's' 't' 'r' 'i' 'n' 'g';
+_true: 't' 'r' 'u' 'e';
+_false: 'f' 'a' 'l' 's' 'e';
+if: 'i' 'f';
+else: 'e' 'l' 's' 'e';
