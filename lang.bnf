@@ -52,6 +52,22 @@ semicolon: ';';
 dot: '.';
 comma: ',';
 equals: '=';
+main: 'm' 'a' 'i' 'n';
+tick: 't' 'i' 'c' 'k';
+setColor: 's' 'e' 't' 'C' 'o' 'l' 'o' 'r';
+setSize: 's' 'e' 't' 'S' 'i' 'z' 'e';
+setPosition: 's' 'e' 't' 'P' 'o' 's' 'i' 't' 'i' 'o' 'n';
+move: 'm' 'o' 'v' 'e';
+setText: 's' 'e' 't' 'T' 'e' 'x' 't';
+keyPressed: 'k' 'e' 'y' 'P' 'r' 'e' 's' 's' 'e' 'd';
+setFontSize: 's' 'e' 't' 'F' 'o' 'n' 't' 'S' 'i' 'z' 'e';
+list: 'l' 'i' 's' 't';
+loadImage: 'l' 'o' 'a' 'd' 'I' 'm' 'a' 'g' 'e';
+checkCollision: 'c' 'h' 'e' 'c' 'k' 'C' 'o' 'l' 'l' 'i' 's' 'i' 'o' 'n';
+setImage: 's' 'e' 't' 'I' 'm' 'a' 'g' 'e';
+pow: 'p' 'o' 'w';
+squareRoot: 's' 'q' 'u' 'a' 'r' 'e' 'R' 'o' 'o' 't';
+
 
 cteint: _integer;
 ctefloat: _float;
