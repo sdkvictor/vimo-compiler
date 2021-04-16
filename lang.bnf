@@ -160,7 +160,7 @@ While: while leftparenthesis Expression rightparenthesis Block;
 
 CallFunction: id CallFunctionAux;
 
-CallFunctionAux: leftparenthesis Expression leftparenthesis
+CallFunctionAux: leftparenthesis Expression rightparenthesis
 			   | leftparenthesis Expression comma CallFunctionAux
 			   | leftparenthesis rightparenthesis;
 
