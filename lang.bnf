@@ -1,5 +1,5 @@
 
-(*
+/*
 BNF File for compiler written in Go
 
 *Insert compiler name*
@@ -7,9 +7,9 @@ BNF File for compiler written in Go
 Developed by:
 	- Moisés Fernández
 	- Víctor Villarreal
-*)
+*/
 
-# Lexical Part
+/* Lexical Part */
 
 _letter: 'a' - 'z' | 'A' - 'Z';
 _digit: '0' - '9';
@@ -23,7 +23,7 @@ _boolean: _true | _false;
 
 !ws : ' ' | '\t' | '\n' | '\r';
 
-programa: 'p' 'r' 'o' 'g' 'r' 'a' 'm';
+program: 'p' 'r' 'o' 'g' 'r' 'a' 'm';
 inttype: 'i' 'n' 't';
 floattype: 'f' 'l' 'o' 'a' 't';
 stringtype: 's' 't' 'r' 'i' 'n' 'g';
@@ -40,13 +40,20 @@ while: 'w' 'h' 'i' 'l' 'e';
 for: 'f' 'o' 'r';
 print: 'p' 'r' 'i' 'n' 't';
 return: 'r' 'e' 't' 'u' 'r' 'n';
+greaterthan: '>';
+lessthan: '<';
 relop: '<' | '>' | '<' '=' | '>' '=' | '<' '>' | '=' '=';
 logicalop: '&' '&' | '|' '|';
-arithmeticop: '+' | '-' | '*' | '/' | '&';
+plus: '+';
+minus:  '-'; 
+mult: '*'; 
+div: '/';
 leftparenthesis: '(';
 rightparenthesis: ')';
 leftbracket: '{';
 rightbracket: '}';
+leftsqrbracket: '[';
+rightsqrbracket: ']';
 colon: ':';
 semicolon: ';';
 dot: '.';
@@ -67,6 +74,7 @@ checkCollision: 'c' 'h' 'e' 'c' 'k' 'C' 'o' 'l' 'l' 'i' 's' 'i' 'o' 'n';
 setImage: 's' 'e' 't' 'I' 'm' 'a' 'g' 'e';
 pow: 'p' 'o' 'w';
 squareRoot: 's' 'q' 'u' 'a' 'r' 'e' 'R' 'o' 'o' 't';
+render: 'r' 'e' 'n' 'd' 'e' 'r';
 
 
 cteint: _integer;
@@ -75,7 +83,8 @@ ctestring: _string;
 ctebool: _boolean;
 id: _id;
 
-# Syntax Part
+/*  Syntax Part */
+
 Programa: program id semicolon Vars Functions Tick Main
 		| program id semicolon Tick Main
         | program id semicolon Functions Tick Main;
@@ -92,7 +101,7 @@ Functions: FunctionsAux id leftparenthesis Vars rightparenthesis Block Functions
 		 | FunctionsAux id leftparenthesis Vars rightparenthesis Block;
 
 FunctionsAux: Type
-			| void;
+			| voidtype;
 
 Block: leftbracket BlockAux;
 
@@ -127,17 +136,17 @@ Object: squaretype
 	  | backgroundtype;
 
 Term: Factor 
-	| Factor '*' Factor
-	| Factor '/' Factor;
+	| Factor mult Factor
+	| Factor div Factor;
 
 Exp: Term
-   | Term '+' Term
-   | Term '-' Term;
+   | Term plus Term
+   | Term minus Term;
 
 Factor: leftparenthesis Expression rightparenthesis
-      | '+' VarCte
-      | '-' VarCte
-      | VarCte;
+      | plus Varcte
+      | minus Varcte
+      | Varcte;
 
 Assign: id equals Expression semicolon
 	  | Attribute equals Expression semicolon;
@@ -175,19 +184,19 @@ Varcte
     ;
 
 Main
-    : void main leftparenthesis rightparenthesis Block
+    : voidtype main leftparenthesis rightparenthesis Block
     ;
 
 Tick
-    : void tick leftparenthesis rightparenthesis Block
+    : voidtype tick leftparenthesis rightparenthesis Block
     ;
 
 SetColor
-    : leftparenthesis ctestring rightparenthesis
+    : setColor leftparenthesis ctestring rightparenthesis
     ;
 
 ListElem
-    : id '[' cteint ']'
+    : id leftsqrbracket cteint rightsqrbracket
     ;
 
 SetSize
@@ -220,7 +229,7 @@ SetFontSize
 
 Type 
     : BasicType
-    | list '<' BasicType '>' 
+    | list greaterthan BasicType lessthan 
     ;
 
 Attribute 
