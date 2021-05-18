@@ -1,0 +1,254 @@
+game PingPong;
+
+int playerOnePoints, playerTwoPoints;
+Circle ball;
+Square playerOne, playerTwo;
+int ballXVel, ballYVel;
+bool gameOver, starting;
+
+Text scoreOne, scoreTwo;
+
+void movePlayerOne(){
+    if(keyPressed(UP)){
+       if(playerOne.y >= 10){
+            playerOne.move(0,10);
+        }
+    }
+    if(keyPressed(DOWN)){
+        if(playerOne.y <= 440){
+            playerOne.move(0,-10);
+        }
+    }
+}
+
+void movePlayerTwo(){
+    if(keyPressed(W)){
+        if(playerTwo.y >= 10){
+            playerOne.move(0,10);
+        }
+    }
+    if(keyPressed(S)){
+        if(playerTwo.y <= 440){
+            playerOne.move(0,-10);
+        }
+    }
+}
+
+void checkCollisionOne(){
+    if (checkCollision(ball, playerOne) ) {
+        
+bool playerBetween = ball.x < playerOne.x  && ball.x < playerOne.x + playerOne.width ;
+//verify if the ball's upper edge is bewteen the player's height
+bool upBetweenPlayer = ball.x + ball.width < playerOne.x  && ball.x + ball.width > playerOne.x + playerOne.width;               
+//verify if the ball's lower edge is between the player's height
+bool downBetweenPlayer = ball.x > playerOne.x && ball.x + ball.width < playerOne.x + playerOne.width;
+        
+        if(playerHit || upBetweenPlayer || downBetweenPlayer){
+            if(ball.y>playerOne.y+playerOne.width/2){
+                //the ball hits the player from above
+                //make y vel negative
+                if(ballXVel > 0){
+                    ballYVel = ballYVel * (-1);
+                } 
+            }
+            else{ //the ball hits the player from the bottom
+                //make y vel positive
+                if(ballYVel < 0){
+                    ballYVel = ballYVel * (-1);
+                }
+            }
+        }
+
+        else{  //ball hits from up
+//Calculate the distance the ball is from the center of the player pad
+int dist = ball.y + ball.height / 2 - (player.y + player.height / 2);
+
+//Map the dist value in proportion to the maxVel of the ball
+            int deltaVel =  (dist / 50) * 10;
+
+            //Update ball's yVel accordingly
+            ballYVel = ballYVel + deltaVel;
+
+            //Bounce the velocity in the x component
+            ballXVel = ballXVel * (-1);
+        }
+    }
+}
+
+void checkCollisionTwo(){
+    if (checkCollision(ball, playerTwo) ) {
+    
+bool playerBetween = ball.x > playerTwo.x  && ball.x > playerTwo.x + playerTwo.width ;
+
+//verify if the ball's upper edge is between the player's height
+bool upBetweenPlayer = ball.x + ball.width > playerTwo.x  && ball.x + ball.width < playerTwo.x + playerTwo.width;               
+
+//verify if the ball's lower edge is between the player's height
+bool downBetweenPlayer = ball.x < playerTwo.x && ball.x + ball.width > playerTwo.x + playerTwo.width;
+        
+        if(playerHit || upBetweenPlayer || downBetweenPlayer){
+            if(ball.y < playerTwo.y+playerTwo.width/2){
+                //the ball hits the player from above
+                //make y vel negative
+                if(ballXVel > 0){
+                    ballYVel = ballYVel * (-1);
+                } 
+            }
+            else{ //the ball hits the player from the bottom
+                //make y vel positive
+                if(ballYVel < 0){
+                    ballYVel = ballYVel * (-1);
+                }
+            }
+        }
+
+        else{  //ball hits from up
+//Calculate the distance the ball is from the center of the player pad
+int dist = ball.y + ball.height / 2 - (player.y + player.height / 2);
+
+//Map the dist value in proportion to the maxVel of the ball
+            int deltaVel =  (dist / 50) * 10;
+
+            //Update ball's yVel accordingly
+            ballYVel = ballYVel + deltaVel;
+
+            //Bounce the velocity in the x component
+            ballXVel = ballXVel * (-1);
+        }
+    }
+}
+
+void moveBall(){
+    ball.move(ballXVel, ballYVel);
+}
+
+void updateScore(){
+    if(playerOnePoints == 1){
+        scoreOne.setText("1");
+    }
+    if(playerOnePoints == 2){
+        scoreOne.setText("2");
+    }
+    if(playerOnePoints == 3){
+        scoreOne.setText("3");
+    }
+    if(playerTwoPoints == 1){
+        scoreTwo.setText("1");
+    }
+    if(playerTwoPoints == 2){
+        scoreTwo.setText("2");
+    }
+    if(playerTwoPoints == 3){
+        scoreTwo.setText("3");
+    }
+    scoreOne.render();
+    scoreTwo.render();
+}
+
+void tick(){
+    movePlayerOne();
+    movePlayerTwo();
+    if(!gameOver){
+        if(starting){
+            if(keyPressed(SPACE)){
+                starting = false;
+            }
+        }
+        else{
+            checkCollisionOne();
+            checkCollisionTwo();
+            
+            //bounce from top and bottom boundaries
+if((ball.y <= 0 || ball.y + ball.height >= 500)  && ball.x > 0 && ball.x + ball.width < 750){
+                ballYVel = ballYVel * (-1);
+            }
+
+            //player one scores a point
+            if(ball.x + ball.width >= 750){
+                playerOnePoints = playerOnePoints + 1;
+                starting = true;
+                playerOne.setPosition(0,225);
+                playerTwo.setPosition(710,225);
+                ball.setPosition(680,235);
+                ballXVel = -10;
+                ballYVel = -10;
+                updateScore();
+            }
+
+            //player two scores a point
+            if(ball.x <= 0){
+                playerTwoPoints = playerTwoPoints + 1;
+                starting = true;
+                playerOne.setPosition(0,225);
+                playerTwo.setPosition(710,225);
+                ball.setPosition(20,235);
+                ballXVel = 10;
+                ballYVel = 10;
+                updateScore();
+            }
+
+            moveBall();
+
+            if(playerOnePoints == 3){
+                Text oneWins;
+                oneWins.setText("PLAYER 1 WINS!!");
+                oneWins.setColor(#ffffff);
+                oneWins.setPosition(275,200);
+                oneWins.setFontSize(40);
+                oneWins.render();
+                gameOver = true;
+            }
+
+            if(playerTwoPoints == 3){
+                Text twoWins;
+                twoWins.setText("PLAYER 2 WINS!!");
+                twoWins.setColor(#ffffff);
+                twoWins.setPosition(275,200);
+                twoWins.setFontSize(40);
+                twoWins.render();
+                gameOver = true;
+            }
+        } 
+    }
+
+}
+
+void main(){
+    
+    Background bg;
+
+    playerOnePoints = 0;
+    playerTwoPoints = 0;
+
+    gameOver = false;
+    starting = true;
+
+    ballXVel = 10;
+    ballYVel = 10;
+
+    bg.setColor(#000000);
+    bg.setSize(730,500);
+
+    ball.setSize(30,30);
+    ball.setColor(#ffffff);
+    ball.setPosition(20,235);
+
+    playerOne.setColor(#ffffff);
+    playerOne.setSize(20,50);
+    playerOne.setPosition(0,225);
+    
+    playerTwo.setColor(#ffffff);
+    playerTwo.setSize(20,50);
+    playerTwo.setPosition(710,225);
+
+    scoreOne.setText("0");
+    scoreOne.setFontSize(30);
+    scoreOne.setPosition(300, 10);
+    scoreOne.render();
+    scoreTwo.setText("0");
+    scoreTwo.setFontSize(30);
+    scoreTwo.setPosition(330, 10);
+    scoreTwo.render();
+    
+    tick();
+}
