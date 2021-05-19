@@ -149,8 +149,30 @@ type Condition struct {
 	exp Expression
 	stmts []Statement
 	elseStmts []Statement
+	tok *token.Token
 }
 
+func (c *Condition) Exp() string {
+	return c.exp
+}
+
+func (c *Condition) Statements() string {
+	return c.stmts
+}
+
+func (c *Condition) ElseStatements() string {
+	return c.elseStmts
+}
+
+func (c *Condition) Token() *token.Token {
+	return c.tok
+}
+
+type Write struct {
+	exp Expression
+	str string
+	tok *token.Token
+}
 // .... CONTINUE
 
 // ConstantValue defines a type with a single basic value
