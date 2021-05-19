@@ -173,6 +173,8 @@ type Write struct {
 	str string
 	tok *token.Token
 }
+
+
 // .... CONTINUE
 
 // ConstantValue defines a type with a single basic value
