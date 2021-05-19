@@ -6,7 +6,11 @@ import (
 	"github.com/sdkvictor/golang-compiler/types"
 )
 
+// TODO: agregar struct de Block?
+
 type Attrib interface {}
+
+type Block interface {}
 
 type Program struct {
     functions 	[]*Function
@@ -129,6 +133,7 @@ type Assign struct {
 	tok *token.Token
 }
 
+// cambiar a valor de retorno Id?
 func (a *Assign) Id() string {
 	return a.id
 }
@@ -174,8 +179,94 @@ type Write struct {
 	tok *token.Token
 }
 
+func (w *Write) Expression() Expression {
+	return w.exp
+}
 
-// .... CONTINUE
+func (w *Write) String() string {
+	return w.str
+}
+
+func (w *Write) Token() *token.Token {
+	return w.tok
+}
+
+type Return struct {
+	exp Expression
+	tok *token.Token
+}
+
+func (r *Return) Expression() Expression {
+	return r.exp
+}
+
+func (r *Return) Token() *token.Token {
+	return r.tok
+}
+
+type For struct {
+	ass Assign
+	expC Expression
+	expA Expression
+	blck Block
+	tok *token.Token
+}
+
+func (f *For) Assign() Assign {
+	return f.ass
+}
+
+func (f *For) ExpressionCondition() Expression {
+	return f.expC
+}
+
+func (f *For) ExpressionAfter() Expression {
+	return f.expA
+}
+
+func (f *For) Block() Block {
+	return f.blck
+}
+
+func (f *For) Token() *token.Token {
+	return f.tok
+}
+
+type While struct {
+	exp Expression
+	blck Block
+	tok *token.Token
+}
+
+func (w *While) Expression() Expression {
+	return w.exp
+}
+
+func (w *While) Block() Block {
+	return w.blck
+}
+
+func (w *While) Token() *token.Token {
+	return w.tok
+}
+
+type FunctionCall struct {
+	id Id
+	exp Expression
+	tok *token.Token
+}
+
+func (fc *FunctionCall) Id() Id {
+	return fc.id
+}
+
+func (fc *FunctionCall) Expression() Expression {
+	return fc.exp
+}
+
+func (fc *FunctionCall) Token() *token.Token {
+	return fc.tok
+}
 
 // ConstantValue defines a type with a single basic value
 type ConstantValue struct {
@@ -195,4 +286,3 @@ func (c *ConstantValue) Token() *token.Token {
 func (c *ConstantValue) Value() string {
 	return c.value
 }
-
