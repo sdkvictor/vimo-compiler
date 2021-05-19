@@ -6,11 +6,7 @@ import (
 	"github.com/sdkvictor/golang-compiler/types"
 )
 
-// TODO: agregar struct de Block?
-
 type Attrib interface {}
-
-type Block interface {}
 
 type Program struct {
     functions 	[]*Function
@@ -133,8 +129,7 @@ type Assign struct {
 	tok *token.Token
 }
 
-// cambiar a valor de retorno Id?
-func (a *Assign) Id() string {
+func (a *Assign) Id() Id {
 	return a.id
 }
 
@@ -208,7 +203,7 @@ type For struct {
 	ass Assign
 	expC Expression
 	expA Expression
-	blck Block
+	blck []Statement
 	tok *token.Token
 }
 
@@ -224,7 +219,7 @@ func (f *For) ExpressionAfter() Expression {
 	return f.expA
 }
 
-func (f *For) Block() Block {
+func (f *For) Block() []Statement {
 	return f.blck
 }
 
@@ -234,7 +229,7 @@ func (f *For) Token() *token.Token {
 
 type While struct {
 	exp Expression
-	blck Block
+	blck []Statement
 	tok *token.Token
 }
 
@@ -242,7 +237,7 @@ func (w *While) Expression() Expression {
 	return w.exp
 }
 
-func (w *While) Block() Block {
+func (w *While) Block() []Statement {
 	return w.blck
 }
 
