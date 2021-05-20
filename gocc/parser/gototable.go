@@ -2,7 +2,7 @@
 
 package parser
 
-const numNTSymbols = 46
+const numNTSymbols = 32
 
 type (
 	gotoTable [numStates]gotoRow
@@ -14,8 +14,9 @@ var gotoTab = gotoTable{
 		-1, // S'
 		1,  // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -36,34 +37,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S1
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -84,34 +71,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S2
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -132,34 +105,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S3
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -180,43 +139,29 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S4
 		-1, // S'
 		-1, // Programa
-		5,  // Vars
-		-1, // VarsAux
+		-1, // Vars
 		-1, // Ids
-		6,  // Functions
-		9,  // FunctionsAux
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		11, // BasicType
-		16, // Object
+		-1, // BasicType
+		-1, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -228,43 +173,29 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		7,  // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		8,  // Type
+		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S5
 		-1, // S'
 		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
+		6,  // Vars
 		-1, // Ids
-		23, // Functions
-		9,  // FunctionsAux
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		11, // BasicType
-		16, // Object
+		9,  // BasicType
+		14, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -276,34 +207,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		24, // Type
+		8,  // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S6
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -324,43 +241,29 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		26, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S7
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
+		-1, // Params
+		-1, // ParamsAux
+		22, // Functions
+		24, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		14, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -372,34 +275,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		28, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
+		23, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S8
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		31, // VarsAux
-		32, // Ids
+		27, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -420,34 +309,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S9
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -468,34 +343,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S10
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -516,34 +377,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S11
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -564,34 +411,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S12
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -612,34 +445,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S13
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -660,34 +479,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S14
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -708,34 +513,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S15
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -756,34 +547,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S16
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -804,34 +581,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S17
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -852,34 +615,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S18
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -900,34 +649,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S19
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -948,34 +683,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S20
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -996,43 +717,29 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S21
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
+		-1, // Params
+		-1, // ParamsAux
+		29, // Functions
+		24, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		14, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -1044,34 +751,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
+		23, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S22
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1092,34 +785,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S23
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1140,34 +819,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		36, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S24
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1188,34 +853,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S25
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1236,34 +887,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S26
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1284,34 +921,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		37, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S27
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1332,34 +955,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S28
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1367,8 +976,8 @@ var gotoTab = gotoTable{
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		-1, // BasicType
-		-1, // Object
+		33, // BasicType
+		38, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -1380,34 +989,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S29
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1428,34 +1023,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S30
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1476,34 +1057,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S31
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
+		45, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1524,34 +1091,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S32
 		-1, // S'
 		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
+		46, // Vars
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1559,8 +1112,8 @@ var gotoTab = gotoTable{
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		14, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -1572,34 +1125,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
+		8,  // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S33
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1620,34 +1159,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S34
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1668,34 +1193,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S35
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1703,8 +1214,8 @@ var gotoTab = gotoTable{
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		43, // BasicType
-		48, // Object
+		-1, // BasicType
+		-1, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -1716,34 +1227,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S36
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1764,34 +1261,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		54, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S37
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1812,34 +1295,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S38
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1860,34 +1329,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S39
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
-		56, // Ids
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1908,34 +1363,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S40
 		-1, // S'
 		-1, // Programa
-		57, // Vars
-		-1, // VarsAux
+		-1, // Vars
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1943,8 +1384,8 @@ var gotoTab = gotoTable{
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		11, // BasicType
-		16, // Object
+		-1, // BasicType
+		-1, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -1956,34 +1397,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		58, // Type
+		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S41
 		-1, // S'
 		-1, // Programa
-		59, // Vars
-		-1, // VarsAux
+		-1, // Vars
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -1991,8 +1418,8 @@ var gotoTab = gotoTable{
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		11, // BasicType
-		16, // Object
+		-1, // BasicType
+		-1, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -2004,34 +1431,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		60, // Type
+		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S42
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2052,34 +1465,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S43
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2100,34 +1499,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S44
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		49, // Params
+		50, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2135,8 +1520,8 @@ var gotoTab = gotoTable{
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		14, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -2148,34 +1533,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
+		48, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S45
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2196,34 +1567,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S46
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2244,34 +1601,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S47
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2292,34 +1635,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S48
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2340,34 +1669,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S49
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2388,34 +1703,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S50
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2436,34 +1737,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S51
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2484,37 +1771,23 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S52
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
-		-1, // Block
+		55, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // Expression
@@ -2532,34 +1805,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S53
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		56, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2567,8 +1826,8 @@ var gotoTab = gotoTable{
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		14, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -2580,91 +1839,63 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
+		48, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S54
 		-1, // S'
 		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
+		58, // Vars
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
+		61, // BlockAux
+		62, // Statement
 		-1, // Expression
 		-1, // Operations
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		14, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
+		63, // Assign
+		64, // Condition
+		65, // Write
 		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
+		66, // Return
+		67, // For
+		68, // While
+		69, // CallFunction
+		70, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		60, // Type
+		71, // Attribute
 	},
 	gotoRow{ // S55
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
+		-1, // Params
+		-1, // ParamsAux
+		77, // Functions
+		24, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // Expression
 		-1, // Operations
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		14, // Object
 		-1, // Term
 		-1, // Exp
 		-1, // Factor
@@ -2676,34 +1907,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
+		23, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S56
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2724,34 +1941,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S57
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2772,34 +1975,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S58
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		31, // VarsAux
-		32, // Ids
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2820,34 +2009,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S59
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2868,34 +2043,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S60
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		65, // VarsAux
-		66, // Ids
+		81, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -2916,82 +2077,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S61
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		67, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S62
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3012,37 +2111,57 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+	},
+	gotoRow{ // S62
+		-1, // S'
+		-1, // Programa
+		58, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		83, // BlockAux
+		62, // Statement
+		-1, // Expression
+		-1, // Operations
+		9,  // BasicType
+		14, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		63, // Assign
+		64, // Condition
+		65, // Write
+		-1, // WriteAux
+		66, // Return
+		67, // For
+		68, // While
+		69, // CallFunction
+		70, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		60, // Type
+		71, // Attribute
 	},
 	gotoRow{ // S63
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
-		69, // Block
+		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // Expression
@@ -3060,37 +2179,23 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S64
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
-		71, // Block
+		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // Expression
@@ -3108,34 +2213,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S65
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3156,34 +2247,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S66
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3204,34 +2281,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S67
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3252,82 +2315,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S68
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		75,  // BlockAux
-		76,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S69
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3348,238 +2383,168 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S70
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		117, // BlockAux
-		118, // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S71
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		119, // Functions
-		9,   // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		11,  // BasicType
-		16,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		24,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S72
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		120, // BlockAux
-		121, // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S73
-		-1,  // S'
-		-1,  // Programa
-		122, // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		11,  // BasicType
-		16,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		60,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S74
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		-1,  // Expression
+		93,  // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
+		95,  // Term
+		94,  // Exp
+		96,  // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -3587,35 +2552,21 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
-		125, // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
 		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		100, // Attribute
 	},
 	gotoRow{ // S75
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3636,82 +2587,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S76
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		127, // BlockAux
-		76,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S77
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3732,130 +2655,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S78
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		113, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		122, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S79
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		127, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		95,  // Term
+		94,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S80
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3876,34 +2757,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S81
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3924,34 +2791,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S82
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -3972,34 +2825,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S83
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4020,34 +2859,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S84
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4068,34 +2893,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S85
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4116,178 +2927,122 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S86
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		130, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		95,  // Term
+		94,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S87
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		135, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		137, // Term
+		136, // Exp
+		138, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		141, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S88
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		134, // Expression
+		148, // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		136, // Term
-		135, // Exp
-		137, // Factor
+		115, // Term
+		114, // Exp
+		116, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
-		-1,  // WriteAux
+		149, // WriteAux
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		111, // CallFunction
+		112, // CallClassFunction
 		-1,  // CallFunctionAux
-		140, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		119, // Varcte
+		125, // ListElem
 		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		120, // Attribute
 	},
 	gotoRow{ // S89
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4308,82 +3063,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S90
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		154, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		137, // Term
+		136, // Exp
+		138, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		141, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S91
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4404,34 +3131,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S92
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4452,34 +3165,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S93
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4500,82 +3199,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S94
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		156, // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S95
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4596,34 +3267,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S96
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4644,130 +3301,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S97
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		163, // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S98
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		164, // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S99
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4788,34 +3403,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S100
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4836,34 +3437,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S101
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4884,34 +3471,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S102
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4932,34 +3505,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S103
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -4980,34 +3539,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S104
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5028,34 +3573,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S105
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5076,130 +3607,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S106
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		166, // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		167, // Attribute
 	},
 	gotoRow{ // S107
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		168, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		137, // Term
+		136, // Exp
+		138, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		141, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S108
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5220,82 +3709,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S109
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		172, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		137, // Term
+		136, // Exp
+		138, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		141, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S110
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5316,34 +3777,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S111
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5364,34 +3811,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S112
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5412,34 +3845,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S113
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5460,82 +3879,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S114
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		174, // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S115
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5556,34 +3947,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S116
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5604,87 +3981,59 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S117
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		-1,  // CallFunctionAux
+		179, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S118
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
-		162, // BlockAux
-		118, // Statement
+		-1,  // BlockAux
+		-1,  // Statement
 		-1,  // Expression
 		-1,  // Operations
 		-1,  // BasicType
@@ -5692,42 +4041,28 @@ var gotoTab = gotoTable{
 		-1,  // Term
 		-1,  // Exp
 		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
 		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
 		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
+		180, // Varcte
+		125, // ListElem
 		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
+		120, // Attribute
 	},
 	gotoRow{ // S119
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5748,34 +4083,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S120
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5796,82 +4117,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S121
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		164, // BlockAux
-		121, // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S122
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -5892,130 +4185,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S123
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		169, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		171, // Term
-		170, // Exp
-		172, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		175, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		180, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		176, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S124
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		182, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		136, // Term
-		135, // Exp
-		137, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		140, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S125
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6036,34 +4287,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S126
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6084,34 +4321,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S127
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6132,34 +4355,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S128
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6180,46 +4389,32 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S129
 		-1,  // S'
 		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
+		184, // Vars
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		184, // Expression
+		-1,  // Expression
 		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		136, // Term
-		135, // Exp
-		137, // Factor
+		9,   // BasicType
+		14,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -6228,130 +4423,20 @@ var gotoTab = gotoTable{
 		-1,  // For
 		-1,  // While
 		-1,  // CallFunction
+		-1,  // CallClassFunction
 		-1,  // CallFunctionAux
-		140, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1,  // Varcte
+		-1,  // ListElem
+		60,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S130
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		187, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S131
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		200, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		171, // Term
-		170, // Exp
-		172, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		201, // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		175, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		180, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		176, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S132
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6372,46 +4457,66 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
-	gotoRow{ // S133
+	gotoRow{ // S131
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S132
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		205, // Expression
+		189, // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
+		137, // Term
+		136, // Exp
+		138, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -6419,35 +4524,55 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		133, // CallFunction
+		134, // CallClassFunction
 		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		141, // Varcte
+		146, // ListElem
 		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		142, // Attribute
+	},
+	gotoRow{ // S133
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S134
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6468,41 +4593,61 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S135
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S136
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
 		-1,  // Expression
-		207, // Operations
+		191, // Operations
 		-1,  // BasicType
 		-1,  // Object
 		-1,  // Term
@@ -6516,82 +4661,20 @@ var gotoTab = gotoTable{
 		-1,  // For
 		-1,  // While
 		-1,  // CallFunction
+		-1,  // CallClassFunction
 		-1,  // CallFunctionAux
 		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
 		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
 		-1,  // Type
 		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S136
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S137
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6612,82 +4695,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S138
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		214, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S139
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
@@ -6707,83 +4762,55 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		133, // CallFunction
+		134, // CallClassFunction
 		-1,  // CallFunctionAux
-		215, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		196, // Varcte
+		146, // ListElem
 		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		142, // Attribute
 	},
 	gotoRow{ // S140
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		197, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S141
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6804,34 +4831,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S142
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6852,34 +4865,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S143
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6900,34 +4899,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S144
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6948,34 +4933,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S145
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -6996,34 +4967,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S146
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7044,130 +5001,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S147
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		217, // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		218, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S148
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		219, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S149
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7188,34 +5103,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S150
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7236,82 +5137,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S151
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		113, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		202, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S152
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7332,82 +5205,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S153
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		208, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		210, // Term
+		209, // Exp
+		211, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		206, // CallFunction
+		207, // CallClassFunction
+		-1,  // CallFunctionAux
+		214, // Varcte
+		219, // ListElem
+		-1,  // Type
+		215, // Attribute
 	},
 	gotoRow{ // S154
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7428,34 +5273,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S155
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7476,82 +5307,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S156
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		222, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		95,  // Term
+		94,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S157
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7572,34 +5375,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S158
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S159
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
@@ -7608,10 +5431,10 @@ var gotoTab = gotoTable{
 		-1,  // Expression
 		-1,  // Operations
 		-1,  // BasicType
-		229, // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
+		-1,  // Object
+		95,  // Term
+		223, // Exp
+		96,  // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -7619,227 +5442,123 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		91,  // CallFunction
+		92,  // CallClassFunction
 		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		99,  // Varcte
+		104, // ListElem
 		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S159
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		100, // Attribute
 	},
 	gotoRow{ // S160
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		95,  // Term
+		224, // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S161
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		225, // Term
+		-1,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S162
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		226, // Term
+		-1,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S163
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7860,34 +5579,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S164
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7908,34 +5613,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S165
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -7956,34 +5647,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S166
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8004,82 +5681,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S167
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		240, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S168
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8100,94 +5749,32 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S169
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S170
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		-1,  // Expression
-		243, // Operations
+		113, // Expression
+		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
+		115, // Term
+		114, // Exp
+		116, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -8195,35 +5782,21 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		111, // CallFunction
+		112, // CallClassFunction
+		233, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
 		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		120, // Attribute
 	},
-	gotoRow{ // S171
+	gotoRow{ // S170
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8244,34 +5817,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+	},
+	gotoRow{ // S171
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		235, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		210, // Term
+		209, // Exp
+		211, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		206, // CallFunction
+		207, // CallClassFunction
+		-1,  // CallFunctionAux
+		214, // Varcte
+		219, // ListElem
+		-1,  // Type
+		215, // Attribute
 	},
 	gotoRow{ // S172
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8292,46 +5885,32 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S173
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		-1,  // Expression
+		113, // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
+		115, // Term
+		114, // Exp
+		116, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -8339,35 +5918,55 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		248, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		180, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		111, // CallFunction
+		112, // CallClassFunction
+		237, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
 		-1,  // Type
-		176, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		120, // Attribute
 	},
 	gotoRow{ // S174
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		238, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		-1,  // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
+	},
+	gotoRow{ // S175
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
@@ -8377,9 +5976,9 @@ var gotoTab = gotoTable{
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
+		115, // Term
+		239, // Exp
+		116, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -8387,227 +5986,123 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		111, // CallFunction
+		112, // CallClassFunction
 		-1,  // CallFunctionAux
-		249, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		180, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		119, // Varcte
+		125, // ListElem
 		-1,  // Type
-		176, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S175
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		120, // Attribute
 	},
 	gotoRow{ // S176
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		240, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		-1,  // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S177
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		241, // Term
+		-1,  // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		-1,  // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S178
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		242, // Term
+		-1,  // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		-1,  // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S179
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8628,34 +6123,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S180
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8676,34 +6157,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S181
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8724,34 +6191,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S182
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8772,82 +6225,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S183
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		113, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		244, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S184
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8868,34 +6293,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S185
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -8916,46 +6327,32 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S186
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		254, // Expression
+		113, // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
+		115, // Term
+		114, // Exp
+		116, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -8963,35 +6360,21 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		111, // CallFunction
+		112, // CallClassFunction
+		246, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
 		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		120, // Attribute
 	},
 	gotoRow{ // S187
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9012,46 +6395,32 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S188
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		-1,  // Expression
-		256, // Operations
+		248, // Expression
+		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
+		210, // Term
+		209, // Exp
+		211, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -9059,35 +6428,21 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		206, // CallFunction
+		207, // CallClassFunction
 		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		214, // Varcte
+		219, // ListElem
 		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		215, // Attribute
 	},
 	gotoRow{ // S189
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9108,94 +6463,66 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S190
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		251, // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S191
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		-1,  // Expression
+		252, // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
+		137, // Term
+		136, // Exp
+		138, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -9203,35 +6530,21 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		133, // CallFunction
+		134, // CallClassFunction
 		-1,  // CallFunctionAux
-		261, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		141, // Varcte
+		146, // ListElem
 		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		142, // Attribute
 	},
 	gotoRow{ // S192
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
@@ -9241,9 +6554,9 @@ var gotoTab = gotoTable{
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
+		137, // Term
+		253, // Exp
+		138, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -9251,179 +6564,123 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		133, // CallFunction
+		134, // CallClassFunction
 		-1,  // CallFunctionAux
-		262, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		141, // Varcte
+		146, // ListElem
 		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		142, // Attribute
 	},
 	gotoRow{ // S193
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		137, // Term
+		254, // Exp
+		138, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		141, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S194
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		255, // Term
+		-1,  // Exp
+		138, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		141, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S195
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		256, // Term
+		-1,  // Exp
+		138, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		141, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S196
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9444,34 +6701,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S197
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9492,82 +6735,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S198
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		148, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		257, // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		-1,  // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S199
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9588,82 +6803,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S200
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		148, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		259, // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		-1,  // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S201
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9684,34 +6871,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S202
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9732,34 +6905,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S203
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9780,34 +6939,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S204
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9828,82 +6973,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S205
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		265, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		137, // Term
+		136, // Exp
+		138, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		133, // CallFunction
+		134, // CallClassFunction
+		-1,  // CallFunctionAux
+		141, // Varcte
+		146, // ListElem
+		-1,  // Type
+		142, // Attribute
 	},
 	gotoRow{ // S206
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -9924,82 +7041,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S207
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		272, // Term
-		271, // Exp
-		273, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		276, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		281, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		277, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S208
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10020,34 +7109,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S209
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		267, // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
+	},
+	gotoRow{ // S210
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10068,130 +7177,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S210
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		285, // Term
-		-1,  // Exp
-		286, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		289, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		294, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		290, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
 	},
 	gotoRow{ // S211
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		296, // Term
-		-1,  // Exp
-		286, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		289, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		294, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		290, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S212
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
@@ -10203,7 +7236,7 @@ var gotoTab = gotoTable{
 		-1,  // Object
 		-1,  // Term
 		-1,  // Exp
-		299, // Factor
+		-1,  // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -10211,35 +7244,21 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		206, // CallFunction
+		207, // CallClassFunction
 		-1,  // CallFunctionAux
-		302, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		307, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		272, // Varcte
+		219, // ListElem
 		-1,  // Type
-		303, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		215, // Attribute
 	},
 	gotoRow{ // S213
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
@@ -10251,7 +7270,7 @@ var gotoTab = gotoTable{
 		-1,  // Object
 		-1,  // Term
 		-1,  // Exp
-		309, // Factor
+		-1,  // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -10259,35 +7278,21 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		206, // CallFunction
+		207, // CallClassFunction
 		-1,  // CallFunctionAux
-		302, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		307, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		273, // Varcte
+		219, // ListElem
 		-1,  // Type
-		303, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		215, // Attribute
 	},
 	gotoRow{ // S214
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10308,34 +7313,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S215
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10356,34 +7347,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S216
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10404,34 +7381,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S217
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10452,34 +7415,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S218
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10500,34 +7449,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S219
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10548,34 +7483,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S220
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10596,34 +7517,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S221
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10644,34 +7551,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S222
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10692,34 +7585,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S223
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10740,34 +7619,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S224
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10788,34 +7653,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S225
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10836,34 +7687,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S226
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10884,82 +7721,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S227
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		274, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		95,  // Term
+		94,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S228
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -10980,178 +7789,122 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S229
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		276, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		95,  // Term
+		94,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S230
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		277, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		95,  // Term
+		94,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S231
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		279, // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S232
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11172,34 +7925,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S233
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11220,34 +7959,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S234
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11268,34 +7993,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S235
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11316,34 +8027,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S236
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11364,34 +8061,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S237
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11412,34 +8095,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S238
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11460,34 +8129,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S239
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11508,34 +8163,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S240
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11556,82 +8197,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S241
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		329, // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S242
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11652,274 +8265,190 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S243
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		333, // Term
-		332, // Exp
-		334, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		337, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		342, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		338, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S244
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		346, // Term
-		-1,  // Exp
-		347, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		350, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		355, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		351, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S245
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		357, // Term
-		-1,  // Exp
-		347, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		350, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		355, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		351, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S246
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		360, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		363, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		368, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		364, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S247
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		370, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		363, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		368, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		364, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S248
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11940,34 +8469,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S249
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -11988,82 +8503,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S250
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		58,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		288, // BlockAux
+		62,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		9,   // BasicType
+		14,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		63,  // Assign
+		64,  // Condition
+		65,  // Write
+		-1,  // WriteAux
+		66,  // Return
+		67,  // For
+		68,  // While
+		69,  // CallFunction
+		70,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		60,  // Type
+		71,  // Attribute
 	},
 	gotoRow{ // S251
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -12084,34 +8571,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S252
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -12132,34 +8605,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S253
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -12180,34 +8639,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S254
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -12228,286 +8673,236 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S255
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		374, // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S256
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		380, // Term
-		379, // Exp
-		381, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		384, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		389, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		385, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S257
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		393, // Term
-		-1,  // Exp
-		394, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		397, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		402, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		398, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S258
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		404, // Term
-		-1,  // Exp
-		394, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		397, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		402, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		398, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S259
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		407, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		410, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		415, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		411, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S260
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S261
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		-1,  // Expression
+		113, // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		417, // Factor
+		115, // Term
+		114, // Exp
+		116, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -12515,179 +8910,55 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		410, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		415, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		111, // CallFunction
+		112, // CallClassFunction
+		291, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
 		-1,  // Type
-		411, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S261
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		120, // Attribute
 	},
 	gotoRow{ // S262
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		113, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		293, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S263
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		200, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		171, // Term
-		170, // Exp
-		172, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		418, // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		175, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		180, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		176, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S264
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -12708,82 +8979,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
-	gotoRow{ // S265
+	gotoRow{ // S264
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		200, // Expression
+		295, // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		171, // Term
-		170, // Exp
-		172, // Factor
+		210, // Term
+		209, // Exp
+		211, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
-		420, // WriteAux
+		-1,  // WriteAux
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		206, // CallFunction
+		207, // CallClassFunction
 		-1,  // CallFunctionAux
-		175, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		180, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		214, // Varcte
+		219, // ListElem
 		-1,  // Type
-		176, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		215, // Attribute
+	},
+	gotoRow{ // S265
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S266
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -12804,190 +9081,134 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S267
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		297, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		210, // Term
+		209, // Exp
+		211, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		206, // CallFunction
+		207, // CallClassFunction
+		-1,  // CallFunctionAux
+		214, // Varcte
+		219, // ListElem
+		-1,  // Type
+		215, // Attribute
 	},
 	gotoRow{ // S268
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		210, // Term
+		298, // Exp
+		211, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		206, // CallFunction
+		207, // CallClassFunction
+		-1,  // CallFunctionAux
+		214, // Varcte
+		219, // ListElem
+		-1,  // Type
+		215, // Attribute
 	},
 	gotoRow{ // S269
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		210, // Term
+		299, // Exp
+		211, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		206, // CallFunction
+		207, // CallClassFunction
+		-1,  // CallFunctionAux
+		214, // Varcte
+		219, // ListElem
+		-1,  // Type
+		215, // Attribute
 	},
 	gotoRow{ // S270
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		424, // Expression
+		-1,  // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
+		300, // Term
+		-1,  // Exp
+		211, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -12995,83 +9216,55 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		206, // CallFunction
+		207, // CallClassFunction
 		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		214, // Varcte
+		219, // ListElem
 		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		215, // Attribute
 	},
 	gotoRow{ // S271
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		301, // Term
+		-1,  // Exp
+		211, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		206, // CallFunction
+		207, // CallClassFunction
+		-1,  // CallFunctionAux
+		214, // Varcte
+		219, // ListElem
+		-1,  // Type
+		215, // Attribute
 	},
 	gotoRow{ // S272
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13092,34 +9285,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S273
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13140,130 +9319,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S274
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		429, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		281, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		277, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S275
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		430, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		281, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		277, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S276
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13284,34 +9421,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S277
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13332,82 +9455,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S278
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		58,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		306, // BlockAux
+		62,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		9,   // BasicType
+		14,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		63,  // Assign
+		64,  // Condition
+		65,  // Write
+		-1,  // WriteAux
+		66,  // Return
+		67,  // For
+		68,  // While
+		69,  // CallFunction
+		70,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		60,  // Type
+		71,  // Attribute
 	},
 	gotoRow{ // S279
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13428,34 +9523,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S280
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13476,82 +9557,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S281
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		113, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		308, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S282
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13572,34 +9625,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S283
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13620,46 +9659,66 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S284
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S285
 		-1,  // S'
 		-1,  // Programa
 		-1,  // Vars
-		-1,  // VarsAux
 		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
-		433, // Expression
+		113, // Expression
 		-1,  // Operations
 		-1,  // BasicType
 		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
+		115, // Term
+		114, // Exp
+		116, // Factor
 		-1,  // Assign
 		-1,  // Condition
 		-1,  // Write
@@ -13667,83 +9726,21 @@ var gotoTab = gotoTable{
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
+		111, // CallFunction
+		112, // CallClassFunction
+		310, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
 		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S285
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		120, // Attribute
 	},
 	gotoRow{ // S286
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13764,130 +9761,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S287
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		436, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		294, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		290, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S288
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		437, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		294, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		290, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S289
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13908,34 +9795,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+	},
+	gotoRow{ // S288
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S289
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		312, // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S290
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -13956,34 +9897,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S291
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14004,34 +9931,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S292
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14052,34 +9965,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S293
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14100,34 +9999,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S294
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14148,34 +10033,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S295
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14196,34 +10067,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S296
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14244,34 +10101,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S297
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14292,82 +10135,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S298
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		440, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S299
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14388,130 +10203,88 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S300
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		441, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		307, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		303, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S301
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		442, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		307, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		303, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S302
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14532,82 +10305,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S303
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		317, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		95,  // Term
+		94,  // Exp
+		96,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		91,  // CallFunction
+		92,  // CallClassFunction
+		-1,  // CallFunctionAux
+		99,  // Varcte
+		104, // ListElem
+		-1,  // Type
+		100, // Attribute
 	},
 	gotoRow{ // S304
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14628,34 +10373,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S305
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14676,34 +10407,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S306
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14724,34 +10441,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S307
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14772,34 +10475,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S308
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14820,34 +10509,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S309
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -14868,226 +10543,156 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S310
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		443, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		136, // Term
-		135, // Exp
-		137, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		140, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S311
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		444, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		136, // Term
-		135, // Exp
-		137, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		140, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S312
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		445, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		136, // Term
-		135, // Exp
-		137, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		140, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S313
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		446, // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S314
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15108,82 +10713,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S315
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		113, // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		115, // Term
+		114, // Exp
+		116, // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		111, // CallFunction
+		112, // CallClassFunction
+		322, // CallFunctionAux
+		119, // Varcte
+		125, // ListElem
+		-1,  // Type
+		120, // Attribute
 	},
 	gotoRow{ // S316
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15204,34 +10781,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S317
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15252,34 +10815,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S318
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15300,34 +10849,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S319
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15348,34 +10883,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S320
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15396,34 +10917,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S321
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15444,82 +10951,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S322
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		451, // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
+		-1, // S'
+		-1, // Programa
+		-1, // Vars
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // Expression
+		-1, // Operations
+		-1, // BasicType
+		-1, // Object
+		-1, // Term
+		-1, // Exp
+		-1, // Factor
+		-1, // Assign
+		-1, // Condition
+		-1, // Write
+		-1, // WriteAux
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallClassFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S323
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15540,34 +11019,20 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S324
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15588,82 +11053,54 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 	gotoRow{ // S325
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
+		-1,  // S'
+		-1,  // Programa
+		-1,  // Vars
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		326, // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Term
+		-1,  // Exp
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Condition
+		-1,  // Write
+		-1,  // WriteAux
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallClassFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S326
 		-1, // S'
 		-1, // Programa
 		-1, // Vars
-		-1, // VarsAux
 		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -15684,24362 +11121,11 @@ var gotoTab = gotoTable{
 		-1, // For
 		-1, // While
 		-1, // CallFunction
+		-1, // CallClassFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
 		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
 		-1, // Type
 		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S327
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S328
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S329
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S330
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S331
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		461, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S332
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S333
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S334
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S335
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		466, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		342, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		338, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S336
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		467, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		342, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		338, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S337
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S338
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S339
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S340
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S341
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S342
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S343
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S344
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S345
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		470, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S346
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S347
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S348
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		473, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		355, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		351, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S349
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		474, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		355, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		351, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S350
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S351
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S352
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S353
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S354
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S355
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S356
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S357
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S358
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S359
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		477, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S360
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S361
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		478, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		368, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		364, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S362
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		479, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		368, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		364, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S363
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S364
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S365
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S366
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S367
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S368
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S369
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S370
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S371
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S372
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S373
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S374
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S375
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		482, // BlockAux
-		483, // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
-	},
-	gotoRow{ // S376
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		484, // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S377
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S378
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		487, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S379
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S380
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S381
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S382
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		492, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		389, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		385, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S383
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		493, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		389, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		385, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S384
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S385
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S386
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S387
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S388
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S389
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S390
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S391
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S392
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		496, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S393
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S394
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S395
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		499, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		402, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		398, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S396
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		500, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		402, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		398, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S397
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S398
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S399
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S400
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S401
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S402
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S403
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S404
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S405
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S406
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		503, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S407
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S408
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		504, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		415, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		411, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S409
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		505, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		415, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		411, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S410
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S411
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S412
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S413
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S414
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S415
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S416
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S417
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S418
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S419
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S420
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S421
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S422
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S423
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S424
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S425
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		511, // Term
-		-1,  // Exp
-		512, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		515, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		520, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		516, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S426
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		522, // Term
-		-1,  // Exp
-		512, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		515, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		520, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		516, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S427
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		525, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		528, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		533, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		529, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S428
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		535, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		528, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		533, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		529, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S429
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S430
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S431
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S432
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S433
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S434
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		541, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		544, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		549, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		545, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S435
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		551, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		544, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		549, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		545, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S436
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S437
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S438
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S439
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S440
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S441
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S442
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S443
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S444
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S445
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S446
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S447
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		558, // BlockAux
-		559, // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
-	},
-	gotoRow{ // S448
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S449
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S450
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S451
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S452
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S453
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S454
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S455
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S456
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S457
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S458
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S459
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S460
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S461
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S462
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		570, // Term
-		-1,  // Exp
-		571, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		574, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		579, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		575, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S463
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		581, // Term
-		-1,  // Exp
-		571, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		574, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		579, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		575, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S464
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		584, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		587, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		592, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		588, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S465
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		594, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		587, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		592, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		588, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S466
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S467
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S468
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S469
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S470
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S471
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		600, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		603, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		608, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		604, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S472
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		610, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		603, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		608, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		604, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S473
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S474
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S475
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S476
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S477
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S478
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S479
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S480
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S481
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S482
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S483
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		614, // BlockAux
-		483, // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
-	},
-	gotoRow{ // S484
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S485
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S486
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S487
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S488
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		622, // Term
-		-1,  // Exp
-		623, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		626, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		631, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		627, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S489
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		633, // Term
-		-1,  // Exp
-		623, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		626, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		631, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		627, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S490
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		636, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		639, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		644, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		640, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S491
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		646, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		639, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		644, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		640, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S492
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S493
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S494
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S495
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S496
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S497
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		652, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		655, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		660, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		656, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S498
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		662, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		655, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		660, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		656, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S499
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S500
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S501
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S502
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S503
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S504
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S505
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S506
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S507
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S508
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S509
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S510
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		669, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S511
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S512
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S513
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		672, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		520, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		516, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S514
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		673, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		520, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		516, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S515
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S516
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S517
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S518
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S519
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S520
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S521
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S522
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S523
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S524
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		676, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S525
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S526
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		677, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		533, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		529, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S527
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		678, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		533, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		529, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S528
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S529
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S530
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S531
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S532
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S533
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S534
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S535
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S536
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S537
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S538
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S539
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S540
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		682, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S541
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S542
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		683, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		549, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		545, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S543
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		684, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		549, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		545, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S544
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S545
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S546
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S547
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S548
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S549
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S550
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S551
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S552
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S553
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S554
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S555
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S556
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		686, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		136, // Term
-		135, // Exp
-		137, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		140, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		145, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		141, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S557
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S558
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S559
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		687, // BlockAux
-		559, // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		77,  // Assign
-		78,  // Condition
-		79,  // Write
-		-1,  // WriteAux
-		80,  // Return
-		81,  // For
-		82,  // While
-		83,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		91,  // SetColor
-		-1,  // ListElem
-		93,  // SetSize
-		95,  // SetPosition
-		97,  // Move
-		99,  // SetText
-		101, // Render
-		103, // KeyPressed
-		105, // SetFontSize
-		-1,  // Type
-		85,  // Attribute
-		107, // LoadImage
-		109, // CheckCollision
-		111, // SetImage
-		113, // Pow
-		115, // SquareRoot
-		84,  // PredefinedFunction
-	},
-	gotoRow{ // S560
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S561
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S562
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S563
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S564
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S565
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S566
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S567
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S568
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S569
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		692, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S570
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S571
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S572
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		695, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		579, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		575, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S573
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		696, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		579, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		575, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S574
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S575
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S576
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S577
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S578
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S579
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S580
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S581
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S582
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S583
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		699, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S584
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S585
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		700, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		592, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		588, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S586
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		701, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		592, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		588, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S587
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S588
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S589
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S590
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S591
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S592
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S593
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S594
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S595
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S596
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S597
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S598
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S599
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		705, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S600
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S601
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		706, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		608, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		604, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S602
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		707, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		608, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		604, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S603
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S604
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S605
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S606
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S607
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S608
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S609
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S610
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S611
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S612
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S613
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S614
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S615
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S616
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S617
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S618
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S619
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S620
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S621
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		712, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S622
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S623
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S624
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		715, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		631, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		627, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S625
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		716, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		631, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		627, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S626
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S627
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S628
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S629
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S630
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S631
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S632
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S633
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S634
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S635
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		719, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S636
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S637
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		720, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		644, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		640, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S638
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		721, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		644, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		640, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S639
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S640
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S641
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S642
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S643
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S644
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S645
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S646
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S647
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S648
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S649
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S650
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S651
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		725, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S652
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S653
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		726, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		660, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		656, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S654
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		727, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		660, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		656, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S655
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S656
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S657
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S658
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S659
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S660
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S661
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S662
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S663
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S664
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S665
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S666
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S667
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S668
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S669
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S670
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		734, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		737, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		742, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		738, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S671
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		744, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		737, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		742, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		738, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S672
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S673
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S674
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S675
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S676
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S677
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S678
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S679
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S680
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S681
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S682
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S683
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S684
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S685
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S686
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S687
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S688
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S689
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S690
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S691
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S692
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S693
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		757, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		760, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		765, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		761, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S694
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		767, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		760, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		765, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		761, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S695
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S696
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S697
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S698
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S699
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S700
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S701
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S702
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S703
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S704
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S705
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S706
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S707
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S708
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S709
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S710
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S711
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S712
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S713
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		779, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		782, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		787, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		783, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S714
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		789, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		782, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		787, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		783, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S715
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S716
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S717
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S718
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S719
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S720
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S721
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S722
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S723
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S724
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S725
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S726
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S727
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S728
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S729
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S730
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S731
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S732
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S733
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		799, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S734
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S735
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		800, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		742, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		738, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S736
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		801, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		742, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		738, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S737
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S738
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S739
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S740
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S741
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S742
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S743
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S744
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S745
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S746
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S747
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S748
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S749
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S750
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S751
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S752
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S753
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S754
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S755
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S756
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		808, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S757
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S758
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		809, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		765, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		761, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S759
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		810, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		765, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		761, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S760
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S761
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S762
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S763
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S764
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S765
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S766
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S767
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S768
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S769
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S770
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S771
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S772
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S773
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S774
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S775
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S776
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S777
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S778
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		816, // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		189, // Term
-		188, // Exp
-		190, // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		198, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		194, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S779
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S780
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		817, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		787, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		783, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S781
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		818, // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		787, // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		783, // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S782
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S783
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S784
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S785
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S786
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S787
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S788
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S789
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S790
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S791
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S792
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S793
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S794
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S795
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S796
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S797
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S798
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S799
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S800
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S801
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S802
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S803
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S804
-		-1,  // S'
-		-1,  // Programa
-		-1,  // Vars
-		-1,  // VarsAux
-		-1,  // Ids
-		-1,  // Functions
-		-1,  // FunctionsAux
-		824, // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Term
-		-1,  // Exp
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Condition
-		-1,  // Write
-		-1,  // WriteAux
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // Main
-		-1,  // Tick
-		-1,  // SetColor
-		-1,  // ListElem
-		-1,  // SetSize
-		-1,  // SetPosition
-		-1,  // Move
-		-1,  // SetText
-		-1,  // Render
-		-1,  // KeyPressed
-		-1,  // SetFontSize
-		-1,  // Type
-		-1,  // Attribute
-		-1,  // LoadImage
-		-1,  // CheckCollision
-		-1,  // SetImage
-		-1,  // Pow
-		-1,  // SquareRoot
-		-1,  // PredefinedFunction
-	},
-	gotoRow{ // S805
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S806
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S807
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S808
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S809
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S810
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S811
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S812
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S813
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S814
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S815
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S816
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S817
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S818
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S819
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S820
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S821
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S822
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S823
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S824
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S825
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S826
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S827
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S828
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S829
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S830
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S831
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S832
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
-	},
-	gotoRow{ // S833
-		-1, // S'
-		-1, // Programa
-		-1, // Vars
-		-1, // VarsAux
-		-1, // Ids
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // Expression
-		-1, // Operations
-		-1, // BasicType
-		-1, // Object
-		-1, // Term
-		-1, // Exp
-		-1, // Factor
-		-1, // Assign
-		-1, // Condition
-		-1, // Write
-		-1, // WriteAux
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // Main
-		-1, // Tick
-		-1, // SetColor
-		-1, // ListElem
-		-1, // SetSize
-		-1, // SetPosition
-		-1, // Move
-		-1, // SetText
-		-1, // Render
-		-1, // KeyPressed
-		-1, // SetFontSize
-		-1, // Type
-		-1, // Attribute
-		-1, // LoadImage
-		-1, // CheckCollision
-		-1, // SetImage
-		-1, // Pow
-		-1, // SquareRoot
-		-1, // PredefinedFunction
 	},
 }

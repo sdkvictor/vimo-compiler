@@ -6,7 +6,7 @@ import (
 	"github.com/sdkvictor/golang-compiler/types"
 )
 
-type Attrib interface {}
+type Attribute interface {}
 
 type Program struct {
     functions 	[]*Function
@@ -21,6 +21,7 @@ func (p *Program) Functions() []*Function {
 func (p *Program) Id() string {
 	return p.id
 }
+/*
 
 type Object struct {
 	id string
@@ -28,14 +29,14 @@ type Object struct {
 	t *types.Type
 	tok *token.Token
 }
-
+*/
 type Function struct {
-	id        string
-	key       string
-	params    []*directories.VarEntry
-	t         *types.Type
-	statement Statement
-	tok       *token.Token
+	id        	string
+	key       	string
+	params    	[]*directories.VarEntry
+	t         	*types.Type
+	statement 	Statement
+	tok       	*token.Token
 }
 
 
@@ -76,6 +77,7 @@ type Statement interface {
 	isFor() bool
 	isWhile() bool
 	isFunctionCall() bool
+	isClassFunctionCall() bool
 	isPredefinedFunction() bool
 	Token() *token.Token
 }
@@ -108,6 +110,11 @@ func (s *Statement) isFunctionCall() bool {
 	return false
 }
 
+func (s *Statement) isClassFunctionCall() bool {
+	return false
+}
+
+
 func (s *Statement) isPredefinedFunction() bool {
 	return false
 }
@@ -116,19 +123,6 @@ func (s *Statement) Token() *token.Token {
 	return i.tok
 }
 
-// Id is a wrapper for a string to represent an id for a variable as a statement
-type Id struct {
-	id  string
-	tok *token.Token
-}
-
-func (i *Id) Id() string {
-	return i.id
-}
-
-func (i *Id) Token() *token.Token {
-	return i.tok
-}
 
 type Factor struct {
 	exp Expression

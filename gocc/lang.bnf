@@ -16,7 +16,7 @@ _digit: '0' - '9';
 _id : _letter {(_letter | _digit)};
 _integer: _digit {_digit};
 _float: _digit {_digit} '.' _digit {_digit};
-_string: '"' {_digit | _letter | ' '} '"';
+_string: '"' {_digit | _letter | ' ' | '#' |'!' | '?'} '"';
 _true: 't' 'r' 'u' 'e';
 _false: 'f' 'a' 'l' 's' 'e';
 _boolean: _true | _false;
@@ -29,19 +29,17 @@ floattype: 'f' 'l' 'o' 'a' 't';
 stringtype: 's' 't' 'r' 'i' 'n' 'g';
 booltype: 'b' 'o' 'o' 'l';
 voidtype: 'v' 'o' 'i' 'd';
-squaretype: 's' 'q' 'u' 'a' 'r' 'e';
-circletype: 'c' 'i' 'r' 'c' 'l' 'e';
-imagetype: 'i' 'm' 'a' 'g' 'e';
-texttype: 't' 'e' 'x' 't';
-backgroundtype: 'b' 'a' 'c' 'k' 'g' 'r' 'o' 'u' 'n' 'd';
+squaretype: 'S' 'q' 'u' 'a' 'r' 'e';
+circletype: 'C' 'i' 'r' 'c' 'l' 'e';
+imagetype: 'I' 'm' 'a' 'g' 'e';
+texttype: 'T' 'e' 'x' 't';
+backgroundtype: 'B' 'a' 'c' 'k' 'g' 'r' 'o' 'u' 'n' 'd';
 if: 'i' 'f';
 else: 'e' 'l' 's' 'e';
 while: 'w' 'h' 'i' 'l' 'e';
 for: 'f' 'o' 'r';
 print: 'p' 'r' 'i' 'n' 't';
 return: 'r' 'e' 't' 'u' 'r' 'n';
-greaterthan: '>';
-lessthan: '<';
 relop: '<' | '>' | '<' '=' | '>' '=' | '<' '>' | '=' '=';
 logicalop: '&' '&' | '|' '|';
 plus: '+';
@@ -59,8 +57,8 @@ semicolon: ';';
 dot: '.';
 comma: ',';
 equals: '=';
-main: 'm' 'a' 'i' 'n';
-tick: 't' 'i' 'c' 'k';
+/* main: 'm' 'a' 'i' 'n';
+ tick: 't' 'i' 'c' 'k'; 
 setColor: 's' 'e' 't' 'C' 'o' 'l' 'o' 'r';
 setSize: 's' 'e' 't' 'S' 'i' 'z' 'e';
 setPosition: 's' 'e' 't' 'P' 'o' 's' 'i' 't' 'i' 'o' 'n';
@@ -68,13 +66,14 @@ move: 'm' 'o' 'v' 'e';
 setText: 's' 'e' 't' 'T' 'e' 'x' 't';
 keyPressed: 'k' 'e' 'y' 'P' 'r' 'e' 's' 's' 'e' 'd';
 setFontSize: 's' 'e' 't' 'F' 'o' 'n' 't' 'S' 'i' 'z' 'e';
-list: 'l' 'i' 's' 't';
 loadImage: 'l' 'o' 'a' 'd' 'I' 'm' 'a' 'g' 'e';
 checkCollision: 'c' 'h' 'e' 'c' 'k' 'C' 'o' 'l' 'l' 'i' 's' 'i' 'o' 'n';
 setImage: 's' 'e' 't' 'I' 'm' 'a' 'g' 'e';
 pow: 'p' 'o' 'w';
 squareRoot: 's' 'q' 'u' 'a' 'r' 'e' 'R' 'o' 'o' 't';
 render: 'r' 'e' 'n' 'd' 'e' 'r';
+*/
+list: 'l' 'i' 's' 't';
 
 
 cteint: _integer;
@@ -85,43 +84,55 @@ id: _id;
 
 /*  Syntax Part */
 
-Programa: program id semicolon Vars Functions Tick Main
-		| program id semicolon Tick Main
-        | program id semicolon Functions Tick Main;
+<< import "github.com/sdkvictor/golang-compiler/ast" >>
 
-Vars: Type VarsAux;
+Programa: program id semicolon leftbracket Vars rightbracket Functions << ast.NewProgram($1, $4, $6) >> 
+        | program id semicolon leftbracket rightbracket Functions 
+        ;
 
-VarsAux: Ids semicolon Vars
-	   | Ids semicolon;
+Vars: Type Ids semicolon Vars
+    | Type Ids semicolon
+    ;
 
 Ids: id comma Ids
    | id;
 
-Functions: FunctionsAux id leftparenthesis Vars rightparenthesis Block Functions
-		 | FunctionsAux id leftparenthesis Vars rightparenthesis Block;
+Params
+    : ParamsAux
+    | empty;
+    
+
+ParamsAux
+    : Type id comma ParamsAux
+    | Type id;
+
+
+Functions: FunctionsAux id leftparenthesis Params rightparenthesis Block Functions
+        |  FunctionsAux id leftparenthesis Params rightparenthesis Block
+        ;
 
 FunctionsAux: Type
 			| voidtype;
 
-Block: leftbracket BlockAux;
+Block: leftbracket BlockAux rightbracket
+    |  leftbracket rightbracket
+    ;
 
-BlockAux: Statement rightbracket
+BlockAux: Statement 
 		| Statement BlockAux;
 
-Statement: Assign
+Statement: 
+        Vars
+         | Assign
 		 | Condition
 		 | Write
 		 | Return
 		 | For
 		 | While
-		 | CallFunction
-		 | PredefinedFunction;
+		 | CallFunction semicolon
+         | CallClassFunction semicolon
+         ;
 
-Expression: Exp
-		  | Exp Operations Exp;
-
-Operations: relop
-		  | logicalop;
 
 BasicType: inttype
 		 | floattype
@@ -135,26 +146,40 @@ Object: squaretype
 	  | texttype
 	  | backgroundtype;
 
-Term: Factor 
-	| Factor mult Factor
-	| Factor div Factor;
+Expression: ExpressionAux // Creas objecto Expression
 
-Exp: Term
-   | Term plus Term
-   | Term minus Term;
+ExpressionAux: Exp // crear el objeto Exp con lista de terms y creas lista de Exp
+		  | Exp Operations ExpressionAux; //append a lista de Exp
 
-Factor: leftparenthesis Expression rightparenthesis
+Operations: relop
+		  | logicalop;
+
+Exp: Term // crear objecto Term con lista de factores y creas lista de Term
+   | Term plus Exp // crear el objeto Term y agregar a lista
+   | Term minus Exp;
+
+Term
+    : Factor // creas lista de Factor y agregas primer Factor
+	| Factor mult Term // Append Factor a lista de factores (Term)
+	| Factor div Term;
+
+Factor: leftparenthesis Expression rightparenthesis // creas Factor con Expression adentro
       | plus Varcte
       | minus Varcte
-      | Varcte;
+      | Varcte; // creas el nodo Factor con varcte adentro
+
+2 + 2
 
 Assign: id equals Expression semicolon
 	  | Attribute equals Expression semicolon;
 
-Condition: if leftparenthesis Expression rightparenthesis Block semicolon
-         | if leftparenthesis Expression rightparenthesis else Block semicolon;
+Condition: if leftparenthesis Expression rightparenthesis Block 
+         | if leftparenthesis Expression rightparenthesis Block else Block; 
 
-Write: print leftparenthesis WriteAux rightparenthesis semicolon;
+
+Write
+    : print leftparenthesis WriteAux rightparenthesis semicolon
+    ;
         
 WriteAux: Expression comma WriteAux
 		| ctestring comma WriteAux
@@ -163,15 +188,23 @@ WriteAux: Expression comma WriteAux
 
 Return: return Expression semicolon;
 
-For: for leftparenthesis Assign semicolon Expression semicolon Expression semicolon rightparenthesis Block;
+For
+    : for leftparenthesis Assign semicolon Expression semicolon Expression semicolon rightparenthesis Block
+    ;
 
-While: while leftparenthesis Expression rightparenthesis Block;
+While
+    : while leftparenthesis Expression rightparenthesis Block
+    ;
 
-CallFunction: id CallFunctionAux;
+CallFunction: id leftparenthesis CallFunctionAux rightparenthesis 
+            |  id leftparenthesis rightparenthesis ;
 
-CallFunctionAux: leftparenthesis Expression rightparenthesis
-			   | leftparenthesis Expression comma CallFunctionAux
-			   | leftparenthesis rightparenthesis;
+CallClassFunction: id dot id leftparenthesis CallFunctionAux rightparenthesis 
+                 | id dot id leftparenthesis rightparenthesis ;
+                 
+
+CallFunctionAux: Expression
+            | Expression comma CallFunctionAux ;
 
 Varcte
     : id
@@ -181,8 +214,22 @@ Varcte
     | ListElem
     | ctebool
     | Attribute
+    | CallFunction
+    | CallClassFunction
     ;
 
+ListElem
+    : id leftsqrbracket Expression rightsqrbracket
+    ;
+Type 
+    : BasicType
+    | list leftsqrbracket BasicType rightsqrbracket 
+    ;
+
+Attribute 
+    : id dot id
+    ;
+/*
 Main
     : voidtype main leftparenthesis rightparenthesis Block
     ;
@@ -191,13 +238,13 @@ Tick
     : voidtype tick leftparenthesis rightparenthesis Block
     ;
 
+    
+
 SetColor
     : setColor leftparenthesis ctestring rightparenthesis
     ;
 
-ListElem
-    : id leftsqrbracket cteint rightsqrbracket
-    ;
+
 
 SetSize
     : setSize leftparenthesis cteint comma cteint rightparenthesis
@@ -227,14 +274,7 @@ SetFontSize
     : setFontSize leftparenthesis cteint rightparenthesis
     ;
 
-Type 
-    : BasicType
-    | list greaterthan BasicType lessthan 
-    ;
 
-Attribute 
-    : id dot id
-    ;
 
 LoadImage 
     : loadImage leftparenthesis ctestring rightparenthesis
@@ -256,6 +296,7 @@ SquareRoot
     : squareRoot leftparenthesis ctefloat rightparenthesis
     ;
 
+
 PredefinedFunction
     : SetColor
     | SetSize
@@ -271,3 +312,5 @@ PredefinedFunction
     | Pow
     | SquareRoot
     ;
+
+    */

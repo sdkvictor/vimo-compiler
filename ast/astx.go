@@ -9,13 +9,13 @@ import (
 )
 
 // NewProgram creates a new program node which acts as the root of the tree
-func NewProgram(functions, call interface{}) (*Program, error) {
+func NewProgram(id, vars, functions interface{}) (*Program, error) {
 	fs, ok := functions.([]*Function)
 	if !ok {	
 		return nil, errutil.NewNoPosf("Invalid type for functions. Expected []*Function")
 	}
 
-	id, ok := call.(string)
+	idtok, ok := id.(*Id)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid program id. Expected string")
 	}

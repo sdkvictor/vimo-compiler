@@ -1,0 +1,39 @@
+2 LR-1 conflicts: 
+	S129
+		symbol: circletype
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(16)
+		symbol: imagetype
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(17)
+		symbol: texttype
+			Shift(18)
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+		symbol: inttype
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(10)
+		symbol: booltype
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(12)
+		symbol: squaretype
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(15)
+		symbol: list
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(20)
+		symbol: floattype
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(11)
+		symbol: stringtype
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(13)
+		symbol: backgroundtype
+			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Shift(19)
+	S150
+		symbol: comma
+			Reduce(73:Varcte : ctestring	<<  >>)
+			Shift(200)
+		symbol: rightparenthesis
+			Reduce(60:WriteAux : ctestring	<<  >>)
+			Reduce(73:Varcte : ctestring	<<  >>)
