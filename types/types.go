@@ -10,6 +10,7 @@ const (
 	Num BasicType = iota
 	Char
 	Bool
+	Void
 	Null
 )
 
@@ -24,6 +25,9 @@ func (t BasicType) convert() rune {
 
 	if t == Bool {
 		return '3'
+	}
+	if t == Void {
+		return '4'
 	}
 
 	return 'n'

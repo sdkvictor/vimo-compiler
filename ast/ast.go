@@ -130,6 +130,68 @@ func (i *Id) Token() *token.Token {
 	return i.tok
 }
 
+type Factor struct {
+	exp Expression
+	cv ConstantValue
+	tok *token.Token
+}
+
+func (f *Factor) Expression() *token.Token {
+	return f.exp
+}
+
+func (f *Factor) ConstantValue() ConstantValue {
+	return f.cv
+}
+
+func (f *Factor) Token() *token.Token {
+	return f.tok
+}
+
+type Term struct {
+	fac Factor
+	tok *token.Token
+}
+
+func (t *Term) Factor() Factor {
+	return t.fac
+}
+
+func (t *Term) Token() *token.Token {
+	return t.tok
+}
+
+type Exp struct {
+	ter Term
+	tok *token.Token
+}
+
+func (e *Exp) Term() Term {
+	return e.ter
+}
+
+func (e *Exp) Token() *token.Token {
+	return e.tok
+}
+
+type Expression struct {
+	exp1 Expression
+	exp2 Expression
+	tok *token.Token
+}
+
+func (e *Expression) Expression1() Expression {
+	return e.exp1
+}
+
+func (e *Expression) Expression2() Expression {
+	return e.exp2
+}
+
+func (e *Expression) Token() *token.Token {
+	return e.tok
+}
+
 type Assign struct {
 	id Id
 	attr Attribute
@@ -209,8 +271,8 @@ func (r *Return) Token() *token.Token {
 
 type For struct {
 	ass Assign
-	expC Expression
-	expA Expression
+	exp1 Expression
+	exp2 Expression
 	blck []Statement
 	tok *token.Token
 }
@@ -219,12 +281,12 @@ func (f *For) Assign() Assign {
 	return f.ass
 }
 
-func (f *For) ExpressionCondition() Expression {
-	return f.expC
+func (f *For) Expression1() Expression {
+	return f.exp1
 }
 
-func (f *For) ExpressionAfter() Expression {
-	return f.expA
+func (f *For) Expression2() Expression {
+	return f.exp2
 }
 
 func (f *For) Block() []Statement {
