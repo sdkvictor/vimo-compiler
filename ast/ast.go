@@ -35,7 +35,7 @@ type Function struct {
 	key       	string
 	params    	[]*directories.VarEntry
 	t         	*types.Type
-	statement 	Statement
+	statements 	[]*Statement
 	tok       	*token.Token
 }
 
@@ -48,12 +48,12 @@ func (f *Function) Params() []*dir.VarEntry {
 	return f.params
 }
 
-func (f *Function) Type() *types.LambdishType {
+func (f *Function) Type() *types.Type {
 	return f.t
 }
 
-func (f *Function) Statement() Statement {
-	return f.statement
+func (f *Function) Statements() []*Statement {
+	return f.statements
 }
 
 func (f *Function) Key() string {
@@ -70,15 +70,15 @@ func (f *Function) Token() *token.Token {
 
 // Statement interface represents the body of the function
 type Statement interface {
-	isAssign() bool
-	isCondition() bool
-	isWrite() bool
-	isReturn() bool
-	isFor() bool
-	isWhile() bool
-	isFunctionCall() bool
-	isClassFunctionCall() bool
-	isPredefinedFunction() bool
+	isAssign() 				bool
+	isCondition() 			bool
+	isWrite() 				bool
+	isReturn()				bool
+	isFor() 				bool
+	isWhile() 				bool
+	isFunctionCall() 		bool
+	isClassFunctionCall() 	bool
+	isPredefinedFunction() 	bool
 	Token() *token.Token
 }
 
@@ -114,7 +114,6 @@ func (s *Statement) isClassFunctionCall() bool {
 	return false
 }
 
-
 func (s *Statement) isPredefinedFunction() bool {
 	return false
 }
@@ -123,14 +122,14 @@ func (s *Statement) Token() *token.Token {
 	return i.tok
 }
 
-
 type Factor struct {
-	exp Expression
-	cv ConstantValue
-	tok *token.Token
+	exp 	Expression
+	cv 		ConstantValue
+	op		string
+	tok 	*token.Token
 }
 
-func (f *Factor) Expression() *token.Token {
+func (f *Factor) Expression() Expression {
 	return f.exp
 }
 
@@ -138,17 +137,26 @@ func (f *Factor) ConstantValue() ConstantValue {
 	return f.cv
 }
 
+func (f *Factor) Operation() string {
+	return f.op
+}
+
 func (f *Factor) Token() *token.Token {
 	return f.tok
 }
 
 type Term struct {
-	fac Factor
-	tok *token.Token
+	facs 	[]*Factor
+	ops		[]string
+	tok 	*token.Token
 }
 
-func (t *Term) Factor() Factor {
-	return t.fac
+func (t *Term) Factors() []*Factor {
+	return t.facs
+}
+
+func (t *Term) Operations() []string {
+	return t.ops
 }
 
 func (t *Term) Token() *token.Token {
@@ -156,12 +164,17 @@ func (t *Term) Token() *token.Token {
 }
 
 type Exp struct {
-	ter Term
-	tok *token.Token
+	terms 	[]*Term
+	ops		[]string
+	tok 	*token.Token
 }
 
-func (e *Exp) Term() Term {
-	return e.ter
+func (e *Exp) Terms() []*Term {
+	return e.terms
+}
+
+func (e *Exp) Operations() []string {
+	return e.ops
 }
 
 func (e *Exp) Token() *token.Token {
@@ -169,17 +182,17 @@ func (e *Exp) Token() *token.Token {
 }
 
 type Expression struct {
-	exp1 Expression
-	exp2 Expression
-	tok *token.Token
+	exps 	[]*Exp
+	ops 	[]string
+	tok 	*token.Token
 }
 
-func (e *Expression) Expression1() Expression {
-	return e.exp1
+func (e *Expression) Exps() []*Exp {
+	return e.exps
 }
 
-func (e *Expression) Expression2() Expression {
-	return e.exp2
+func (e *Expression) Operations() []string {
+	return e.ops
 }
 
 func (e *Expression) Token() *token.Token {
@@ -187,13 +200,13 @@ func (e *Expression) Token() *token.Token {
 }
 
 type Assign struct {
-	id Id
-	attr Attribute
-	exp Expression
-	tok *token.Token
+	id 		string
+	attr 	Attribute
+	exp 	Expression
+	tok 	*token.Token
 }
 
-func (a *Assign) Id() Id {
+func (a *Assign) Id() string {
 	return a.id
 }
 
@@ -210,21 +223,21 @@ func (a *Assign) Token() *token.Token {
 }
 
 type Condition struct {
-	exp Expression
-	stmts []Statement
-	elseStmts []Statement
-	tok *token.Token
+	exp 		Expression
+	stmts  		[]Statement
+	elseStmts 	[]Statement
+	tok 		*token.Token
 }
 
-func (c *Condition) Exp() string {
+func (c *Condition) Expression() Expression {
 	return c.exp
 }
 
-func (c *Condition) Statements() string {
+func (c *Condition) Statements() []Statement {
 	return c.stmts
 }
 
-func (c *Condition) ElseStatements() string {
+func (c *Condition) ElseStatements() []Statement {
 	return c.elseStmts
 }
 
@@ -232,23 +245,6 @@ func (c *Condition) Token() *token.Token {
 	return c.tok
 }
 
-type Write struct {
-	exp Expression
-	str string
-	tok *token.Token
-}
-
-func (w *Write) Expression() Expression {
-	return w.exp
-}
-
-func (w *Write) String() string {
-	return w.str
-}
-
-func (w *Write) Token() *token.Token {
-	return w.tok
-}
 
 type Return struct {
 	exp Expression
@@ -264,23 +260,23 @@ func (r *Return) Token() *token.Token {
 }
 
 type For struct {
-	ass Assign
-	exp1 Expression
-	exp2 Expression
+	init Assign
+	cond Expression
+	op Expression
 	blck []Statement
 	tok *token.Token
 }
 
-func (f *For) Assign() Assign {
-	return f.ass
+func (f *For) Init() Assign {
+	return f.init
 }
 
-func (f *For) Expression1() Expression {
-	return f.exp1
+func (f *For) Condition() Expression {
+	return f.cond
 }
 
-func (f *For) Expression2() Expression {
-	return f.exp2
+func (f *For) Operation() Expression {
+	return f.op
 }
 
 func (f *For) Block() []Statement {
@@ -310,20 +306,43 @@ func (w *While) Token() *token.Token {
 }
 
 type FunctionCall struct {
-	id Id
-	exp Expression
-	tok *token.Token
+	id 		string
+	params 	[]*Expression
+	tok 	*token.Token
 }
 
-func (fc *FunctionCall) Id() Id {
+func (fc *FunctionCall) Id() string {
 	return fc.id
 }
 
-func (fc *FunctionCall) Expression() Expression {
-	return fc.exp
+func (fc *FunctionCall) Params() []*Expression {
+	return fc.params
 }
 
 func (fc *FunctionCall) Token() *token.Token {
+	return fc.tok
+}
+
+type ClassFunctionCall struct {
+	id 		string
+	obj 	string
+	params 	[]*Expression
+	tok 	*token.Token
+}
+
+func (fc *ClassFunctionCall) Id() string {
+	return fc.id
+}
+
+func (fc *ClassFunctionCall) Obj() string {
+	return fc.obj
+}
+
+func (fc *ClassFunctionCall) Params() []*Expression {
+	return fc.params
+}
+
+func (fc *ClassFunctionCall) Token() *token.Token {
 	return fc.tok
 }
 
@@ -379,6 +398,9 @@ func (s *Statement) isSquareRoot() bool {
 	return false
 }
 
+type 
+
+/*
 type SetColor struct {
 	color string
 	tok *token.Token
@@ -498,8 +520,6 @@ func (r *Render) Token() *token.Token {
 	return r.tok
 }
 
-
-
 type LoadImage struct {
 	image string
 	tok *token.Token
@@ -574,7 +594,7 @@ func (r *SquareRoot) Base() float32 {
 func (r *SquareRoot) Token() *token.Token {
 	return r.tok
 }
-
+*/
 // ConstantValue defines a type with a single basic value
 type ConstantValue struct {
 	t     *types.Type

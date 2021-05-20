@@ -9,16 +9,18 @@ import (
 )
 
 // NewProgram creates a new program node which acts as the root of the tree
-func NewProgram(id, vars, functions interface{}) (*Program, error) {
+func NewProgram(id, vars, functions interface{}) (*Program, error) { //OK
 	fs, ok := functions.([]*Function)
 	if !ok {	
 		return nil, errutil.NewNoPosf("Invalid type for functions. Expected []*Function")
 	}
 
-	idtok, ok := id.(*Id)
+	idtok, ok := id.(*token.Token)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid program id. Expected string")
 	}
+
+	id := string(idtok.Lit)
 
 	v, ok := call.([]*directories.VarEntry)
 	if !ok {
@@ -29,7 +31,7 @@ func NewProgram(id, vars, functions interface{}) (*Program, error) {
 }
 
 // NewFunctionList creates a new function list of all the program's functions
-func NewFunctionList(function interface{}) ([]*Function, error) {
+func NewFunctionList(function interface{}) ([]*Function, error) { //OK
 	f, ok := function.(*Function)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for function. Expected *Function")
@@ -39,7 +41,7 @@ func NewFunctionList(function interface{}) ([]*Function, error) {
 }
 
 // AppendFunctionList inserts a function into the program's list of functions
-func AppendFunctionList(function, list interface{}) ([]*Function, error) {
+func AppendFunctionList(function, list interface{}) ([]*Function, error) { //OK
 	f, ok := function.(*Function)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for function. Expected *Function")
@@ -54,7 +56,7 @@ func AppendFunctionList(function, list interface{}) ([]*Function, error) {
 }
 
 // NewFuncDecl returns a new function node
-func NewFunction(id, params, typ, statement interface{}) (*Function, error) {
+func NewFunction(id, params, typ, statements interface{}) (*Function, error) { //OK
 	i, ok := id.(*token.Token)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for id. Expected token")
@@ -72,7 +74,7 @@ func NewFunction(id, params, typ, statement interface{}) (*Function, error) {
 		return nil, errutil.NewNoPosf("Invalid type for typ. Expected *types.Type")
 	}
 
-	s, ok := statement.(Statement)
+	s, ok := statements.([]*Statement)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for statement. Expected Statement")
 	}
@@ -86,6 +88,7 @@ func NewFunction(id, params, typ, statement interface{}) (*Function, error) {
 // OK
 
 
+// -----OK-----
 // NewStatementList
 func NewStatementList(statement interface{}) ([]Statement, error) {
 	s, ok := statement.(Statement)
@@ -96,6 +99,7 @@ func NewStatementList(statement interface{}) ([]Statement, error) {
 	return []Statement{s}, nil
 }
 
+// -----OK-----
 // AppendStatementList
 func AppendStatementList(statement, list interface{}) ([]Statement, error) {
 	l, ok := list.([]Statement)
@@ -115,6 +119,7 @@ func AppendStatementList(statement, list interface{}) ([]Statement, error) {
 	return nil, errutil.NewNoPosf("Invalid type for statement. Expected Statement interface got %v", statement)
 }
 
+// -----OK-----
 // NewStatement creates a new Statement node which acts as the children of the function, which is the body of the function
 func NewStatement(value interface{}) (Statement, error) {
 	// Check if the value is an id and cast it fist to a token
@@ -127,6 +132,7 @@ func NewStatement(value interface{}) (Statement, error) {
 
 	return nil, errutil.NewNoPosf("Invalid type for statement. Expected Statement interface got %v", value)
 }
+
 
 // AppendParamsList
 func AppendParamsList(typ, id, list interface{}) ([]*directories.VarEntry, error) {
@@ -173,7 +179,7 @@ func NewParamsList(typ, id interface{}) ([]*directories.VarEntry, error) {
 }
 
 // NewType only basic types and void
-func NewType(t interface{}) (*types.Type, error) {
+func NewType(t interface{}) (*types.Type, error) { //OK
 	typ, ok := t.(*token.Token)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for id. Expected token")
@@ -185,11 +191,11 @@ func NewType(t interface{}) (*types.Type, error) {
 		return nil, errutil.NewNoPosf("Invalid type for type. Expected string, got %v", t)
 	}
 
-	if tstring == "num" {
-		return types.NewDataType(types.Num, 0), nil
+	if tstring == "int" {
+		return types.NewDataType(types.Int, 0), nil
 	}
-	if tstring == "bool" {
-		return types.NewDataType(types.Bool, 0), nil
+	if tstring == "float" {
+		return types.NewDataType(types.Float, 0), nil
 	}
 	if tstring == "char" {
 		return types.NewDataType(types.Char, 0), nil
@@ -197,23 +203,6 @@ func NewType(t interface{}) (*types.Type, error) {
 	if tstring == "void" {
 		return types.NewDataType(types.Void, 0), nil
 	}
-
-	return nil, errutil.NewNoPosf("Invalid type for type. Expected BasicType enum")
-}
-
-// NewObjectType
-func NewObjectType(params, ret interface{}) (*types.Type, error) {
-	typ, ok := t.(*token.Token)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for id. Expected token")
-	}
-
-	tstring := string(typ.Lit)
-
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for type. Expected string, got %v", t)
-	}
-
 	if tstring == "Square" {
 		return types.NewObjectType(types.Square, 0), nil
 	}
@@ -230,47 +219,24 @@ func NewObjectType(params, ret interface{}) (*types.Type, error) {
 		return types.NewObjectType(types.Background, 0), nil
 	}
 
-	return nil, errutil.NewNoPosf("Invalid type for type. Expected ObjectType enum")
+	return nil, errutil.NewNoPosf("Invalid type for type. Expected BasicType or ObjectType enum")
 }
 
+
 // AppendType
-func AppendType(typ interface{}) (*types.Type, error) {
+func AppendType(typ interface{}) (*types.Type, error) { // OK?
 	t, ok := typ.(*types.Type)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for typ. Expected *types.Type")
 	}
 
 	if t.IsObject() {
-		return types.NewObjectType(t.Retval(), t.Params(), t.List()+1), nil
+		return types.NewObjectType(t.Object(), t.List()+1), nil
 	} else {
 		return types.NewDataType(t.Basic(), t.List()+1), nil
 	}
 }
 
-// NewFuncType
-func NewFuncTypeList(typ interface{}) ([]*types.Type, error) {
-	t, ok := typ.(*types.Type)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for typ. Expected *types.Type")
-	}
-
-	return []*types.Type{t}, nil
-}
-
-// NewFuncType
-func AppendFuncTypeList(typ, list interface{}) ([]*types.Type, error) {
-	t, ok := typ.(*types.Type)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for typ. Expected *types.Type")
-	}
-
-	l, ok := list.([]*types.Type)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for typ. Expected []*types.Type")
-	}
-
-	return append([]*types.Type{t}, l...), nil
-}
 
 // NewFunctionCall creates a new FunctionCall node which acts as the children of the program or function, which is the function call
 func NewFunctionCall(id, args interface{}) (*FunctionCall, error) {

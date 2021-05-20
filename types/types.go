@@ -7,7 +7,8 @@ import (
 type BasicType int
 
 const (
-	Num BasicType = iota
+	Int BasicType = iota
+	Float
 	Char
 	Bool
 	Void
@@ -15,7 +16,7 @@ const (
 )
 
 func (t BasicType) convert() rune {
-	if t == Num {
+	if t == Int {
 		return '1'
 	}
 
@@ -28,6 +29,10 @@ func (t BasicType) convert() rune {
 	}
 	if t == Void {
 		return '4'
+	}
+
+	if t == Float {
+		return '5'
 	}
 
 	return 'n'
