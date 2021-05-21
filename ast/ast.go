@@ -6,7 +6,7 @@ import (
 	"github.com/sdkvictor/golang-compiler/types"
 )
 
-type Attribute interface {}
+
 
 type Program struct {
     functions 	[]*Function
@@ -197,6 +197,24 @@ func (e *Expression) Operations() []string {
 
 func (e *Expression) Token() *token.Token {
 	return e.tok
+}
+
+type Attribute struct {
+	objId string
+	varId string
+	tok *token.Token
+}
+
+func (a *Attribute) ObjId() string{
+	return a.objId
+}
+
+func (a *Attribute) VarId() string{
+	return a.varId
+}
+
+func (a *Attribute) Token() *token.Token{
+	return a.tok
 }
 
 type Assign struct {
