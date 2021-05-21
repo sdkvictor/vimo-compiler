@@ -12,6 +12,7 @@ const (
 	Char
 	Bool
 	Void
+	String
 	Null
 )
 
@@ -33,6 +34,9 @@ func (t BasicType) convert() rune {
 
 	if t == Float {
 		return '5'
+	}
+	if t == String {
+		return '6'
 	}
 
 	return 'n'

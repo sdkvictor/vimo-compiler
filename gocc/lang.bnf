@@ -193,7 +193,7 @@ Term
     ;
 
 Factor
-    : leftparenthesis Expression rightparenthesis /*creas Factor con Expression adentro */
+    : leftparenthesis Expression rightparenthesis /*creas Factor con Expression adentro */ 
     | plus Varcte
     | minus Varcte
     | Varcte /* creas el nodo Factor con varcte adentro*/

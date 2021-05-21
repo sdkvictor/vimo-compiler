@@ -37,7 +37,7 @@ func readFile(path string) ([]byte, error) {
 func TestGrammar(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"testfire.vm",
+		"test1.vm",
 	}
 
 	for _, test := range tests {
@@ -48,8 +48,8 @@ func TestGrammar(t *testing.T) {
 		}
 
 		s := lexer.NewLexer(input)
-		program, errtest := p.Parse(s)
-		spew.Dump(program)
+		_, errtest := p.Parse(s)
+		//spew.Dump(program)
 		if errtest != nil {
 			t.Errorf("%s: %v", test, errtest)
 		}

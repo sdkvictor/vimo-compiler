@@ -338,7 +338,6 @@ func AppendConstant(start, list interface{}) (*ConstantList, error) {
 	return &ConstantList{l, val, nil}, nil
 }
 
-// Posiblemente está mal
 func NewStringConstant(str interface{}) (*ConstantValue, error) {
     val, ok := str.(*token.Token)
     if !ok {

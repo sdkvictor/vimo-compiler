@@ -3,7 +3,7 @@ package quad
 import (
 	"fmt"
 
-	"github.com/Loptt/lambdish-compiler/mem"
+	"github.com/sdkvictor/golang-compiler/mem"
 )
 
 // Operation The operation or instruction of the system is a number
