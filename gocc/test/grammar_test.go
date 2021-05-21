@@ -37,7 +37,7 @@ func readFile(path string) ([]byte, error) {
 func TestGrammar(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"test1.vm",
+		"testfire.vm",
 	}
 
 	for _, test := range tests {

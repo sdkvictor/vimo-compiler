@@ -80,7 +80,7 @@ cteint: _integer;
 ctefloat: _float;
 ctestring: _string;
 ctebool: _boolean;
-ctechar: '\'' (letter | _digit | ' ') '\'';
+ctechar: '\'' (_letter | _digit | ' ') '\'';
 id: _id;
 
 /*  Syntax Part */
@@ -92,13 +92,13 @@ Programa
     ;
 
 VarsOp
-    : Vars                                              << >>
+    : Vars                                              
     | empty
     ;
 
 Vars
-    : Type Ids semicolon Vars                           << >>         
-    | Type Ids semicolon                                << >>
+    : Type Ids semicolon Vars                                   
+    | Type Ids semicolon                                
     ;
 
 Ids
@@ -165,7 +165,7 @@ Object
 
 /*
 Expression
-    : ExpressionAux << ast.NewExpression($0) >> /*Crear objeto Expression */
+    : ExpressionAux << ast.NewExpression($0) >> /*Crear objeto Expression 
     ;
 */
 
@@ -234,8 +234,8 @@ CallClassFunction
                  
 
 CallFunctionAux
-    : Expression                                                        << ast. >>
-    | Expression comma CallFunctionAux                                  << ast. >>
+    : Expression                                                        
+    | Expression comma CallFunctionAux                                  
     ;
 
 Varcte
@@ -252,7 +252,7 @@ Varcte
     ;
 
 ListElem
-    : id leftsqrbracket Expression rightsqrbracket                      << >>
+    : id leftsqrbracket Expression rightsqrbracket                      
     ;
 Type 
     : BasicType                                                         << $0, nil>>

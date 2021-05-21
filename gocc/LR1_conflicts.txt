@@ -1,39 +1,32 @@
-2 LR-1 conflicts: 
-	S129
-		symbol: circletype
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
-			Shift(16)
-		symbol: imagetype
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
-			Shift(17)
-		symbol: texttype
-			Shift(18)
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+1 LR-1 conflicts: 
+	S127
 		symbol: inttype
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
 			Shift(10)
-		symbol: booltype
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
-			Shift(12)
-		symbol: squaretype
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
-			Shift(15)
+		symbol: circletype
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+			Shift(16)
+		symbol: backgroundtype
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+			Shift(19)
+		symbol: imagetype
+			Shift(17)
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+		symbol: texttype
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+			Shift(18)
 		symbol: list
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
 			Shift(20)
 		symbol: floattype
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
 			Shift(11)
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+		symbol: booltype
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+			Shift(12)
 		symbol: stringtype
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
 			Shift(13)
-		symbol: backgroundtype
-			Reduce(4:Vars : Type Ids semicolon	<<  >>)
-			Shift(19)
-	S150
-		symbol: comma
-			Reduce(73:Varcte : ctestring	<<  >>)
-			Shift(200)
-		symbol: rightparenthesis
-			Reduce(60:WriteAux : ctestring	<<  >>)
-			Reduce(73:Varcte : ctestring	<<  >>)
+		symbol: squaretype
+			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+			Shift(15)

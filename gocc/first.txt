@@ -4,6 +4,19 @@ S': {
 Programa: {
 	program
 }
+VarsOp: {
+	backgroundtype
+	booltype
+	circletype
+	empty
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+}
 Vars: {
 	backgroundtype
 	booltype
@@ -84,7 +97,6 @@ BlockAux: {
 	imagetype
 	inttype
 	list
-	print
 	return
 	squaretype
 	stringtype
@@ -102,26 +114,11 @@ Statement: {
 	imagetype
 	inttype
 	list
-	print
 	return
 	squaretype
 	stringtype
 	texttype
 	while
-}
-Expression: {
-	ctebool
-	ctefloat
-	cteint
-	ctestring
-	id
-	leftparenthesis
-	minus
-	plus
-}
-Operations: {
-	logicalop
-	relop
 }
 BasicType: {
 	backgroundtype
@@ -141,8 +138,9 @@ Object: {
 	squaretype
 	texttype
 }
-Term: {
+Expression: {
 	ctebool
+	ctechar
 	ctefloat
 	cteint
 	ctestring
@@ -151,8 +149,24 @@ Term: {
 	minus
 	plus
 }
+Operations: {
+	logicalop
+	relop
+}
 Exp: {
 	ctebool
+	ctechar
+	ctefloat
+	cteint
+	ctestring
+	id
+	leftparenthesis
+	minus
+	plus
+}
+Term: {
+	ctebool
+	ctechar
 	ctefloat
 	cteint
 	ctestring
@@ -163,6 +177,7 @@ Exp: {
 }
 Factor: {
 	ctebool
+	ctechar
 	ctefloat
 	cteint
 	ctestring
@@ -176,19 +191,6 @@ Assign: {
 }
 Condition: {
 	if
-}
-Write: {
-	print
-}
-WriteAux: {
-	ctebool
-	ctefloat
-	cteint
-	ctestring
-	id
-	leftparenthesis
-	minus
-	plus
 }
 Return: {
 	return
@@ -207,6 +209,7 @@ CallClassFunction: {
 }
 CallFunctionAux: {
 	ctebool
+	ctechar
 	ctefloat
 	cteint
 	ctestring
@@ -217,6 +220,7 @@ CallFunctionAux: {
 }
 Varcte: {
 	ctebool
+	ctechar
 	ctefloat
 	cteint
 	ctestring
