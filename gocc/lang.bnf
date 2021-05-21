@@ -80,6 +80,7 @@ cteint: _integer;
 ctefloat: _float;
 ctestring: _string;
 ctebool: _boolean;
+ctechar: '\'' (letter | _digit | ' ') '\'';
 id: _id;
 
 /*  Syntax Part */
@@ -111,18 +112,18 @@ Params
     ;
     
 ParamsAux
-    : Type id comma ParamsAux << ast.AppendParamsList($0, $1, $3) >>
-    | Type id
+    : Type id comma ParamsAux             << ast.AppendParamsList($0, $1, $3) >>
+    | Type id                             << ast.NewParamsList($0, $1) >>
     ;
 
 Functions
-    : FunctionsAux id leftparenthesis Params rightparenthesis Block Functions       << ast.AppendFunctionList($0, $1, $3, $5, $6) >>
-    |  FunctionsAux id leftparenthesis Params rightparenthesis Block                << ast.NewFunctionList($0, $1, $3, $5) >>
+    : FunctionsAux id leftparenthesis Params rightparenthesis Block Functions  << ast.AppendFunctionList($0, $1, $3, $5, $6) >>
+    | FunctionsAux id leftparenthesis Params rightparenthesis Block            << ast.FirstFunction($0, $1, $3, $5) >> /*Creates Function node and adds it to a new function list */
     ;
 
 FunctionsAux
-    : Type               << ast.NewType($0) >>
-    | voidtype           << ast.NewType($0) >>
+    : Type                          << ast.NewType($0) >>
+    | voidtype                      << ast.NewType($0) >>
     ; 
 
 Block
@@ -131,35 +132,35 @@ Block
     ;
 
 BlockAux
-    : Statement             <<ast.NewStatementList($0)>>
-    | Statement BlockAux    <<ast.AppendStatement($0, $1)>>
+    : Statement                     <<ast.NewStatementList($0) >> 
+    | Statement BlockAux            <<ast.AppendStatement($0, $1) >>
     ;
 
 Statement
-    : Vars
-    | Assign
-    | Condition
-    | Return
-    | For
-    | While
-    | CallFunction semicolon
-    | CallClassFunction semicolon
+    : Vars                          << ast.NewStatement($0) >>
+    | Assign                        << ast.NewStatement($0) >>
+    | Condition                     << ast.NewStatement($0) >>
+    | Return                        << ast.NewStatement($0) >>
+    | For                           << ast.NewStatement($0) >>
+    | While                         << ast.NewStatement($0) >>
+    | CallFunction semicolon        << ast.NewStatement($0) >>
+    | CallClassFunction semicolon   << ast.NewStatement($0) >>
     ;
 
 BasicType
-    : inttype
-    | floattype
-    | booltype
-    | stringtype
-    | Object
+    : inttype                       << ast.NewType($0) >>
+    | floattype                     << ast.NewType($0) >>
+    | booltype                      << ast.NewType($0) >>
+    | stringtype                    << ast.NewType($0) >>
+    | Object                        << ast.NewType($0) >>
     ;
 
 Object
-    : squaretype
-    | circletype
-    | imagetype
-    | texttype
-    | backgroundtype
+    : squaretype                    << ast.NewType($0) >>
+    | circletype                    << ast.NewType($0) >>
+    | imagetype                     << ast.NewType($0) >>
+    | texttype                      << ast.NewType($0) >>
+    | backgroundtype                << ast.NewType($0) >>
     ;
 
 Expression
@@ -167,8 +168,8 @@ Expression
     ;
 
 ExpressionAux
-    : Exp // crear el objeto Exp con lista de terms y creas lista de Exp
-    | Exp Operations ExpressionAux //append a lista de Exp
+    : Exp /* crear el objeto Exp con lista de terms y creas lista de Exp*/
+    | Exp Operations ExpressionAux /*append a lista de Exp*/
     ;
 
 Operations
@@ -177,77 +178,71 @@ Operations
     ;
 
 Exp
-    : Term // crear objecto Term con lista de factores y creas lista de Term
-    | Term plus Exp // crear el objeto Term y agregar a lista
+    : Term /* crear objecto Term con lista de factores y creas lista de Term */
+    | Term plus Exp /* crear el objeto Term y agregar a lista */
     | Term minus Exp
     ;
 
 Term
-    : Factor // creas lista de Factor y agregas primer Factor
-	| Factor mult Term // Append Factor a lista de factores (Term)
+    : Factor /*creas lista de Factor y agregas primer Factor */
+	| Factor mult Term /* Append Factor a lista de factores (Term) */
 	| Factor div Term
     ;
 
 Factor
-    : leftparenthesis Expression rightparenthesis // creas Factor con Expression adentro
+    : leftparenthesis Expression rightparenthesis /*creas Factor con Expression adentro */
     | plus Varcte
     | minus Varcte
-    | Varcte // creas el nodo Factor con varcte adentro
+    | Varcte /* creas el nodo Factor con varcte adentro*/
     ;
 
 Assign
-    : id equals Expression semicolon
-	| Attribute equals Expression semicolon
+    : id equals Expression semicolon                                    << ast.NewAssign($0, nil, $1, $2) >>
+	| Attribute equals Expression semicolon                             << ast.NewAssign(nil, $0, $1, $2) >>
     ;
 
 Condition
-    : if leftparenthesis Expression rightparenthesis Block 
-    | if leftparenthesis Expression rightparenthesis Block else Block
+    : if leftparenthesis Expression rightparenthesis Block               << ast.NewCondition($0, $2, $4, nil) >>
+    | if leftparenthesis Expression rightparenthesis Block else Block    << ast.NewCondition($0, $2, $4, $6 ) >>
     ; 
 
-        
-WriteAux
-    : Expression comma WriteAux
-    | ctestring comma WriteAux
-    | Expression
-    | ctestring
-    ;
 
 Return
-    : return Expression semicolon
+    : return Expression semicolon                                       << ast.NewReturn($0, $1) >>
     ;
 
 For
-    : for leftparenthesis Assign semicolon Expression semicolon Expression semicolon rightparenthesis Block
+    : for leftparenthesis Assign semicolon Expression semicolon Expression semicolon rightparenthesis Block << ast.NewFor($0, $2, $4, $6, $9) >>
     ;
 
 While
-    : while leftparenthesis Expression rightparenthesis Block
+    : while leftparenthesis Expression rightparenthesis Block           << ast.NewWhile($0, $2, $4) >>
     ;
 
 CallFunction
-    : id leftparenthesis CallFunctionAux rightparenthesis 
-    |  id leftparenthesis rightparenthesis 
+    : id leftparenthesis CallFunctionAux rightparenthesis               << ast.NewFunctionCall($0, $2) >>
+    | id leftparenthesis rightparenthesis                               << ast.NewFunctionCall($0, nil) >>
     ;
 
 CallClassFunction
-    : id dot id leftparenthesis CallFunctionAux rightparenthesis 
-    | id dot id leftparenthesis rightparenthesis 
+    : id dot id leftparenthesis CallFunctionAux rightparenthesis        << ast.NewFunctionCallClass($0, $2, $4) >>
+    | id dot id leftparenthesis rightparenthesis                        << ast.NewFunctionCallClass($0, $2, nil) >>
     ;
                  
 
 CallFunctionAux
-    : Expression
-    | Expression comma CallFunctionAux 
+    : Expression                                                        << ast. >>
+    | Expression comma CallFunctionAux                                  << ast. >>
     ;
 
 Varcte
     : id
-    | cteint 
-    | ctefloat
-    | ctestring
+    | cteint                                                            << ast.NewConstantInt($0) >>
+    | ctefloat                                                          << ast.NewConstantFloat($0) >>
+    | ctestring                                                         << ast.AppendStringConstant($0) >>
+    | ctechar                                                           << ast.NewConstantChar($0) >>
     | ListElem
-    | ctebool
+    | ctebool                                                           << ast.NewConstantBool($0) >>
     | Attribute
     | CallFunction
     | CallClassFunction
@@ -257,8 +252,8 @@ ListElem
     : id leftsqrbracket Expression rightsqrbracket
     ;
 Type 
-    : BasicType
-    | list leftsqrbracket BasicType rightsqrbracket 
+    : BasicType                                                         << $0, nil>>
+    | list leftsqrbracket BasicType rightsqrbracket                     << ast.AppendType($2) >>
     ;
 
 Attribute 

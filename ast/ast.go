@@ -79,7 +79,7 @@ type Statement interface {
 	isFunctionCall() 		bool
 	isClassFunctionCall() 	bool
 	isPredefinedFunction() 	bool
-	Token() *token.Token
+	Token() 				*token.Token
 }
 
 func (s *Statement) isAssign() bool {
@@ -288,9 +288,9 @@ func (f *For) Token() *token.Token {
 }
 
 type While struct {
-	exp Expression
-	blck []Statement
-	tok *token.Token
+	exp 	Expression
+	blck 	[]Statement
+	tok 	*token.Token
 }
 
 func (w *While) Expression() Expression {
@@ -346,6 +346,27 @@ func (fc *ClassFunctionCall) Token() *token.Token {
 	return fc.tok
 }
 
+// ConstantValue defines a type with a single basic value
+type ConstantValue struct {
+	t     *types.Type
+	value string
+	tok   *token.Token
+}
+
+func (c *ConstantValue) Type() *types.Type {
+	return c.t
+}
+
+func (c *ConstantValue) Token() *token.Token {
+	return c.tok
+}
+
+func (c *ConstantValue) Value() string {
+	return c.value
+}
+
+/*
+
 type PredefinedFunction interface {
 	isSetColor()		bool
 	isSetSize() 		bool
@@ -400,7 +421,7 @@ func (s *Statement) isSquareRoot() bool {
 
 type 
 
-/*
+
 type SetColor struct {
 	color string
 	tok *token.Token
@@ -595,21 +616,3 @@ func (r *SquareRoot) Token() *token.Token {
 	return r.tok
 }
 */
-// ConstantValue defines a type with a single basic value
-type ConstantValue struct {
-	t     *types.Type
-	value string
-	tok   *token.Token
-}
-
-func (c *ConstantValue) Type() *types.Type {
-	return c.t
-}
-
-func (c *ConstantValue) Token() *token.Token {
-	return c.tok
-}
-
-func (c *ConstantValue) Value() string {
-	return c.value
-}
