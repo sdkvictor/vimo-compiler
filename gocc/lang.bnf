@@ -5,7 +5,7 @@ BNF File for compiler written in Go
 *Insert compiler name*
 
 Developed by:
-	- Moisés Fernández
+f	- Moisés Fernández
 	- Víctor Villarreal
 */
 
@@ -163,14 +163,17 @@ Object
     | backgroundtype                << ast.NewType($0) >>
     ;
 
+/*
 Expression
     : ExpressionAux << ast.NewExpression($0) >> /*Crear objeto Expression */
     ;
+*/
 
-ExpressionAux
-    : Exp  /* crear el objeto Exp con lista de terms y creas lista de Exp*/
-    | Exp Operations ExpressionAux  << ast.AppendExpression() >>/*append a lista de Exp*/
+Expression
+    : Exp                        << ast.NewExpression($0) >>/* crear el objeto Exp con lista de terms y creas lista de Exp*/
+    | Exp Operations Expression  << ast.AppendExpression($0, $1, $2) >>/*append a lista de Exp*/
     ;
+
 
 Operations
     : relop
@@ -184,8 +187,8 @@ Exp
     ;
 
 Term
-    : Factor /*creas lista de Factor y agregas primer Factor */
-	| Factor mult Term /* Append Factor a lista de factores (Term) */
+    : Factor /* creas el objeto Term y agregas primer Factor y regresas Term */
+	| Factor mult Term /* recibes factor, y agregas a objeto Term el factor y el operador */
 	| Factor div Term
     ;
 
@@ -239,7 +242,7 @@ Varcte
     : id
     | cteint                                                            << ast.NewConstantInt($0) >>
     | ctefloat                                                          << ast.NewConstantFloat($0) >>
-    | ctestring                                                         << ast.AppendStringConstant($0) >>
+    | ctestring                                                         << ast.NewStringConstant($0) >>
     | ctechar                                                           << ast.NewConstantChar($0) >>
     | ListElem
     | ctebool                                                           << ast.NewConstantBool($0) >>
