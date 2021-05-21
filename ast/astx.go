@@ -339,13 +339,15 @@ func AppendConstant(start, list interface{}) (*ConstantList, error) {
 }
 
 // Posiblemente está mal
-func AppendStringConstant(str interface{}) ([]*ConstantValue, error) {
+func NewStringConstant(str interface{}) (*ConstantValue, error) {
     val, ok := str.(*token.Token)
     if !ok {
         return nil, errutil.NewNoPosf("Invalid type for string. Expected token")
     }
 
-	return append([]*ConstantValue, str...), nil
+	valstr := string(val.Lit)
+	
+	return &ConstantValue{types.NewDataType(types.String, 0), valstr, val}, nil
 }
 
 // AppendEmptyConstant creates an empty list with a given type
@@ -367,24 +369,7 @@ func AppendEmptyConstant(start, t interface{}) (*ConstantList, error) {
 	return &ConstantList{make([]Statement, 0), val, typ}, nil
 }
 
-func AppendStringConstant(str interface{}) (*ConstantList, error) {
-	val, ok := str.(*token.Token)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for start. Expected token")
-	}
-
-	substr := val.Lit[1 : len(val.Lit)-1]
-
-	chars := make([]Statement, 0)
-
-	for _, c := range []byte(substr) {
-		chars = append(chars, &ConstantValue{types.NewDataType(types.Char, 0), fmt.Sprintf("'%c'", c), val})
-	}
-
-	return &ConstantList{[]Statement(chars), val, nil}, nil
-}
-
-
+// NewReturn
 func NewReturn(returnToken, exp interface{} ) (*Return, error) { //OK
 	retTok, ok := returnToken.(*token.Token)
 	if !ok {
@@ -397,8 +382,7 @@ func NewReturn(returnToken, exp interface{} ) (*Return, error) { //OK
 	return nil, errutil.Newf("invalid return statement result type; expected Expression, got %T", exp)
 }
 
-
-
+// NewWhile
 func NewWhile(tok, exp, block interface{}) (*While, error) {
 	t, ok := tok.(*token.Token)
 	if !ok {
@@ -419,7 +403,7 @@ func NewWhile(tok, exp, block interface{}) (*While, error) {
 	return &While{exp, block, t}, nil
 }
 
-
+// NewFor
 func NewFor(tok, init, cond, op, block interface{}) (*For, error) {
 	t, ok := tok.(*token.Token)
 	if !ok {
@@ -450,6 +434,7 @@ func NewFor(tok, init, cond, op, block interface{}) (*For, error) {
 	return &For{i, c, o, b, t}, nil
 }
 
+// NewAssign
 func NewAssign(id, attr, tok, exp interface{}) (*Assign, error) {
 	i, ok := id.(*token.Token)
 	if !ok {
@@ -476,6 +461,7 @@ func NewAssign(id, attr, tok, exp interface{}) (*Assign, error) {
 	return &Assign{idstr, a, e, t}, nil
 }
 
+// New Condition
 func NewCondition(id, exp, stmts, elseStmts interface{}) (*Condition, error) {
 	i, ok := id.(*token.Token)
 	if !ok {
@@ -500,47 +486,42 @@ func NewCondition(id, exp, stmts, elseStmts interface{}) (*Condition, error) {
 	return &Condition{e, s, els, i}, nil
 }
 
-func NewExpression(exps, ops, tok interface{}) (*Expression, error) {
-	e, ok := exps.([]*Exp)
+// New Expression
+func NewExpression(exp interface{}) (*Expression, error) {
+	e, ok := exp.(*Exp)
+	if !ok {
+		return nil, errutil.NewNoPosf("Invalid type for exp. Expected *Exp")
+	}
+
+	return &Expression{[]*Exp{e}, make(string, 0), e.tok}
+}
+
+// AppendExpression
+func AppendExpression(exp, op, expre interface{}) (*Expression, error) {
+	e, ok := exp.(Exp)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for exps. Expected []*Exp")
 	}
 
-	o, ok := ops.([]string)
+	o, ok := op.(*token.Token)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for ops. Expected []string")
 	}
 
-	t, ok := tok.(*token.Token)
+	ostr := string(o.Lit)
+
+	expression, ok := expre.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for tok. Expected token")
 	}
 
-	return &Expression{exps, ops, tok}, nil
+	append(expression.exps, e)
+	append(expression.ops, ostr)
+
+	return expression, nil
 }
 
-// Así jala con la struct de expression pero no c kpdo porque en el bnf 
-// donde carlos puso que se crea el objeto Expression solo tiene un
-// parametro que es ExpressionAux
-func NewExpression(exps, ops, tok interface{}) (*Expression, error) {
-	e, ok := exps.([]*Exp)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for exps. Expected []*Exp")
-	}
-
-	o, ok := ops.([]string)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for ops. Expected []string")
-	}
-
-	t, ok := tok.(*token.Token)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for tok. Expected token")
-	}
-
-	return &Expression{exps, ops, tok}, nil
-}
-
+// NewExp
 func NewExp(terms, ops, tok interface{}) (*Exp, error) {
 	t, ok := terms.([]*Term)
 	if !ok {
@@ -560,6 +541,7 @@ func NewExp(terms, ops, tok interface{}) (*Exp, error) {
 	return &Exp{terms, ops, tok}, nil
 }
 
+// NewTerm
 func NewTerm(facs, ops, tok interface{}) (*Term, error) {
 	f, ok := facs.([]*Factor)
 	if !ok {
@@ -579,6 +561,7 @@ func NewTerm(facs, ops, tok interface{}) (*Term, error) {
 	return &Exp{terms, ops, tok}, nil
 }
 
+// NewFactor
 func NewFactor(exp, cv, op, tok interface{}) (*Factor, error) {
 	e, ok := exp.(Expression)
 	if !ok {
