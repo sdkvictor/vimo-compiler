@@ -116,26 +116,26 @@ func NewSemanticCube() *SemanticCube {
 	return &SemanticCube{
 		map[string]types.BasicType{
 			//Arithmetical Operators
-			"+@11": types.Int,
-			"-@11": types.Int,
-			"/@11": types.Int,
-			"*@11": types.Int,
-			"%@11": types.Int,
-			"+@22": types.Int,
-			"-@22": types.Int,
-			"/@22": types.Int,
-			"*@22": types.Int,
-			"%@22": types.Int,
+			"+#11": types.Int,
+			"-#11": types.Int,
+			"/#11": types.Int,
+			"*#11": types.Int,
+			"%#11": types.Int,
+			"+#22": types.Int,
+			"-#22": types.Int,
+			"/#22": types.Int,
+			"*#22": types.Int,
+			"%#22": types.Int,
 			//Relational Operators
-			"<@11":     types.Bool,
-			">@11":     types.Bool,
-			"Equal@11": types.Bool,
-			"Equal@22": types.Bool,
-			"Equal@33": types.Bool,
+			"<#11":     types.Bool,
+			">#11":     types.Bool,
+			"Equal#11": types.Bool,
+			"Equal#22": types.Bool,
+			"Equal#33": types.Bool,
 			//Logical Operators
-			"And@33": types.Bool,
-			"Or@33":  types.Bool,
-			"!@3":    types.Bool,
+			"And#33": types.Bool,
+			"Or#33":  types.Bool,
+			"!#3":    types.Bool,
 		},
 	}
 }
@@ -271,7 +271,7 @@ func GetSemanticCubeKey(id string, params []*types.Type) string {
 		id = strings.Title(id)
 	}
 
-	return fmt.Sprintf("%s@%s", id, b.String())
+	return fmt.Sprintf("%s#%s", id, b.String())
 }
 
 func GetBuiltInType(id string, args []*types.Type, tok *token.Token) (*types.Type, error) {

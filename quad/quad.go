@@ -28,9 +28,6 @@ const (
 	Era
 	Param
 	Call
-	Emp
-	Head
-	Tail
 	Ins
 	App
 	Lst
@@ -79,12 +76,6 @@ func (o Operation) String() string {
 		return "Era"
 	case Param:
 		return "Param"
-	case Emp:
-		return "Emp"
-	case Head:
-		return "Head"
-	case Tail:
-		return "Tail"
 	case Ins:
 		return "Ins"
 	case App:
@@ -128,17 +119,6 @@ func GetOperation(s string) Operation {
 		return Or
 	case "!":
 		return Not
-	case "empty":
-		return Emp
-	case "head":
-		return Head
-	case "tail":
-		return Tail
-	case "insert":
-		return Ins
-	case "append":
-		return App
-	}
 
 	return Invalid
 }
@@ -181,16 +161,6 @@ func StringToOperation(s string) Operation {
 		return Era
 	case "Param":
 		return Param
-	case "Emp":
-		return Emp
-	case "Head":
-		return Head
-	case "Tail":
-		return Tail
-	case "Ins":
-		return Ins
-	case "App":
-		return App
 	case "GeLst":
 		return GeLst
 	case "Lst":
