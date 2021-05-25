@@ -9,27 +9,6 @@ import (
 	"github.com/mewkiz/pkg/errutil"
 )
 
-var reservedFunctions = []string{
-	"if",
-	"append",
-	"empty",
-	"head",
-	"tail",
-	"insert",
-	"and",
-	"or",
-	"equal",
-	"+",
-	"-",
-	"*",
-	"/",
-	"%",
-	"<",
-	">",
-	"!",
-	"main",
-}
-
 type Operation int
 
 const (
@@ -37,10 +16,11 @@ const (
 	Sub
 	Mult
 	Div
-	Mod
 	Lt
 	Gt
+	Assign
 	Equal
+	NotEqual
 	And
 	Or
 	Not
@@ -56,20 +36,23 @@ func (o Operation) convert() string {
 		return "*"
 	case Div:
 		return "/"
-	case Mod:
-		return "%"
 	case Lt:
 		return "<"
 	case Gt:
 		return ">"
 	case Equal:
-		return "equal"
+		return "=="
+	case NotEqual:
+		return "!="
+	case Assign:
+		return "="
 	case And:
-		return "and"
+		return "&&"
 	case Or:
-		return "or"
+		return "||"
 	case Not:
 		return "!"
+		
 	}
 
 	return ""
@@ -86,17 +69,19 @@ func GetOperation(s string) Operation {
 		return Mult
 	case "/":
 		return Div
-	case "%":
-		return Mod
 	case "<":
 		return Lt
 	case ">":
 		return Gt
-	case "equal":
+	case "==":
 		return Equal
-	case "and":
+	case "!=":
+		return NotEqual
+	case "=":
+		return Assign
+	case "&&":
 		return And
-	case "or":
+	case "||":
 		return Or
 	case "!":
 		return Not
@@ -116,26 +101,43 @@ func NewSemanticCube() *SemanticCube {
 	return &SemanticCube{
 		map[string]types.BasicType{
 			//Arithmetical Operators
-			"+#11": types.Int,
-			"-#11": types.Int,
-			"/#11": types.Int,
-			"*#11": types.Int,
-			"%#11": types.Int,
-			"+#22": types.Int,
-			"-#22": types.Int,
-			"/#22": types.Int,
-			"*#22": types.Int,
-			"%#22": types.Int,
+			"+@11": types.Int,
+			"-@11": types.Int,
+			"/@11": types.Int,
+			"*@11": types.Int,
+			"%@11": types.Int,
+			"+@55": types.Float,
+			"-@55": types.Float,
+			"/@55": types.Float,
+			"*@55": types.Float,
+			"%@55": types.Float,
+			
 			//Relational Operators
-			"<#11":     types.Bool,
-			">#11":     types.Bool,
-			"Equal#11": types.Bool,
-			"Equal#22": types.Bool,
-			"Equal#33": types.Bool,
+			"<@11": types.Bool,
+			">@11": types.Bool,
+			"<@55": types.Bool,
+			">@55": types.Bool,
+			"==@11": types.Bool,
+			"==@55": types.Bool,
+			"==@33": types.Bool,
+			"==@22": types.Bool,
+			"==@66": types.Bool,
+			"!=@11": types.Bool,
+			"!=@55": types.Bool,
+			"!=@33": types.Bool,
+			"!=@22": types.Bool,
+			"!=@66": types.Bool,
 			//Logical Operators
-			"And#33": types.Bool,
-			"Or#33":  types.Bool,
-			"!#3":    types.Bool,
+			"&&@33": types.Bool,
+			"||@33":  types.Bool,
+			"!@3":    types.Bool,
+
+			"=@11": types.Int,
+			"=@55": types.Float,
+			"=@33": types.Bool,
+			"=@22": types.Char,
+			"=@66": types.String,
+
 		},
 	}
 }
@@ -166,11 +168,13 @@ func isOperationFromSemanticCube(s string) bool {
 		return true
 	case ">":
 		return true
-	case "equal":
+	case "==":
 		return true
-	case "and":
+	case "=":
 		return true
-	case "or":
+	case "&&":
+		return true
+	case "||":
 		return true
 	case "!":
 		return true
@@ -271,7 +275,7 @@ func GetSemanticCubeKey(id string, params []*types.Type) string {
 		id = strings.Title(id)
 	}
 
-	return fmt.Sprintf("%s#%s", id, b.String())
+	return fmt.Sprintf("%s@%s", id, b.String())
 }
 
 func GetBuiltInType(id string, args []*types.Type, tok *token.Token) (*types.Type, error) {
