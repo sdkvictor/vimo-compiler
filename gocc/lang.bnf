@@ -97,8 +97,8 @@ VarsOp
     ;
 
 Vars
-    : Type Ids semicolon Vars                                   
-    | Type Ids semicolon                                
+    : Type Ids semicolon Vars                                            
+    | Type Ids semicolon                                 
     ;
 
 Ids
@@ -122,8 +122,8 @@ Functions
     ;
 
 FunctionsAux
-    : Type                          << ast.NewType($0) >>
-    | voidtype                      << ast.NewType($0) >>
+    : Type                                  << ast.NewType($0) >>
+    | voidtype                              << ast.NewType($0) >>
     ; 
 
 Block
@@ -181,31 +181,31 @@ Operations
     ;
 
 Exp
-    : Term /* crear objecto Term con lista de factores y creas lista de Term */
-    | Term plus Exp /* crear el objeto Term y agregar a lista */
-    | Term minus Exp
+    : Term /* crear objecto Term con lista de factores y creas lista de Term */ << ast.NewExp($0) >>
+    | Term plus Exp /* crear el objeto Term y agregar a lista */                << ast.AppendExp($0,$1,$2) >>
+    | Term minus Exp                                                            << ast.AppendExp($0,$1,$2) >>
     ;
 
 Term
-    : Factor /* creas el objeto Term y agregas primer Factor y regresas Term */
-	| Factor mult Term /* recibes factor, y agregas a objeto Term el factor y el operador */
-	| Factor div Term
+    : Factor /* creas el objeto Term y agregas primer Factor y regresas Term */                 << ast.NewTerm($0) >>   
+	| Factor mult Term /* recibes factor, y agregas a objeto Term el factor y el operador */    << ast.AppendTerm($0,$1,$2) >>
+	| Factor div Term                                                                           << ast.AppendTerm($0,$1,$2) >>
     ;
 
 Factor
-    : leftparenthesis Expression rightparenthesis /*creas Factor con Expression adentro */ 
-    | plus Varcte
-    | minus Varcte
-    | Varcte /* creas el nodo Factor con varcte adentro*/
+    : leftparenthesis Expression rightparenthesis   << ast.NewFactor($0) >> /*creas Factor con Expression adentro */ 
+    | plus Varcte                                   << ast.AppendFactor($0, $1) >>
+    | minus Varcte                                  << ast.AppendFactor($0, $1) >>
+    | Varcte                                        << ast.AppendVCFactor($0) >>/* creas el nodo Factor con varcte adentro*/
     ;
 
 Assign
-    : id equals Expression semicolon                                    << ast.NewAssign($0, nil, $1, $2) >>
-	| Attribute equals Expression semicolon                             << ast.NewAssign(nil, $0, $1, $2) >>
+    : id equals Expression semicolon                                    << ast.NewAssignNoAttr($0, $1, $2) >>
+	| Attribute equals Expression semicolon                             << ast.NewAssignNoId($0, $1, $2) >>
     ;
 
 Condition
-    : if leftparenthesis Expression rightparenthesis Block               << ast.NewCondition($0, $2, $4, nil) >>
+    : if leftparenthesis Expression rightparenthesis Block               << ast.NewConditionNoElseStmts($0, $2, $4) >>
     | if leftparenthesis Expression rightparenthesis Block else Block    << ast.NewCondition($0, $2, $4, $6 ) >>
     ; 
 
@@ -224,12 +224,12 @@ While
 
 CallFunction
     : id leftparenthesis CallFunctionAux rightparenthesis               << ast.NewFunctionCall($0, $2) >>
-    | id leftparenthesis rightparenthesis                               << ast.NewFunctionCall($0, nil) >>
+    | id leftparenthesis rightparenthesis                               << ast.NewFunctionCallId($0) >>
     ;
 
 CallClassFunction
     : id dot id leftparenthesis CallFunctionAux rightparenthesis        << ast.NewFunctionCallClass($0, $2, $4) >>
-    | id dot id leftparenthesis rightparenthesis                        << ast.NewFunctionCallClass($0, $2, nil) >>
+    | id dot id leftparenthesis rightparenthesis                        << ast.NewFunctionCallClassNoAux($0, $2) >>
     ;
                  
 
@@ -247,7 +247,7 @@ Varcte
     | ListElem
     | ctebool                                                           << ast.NewConstantBool($0) >>
     | Attribute
-    | CallFunction                                                     
+    | CallFunction                                                      
     | CallClassFunction                                                 
     ;
 
