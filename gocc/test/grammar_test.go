@@ -3,7 +3,6 @@ package main
 import (
 	"os"
 	"testing"
-
 	"github.com/sdkvictor/golang-compiler/gocc/lexer"
 	"github.com/sdkvictor/golang-compiler/gocc/parser"
 	"github.com/davecgh/go-spew/spew"
@@ -37,7 +36,7 @@ func readFile(path string) ([]byte, error) {
 func TestGrammar(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"testfire.vm",
+		"test2.vm",
 	}
 
 	for _, test := range tests {
@@ -48,8 +47,8 @@ func TestGrammar(t *testing.T) {
 		}
 
 		s := lexer.NewLexer(input)
-		_, errtest := p.Parse(s)
-		//spew.Dump(program)
+		program, errtest := p.Parse(s)
+		spew.Dump(program)
 		if errtest != nil {
 			t.Errorf("%s: %v", test, errtest)
 		}

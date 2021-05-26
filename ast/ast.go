@@ -35,7 +35,7 @@ type Function struct {
 	key       	string
 	params    	[]*directories.VarEntry
 	t         	*types.Type
-	statements 	[]*Statement
+	statements 	[]Statement
 	tok       	*token.Token
 }
 
@@ -44,7 +44,7 @@ func (f *Function) Id() string {
 	return f.id
 }
 
-func (f *Function) Params() []*dir.VarEntry {
+func (f *Function) Params() []*directories.VarEntry {
 	return f.params
 }
 
@@ -52,7 +52,7 @@ func (f *Function) Type() *types.Type {
 	return f.t
 }
 
-func (f *Function) Statements() []*Statement {
+func (f *Function) Statements() []Statement {
 	return f.statements
 }
 
@@ -77,68 +77,24 @@ type Statement interface {
 	isFor() 				bool
 	isWhile() 				bool
 	isFunctionCall() 		bool
-	isClassFunctionCall() 	bool
 	isPredefinedFunction() 	bool
 	Token() 				*token.Token
 }
 
-func (s *Statement) isAssign() bool {
-	return false
-}
 
-func (s *Statement) isCondition() bool {
-	return false
-}
-
-func (s *Statement) isWrite() bool {
-	return false
-}
-
-func (s *Statement) isReturn() bool {
-	return false
-}
-
-func (s *Statement) isFor() bool {
-	return false
-}
-
-func (s *Statement) isWhile() bool {
-	return false
-}
-
-func (s *Statement) isFunctionCall() bool {
-	return false
-}
-
-func (s *Statement) isClassFunctionCall() bool {
-	return false
-}
-
-func (s *Statement) isPredefinedFunction() bool {
-	return false
-}
-
-func (s *Statement) Token() *token.Token {
-	return i.tok
-}
 
 type Factor struct {
-	exp 	Expression
-	cv 		ConstantValue
-	op		string
+	exp 	*Expression
+	cv 		*ConstantValue
 	tok 	*token.Token
 }
 
-func (f *Factor) Expression() Expression {
+func (f *Factor) Expression() *Expression {
 	return f.exp
 }
 
-func (f *Factor) ConstantValue() ConstantValue {
+func (f *Factor) ConstantValue() *ConstantValue {
 	return f.cv
-}
-
-func (f *Factor) Operation() string {
-	return f.op
 }
 
 func (f *Factor) Token() *token.Token {
@@ -218,36 +174,111 @@ func (a *Attribute) Token() *token.Token{
 }
 
 type Assign struct {
-	id 		string
-	attr 	Attribute
-	exp 	Expression
+	attr 	*Attribute
+	exp 	*Expression
 	tok 	*token.Token
 }
 
-func (a *Assign) Id() string {
-	return a.id
-}
 
-func (a *Assign) Attribute() Attribute {
+func (a *Assign) Attribute() *Attribute {
 	return a.attr
 }
 
-func (a *Assign) Expression() Expression {
+func (a *Assign) Expression() *Expression {
 	return a.exp
 }
+
+func (a Assign) isAssign() bool {
+	return true
+}
+
+func (a Assign) isCondition() bool {
+	return false
+}
+
+func (a Assign) isWrite() bool {
+	return false
+}
+
+func (a Assign) isReturn() bool {
+	return false
+}
+
+func (a Assign) isFor() bool {
+	return false
+}
+
+func (a Assign) isWhile() bool {
+	return false
+}
+
+func (a Assign) isFunctionCall() bool {
+	return false
+}
+
+func (a Assign) isPredefinedFunction() bool {
+	return false
+}
+
 
 func (a *Assign) Token() *token.Token {
 	return a.tok
 }
 
+
+type Write struct {
+	exp 	*Expression
+	tok 	*token.Token
+}
+
+func (a *Write) Expression() *Expression {
+	return a.exp
+}
+
+func (a Write) isAssign() bool {
+	return false
+}
+
+func (a Write) isCondition() bool {
+	return true
+}
+
+func (a Write) isWrite() bool {
+	return true
+}
+
+func (a Write) isReturn() bool {
+	return false
+}
+
+func (a Write) isFor() bool {
+	return false
+}
+
+func (a Write) isWhile() bool {
+	return false
+}
+
+func (a Write) isFunctionCall() bool {
+	return false
+}
+
+func (a Write) isPredefinedFunction() bool {
+	return false
+}
+
+func (a *Write) Token() *token.Token {
+	return a.tok
+}
+
 type Condition struct {
-	exp 		Expression
+	exp 		*Expression
 	stmts  		[]Statement
 	elseStmts 	[]Statement
 	tok 		*token.Token
 }
 
-func (c *Condition) Expression() Expression {
+func (c *Condition) Expression() *Expression {
 	return c.exp
 }
 
@@ -263,14 +294,80 @@ func (c *Condition) Token() *token.Token {
 	return c.tok
 }
 
+func (s Condition) isAssign() bool {
+	return false
+}
+
+func (s Condition) isCondition() bool {
+	return true
+}
+
+func (s Condition) isWrite() bool {
+	return false
+}
+
+func (s Condition) isReturn() bool {
+	return false
+}
+
+func (s Condition) isFor() bool {
+	return false
+}
+
+func (s Condition) isWhile() bool {
+	return false
+}
+
+func (s Condition) isFunctionCall() bool {
+	return false
+}
+
+func (s Condition) isPredefinedFunction() bool {
+	return false
+}
+
+
 
 type Return struct {
-	exp Expression
+	exp *Expression
 	tok *token.Token
 }
 
-func (r *Return) Expression() Expression {
+func (r *Return) Expression() *Expression {
 	return r.exp
+}
+
+
+func (r Return) isAssign() bool {
+	return false
+}
+
+func (r Return) isCondition() bool {
+	return false
+}
+
+func (r Return) isWrite() bool {
+	return false
+}
+
+func (r Return) isReturn() bool {
+	return true
+}
+
+func (r Return) isFor() bool {
+	return false
+}
+
+func (r Return) isWhile() bool {
+	return false
+}
+
+func (r Return) isFunctionCall() bool {
+	return false
+}
+
+func (r Return) isPredefinedFunction() bool {
+	return false
 }
 
 func (r *Return) Token() *token.Token {
@@ -278,22 +375,22 @@ func (r *Return) Token() *token.Token {
 }
 
 type For struct {
-	init Assign
-	cond Expression
-	op Expression
-	blck []Statement
-	tok *token.Token
+	init 	*Assign
+	cond 	*Expression
+	op 		*Expression
+	blck 	[]Statement
+	tok 	*token.Token
 }
 
-func (f *For) Init() Assign {
+func (f *For) Init() *Assign {
 	return f.init
 }
 
-func (f *For) Condition() Expression {
+func (f *For) Condition() *Expression {
 	return f.cond
 }
 
-func (f *For) Operation() Expression {
+func (f *For) Operation() *Expression {
 	return f.op
 }
 
@@ -301,22 +398,87 @@ func (f *For) Block() []Statement {
 	return f.blck
 }
 
+func (f For) isAssign() bool {
+	return false
+}
+
+func (f For) isCondition() bool {
+	return false
+}
+
+func (f For) isWrite() bool {
+	return false
+}
+
+func (f For) isReturn() bool {
+	return false
+}
+
+func (f For) isFor() bool {
+	return true
+}
+
+func (f For) isWhile() bool {
+	return false
+}
+
+func (f For) isFunctionCall() bool {
+	return false
+}
+
+func (f For) isPredefinedFunction() bool {
+	return false
+}
+
 func (f *For) Token() *token.Token {
 	return f.tok
 }
 
 type While struct {
-	exp 	Expression
+	exp 	*Expression
 	blck 	[]Statement
 	tok 	*token.Token
 }
 
-func (w *While) Expression() Expression {
+func (w *While) Expression() *Expression {
 	return w.exp
 }
 
 func (w *While) Block() []Statement {
 	return w.blck
+}
+
+func (w While) isAssign() bool {
+	return false
+}
+
+func (w While) isCondition() bool {
+	return false
+}
+
+func (w While) isWrite() bool {
+	return false
+}
+
+func (w While) isReturn() bool {
+	return false
+}
+
+func (w While) isFor() bool {
+	return false
+}
+
+func (w While) isWhile() bool {
+	return true
+}
+
+func (w While) isFunctionCall() bool {
+	return false
+}
+
+
+func (w While) isPredefinedFunction() bool {
+	return false
 }
 
 func (w *While) Token() *token.Token {
@@ -336,11 +498,42 @@ func (fc *FunctionCall) Id() string {
 func (fc *FunctionCall) Params() []*Expression {
 	return fc.params
 }
+func (fc FunctionCall) isAssign() bool {
+	return false
+}
+
+func (fc FunctionCall) isCondition() bool {
+	return false
+}
+
+func (fc FunctionCall) isWrite() bool {
+	return false
+}
+
+func (fc FunctionCall) isReturn() bool {
+	return false
+}
+
+func (fc FunctionCall) isFor() bool {
+	return false
+}
+
+func (fc FunctionCall) isWhile() bool {
+	return false
+}
+
+func (fc FunctionCall) isFunctionCall() bool {
+	return true
+}
+
+func (fc FunctionCall) isPredefinedFunction() bool {
+	return false
+}
 
 func (fc *FunctionCall) Token() *token.Token {
 	return fc.tok
 }
-
+/*
 type ClassFunctionCall struct {
 	id 		string
 	obj 	string
@@ -363,7 +556,7 @@ func (fc *ClassFunctionCall) Params() []*Expression {
 func (fc *ClassFunctionCall) Token() *token.Token {
 	return fc.tok
 }
-
+*/
 // ConstantValue defines a type with a single basic value
 type ConstantValue struct {
 	t     *types.Type

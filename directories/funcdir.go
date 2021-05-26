@@ -1,9 +1,9 @@
 package directories
 
-import {
-	"fmt"
+import (
 	"github.com/sdkvictor/golang-compiler/types"
-}
+	"github.com/sdkvictor/golang-compiler/mem"
+)
 
 // A FuncEntry represents a declaration of a function that will be stored in the functions directory.
 // Example of declaration:

@@ -1,7 +1,6 @@
 package ast
 
 import (
-	"fmt"
 	"github.com/sdkvictor/golang-compiler/directories"
 	"github.com/sdkvictor/golang-compiler/gocc/token"
 	"github.com/sdkvictor/golang-compiler/types"
@@ -20,68 +19,69 @@ func NewProgram(id, vars, functions interface{}) (*Program, error) { //OK
 		return nil, errutil.NewNoPosf("Invalid program id. Expected string")
 	}
 
-	id := string(idtok.Lit)
+	ids := string(idtok.Lit)
 
-	v, ok := call.([]*directories.VarEntry)
+	v, ok := vars.([]*directories.VarEntry)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for variable declaration. Expected []*directories.VarEntry")
 	}
 
-	return &Program{fs, id, v}, nil
+	return &Program{fs, ids, v}, nil
 }
 
 // NewFunctionList creates a new function list of all the program's functions
-func NewFunctionList(function interface{}) ([]*Function) { //OK
-	f, ok := function.(*Function)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for function. Expected *Function")
+func NewFunctionList(function *Function, err error) ([]*Function, error) { //OK
+	if err != nil {
+		return nil, err
 	}
-
-	return []*Function{f}, nil
+	return []*Function{function}, nil
 }
 
 
-func FirstFunction(id, params, typ, statements interface{}) (([]*Function, error)) {
-	return NewFunctionList(NewFunction(id, params, typ, statements))
+func FirstFunction(typ, id, params, statements interface{}) ([]*Function, error) {
+	return NewFunctionList(NewFunction(typ, id, params, statements))
+}
+
+func AppendFunction(typ, id, params, statements, flist interface{}) ([]*Function, error){
+	list, ok := flist.([]*Function)
+	if !ok {
+		return nil, errutil.NewNoPosf("Invalid flist. Expected []*Function")
+	}
+
+	newf, err := NewFunction(typ, id, params, statements)
+	return AppendFunctionList(newf, list, err)
 }
 
 // AppendFunctionList inserts a function into the program's list of functions
-func AppendFunctionList(function, list interface{}) ([]*Function, error) { //OK
-	f, ok := function.(*Function)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for function. Expected *Function")
+func AppendFunctionList(function *Function, flist []*Function, err error) ([]*Function, error) { //OK
+	if err != nil {
+		return nil, err
 	}
-
-	flist, ok := list.([]*Function)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for functions. Expected []*Function")
-	}
-
-	return append([]*Function{f}, flist...), nil
+	return append([]*Function{function}, flist...), nil
 }
 
 // NewFuncDecl returns a new function node
-func NewFunction(id, params, typ, statements interface{}) (*Function, error) { //OK
+func NewFunction(typ, id, params, statements interface{}) (*Function, error) { //OK
 	i, ok := id.(*token.Token)
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for id. Expected token")
+		return nil, errutil.NewNoPosf("Invalid program id. Expected string")
 	}
 
 	d := string(i.Lit)
 
 	p, ok := params.([]*directories.VarEntry)
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for params. Expected []*directories.VarEntry")
+		return nil, errutil.NewNoPosf("Invalid program id. Expected string")
 	}
 
 	t, ok := typ.(*types.Type)
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for typ. Expected *types.Type")
+		return nil, errutil.NewNoPosf("Invalid program id. Expected string")
 	}
 
-	s, ok := statements.([]*Statement)
+	s, ok := statements.([]Statement)
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for statement. Expected Statement")
+		return nil, errutil.NewNoPosf("Invalid program id. Expected string") 
 	}
 
 	f := &Function{d, "", p, t, s, i}
@@ -209,7 +209,7 @@ func NewType(t interface{}) (*types.Type, error) { //OK
 		return types.NewObjectType(types.Circle, 0), nil
 	}
 	if tstring == "Image" {
-		return types.NewObjecType(types.Image, 0), nil
+		return types.NewObjectType(types.Image, 0), nil
 	}
 	if tstring == "Text" {
 		return types.NewObjectType(types.Text, 0), nil
@@ -244,7 +244,7 @@ func NewFunctionCall(id, exps interface{}) (*FunctionCall, error) {
 		return nil, errutil.NewNoPosf("Invalid type for id. expected Token")
 	}
 	
-	d := string(id.Lit)
+	d := string(i.Lit)
 
 	e, ok := exps.([]*Expression)
 	if !ok {
@@ -252,45 +252,43 @@ func NewFunctionCall(id, exps interface{}) (*FunctionCall, error) {
 	}
 
 	return &FunctionCall{d, e, i}, nil
-}
+} 
 
-// NewFunctionCallClass
-func NewFunctionCallClass(id, obj, exps interface{}) (*ClassFunctionCall, error) {
+// NewFunctionCallId creates a new FunctionCall node which acts as the children of the program or function, which is the function call
+func NewFunctionCallId(id interface{}) (*FunctionCall, error) {
 	i, ok := id.(*token.Token)
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for id. Expected Token")
+		return nil, errutil.NewNoPosf("Invalid type for id. expected Token")
 	}
-	d := string(id.Lit)
+	
+	d := string(i.Lit)
 
-	o, ok := obj.(*token.Token)
+	return &FunctionCall{d, make([]*Expression, 0), i}, nil
+} 
+
+func NewArgumentExpression(exp interface{}) ([]*Expression, error) {
+	s, ok := exp.(*Expression) 
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for id. Expected Token")
-	}
-	b := string(obj.Lit)
-
-	e, ok := exps.([]*Expression)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for args. Expected []Statement, got %v", exps)
+		return nil, errutil.NewNoPosf("Invalid type for stmt. expected Statement")
 	}
 
-	return &ClassFunctionCall{d, b, e, i}, nil
+	return []*Expression{s}, nil
 }
 
-// NewFunctionCallNoAux
-func NewFunctionCallNoAux(id, obj interface{}) (*ClassFunctionCall, error) {
-	i, ok := id.(*token.Token)
+func AppendArgumentExpression(exp, list interface{}) ([]*Expression, error) {
+	s, ok := exp.(*Expression) 
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for id. Expected Token")
+		return nil, errutil.NewNoPosf("Invalid type for stmt. expected Statement")
 	}
-	d := string(id.Lit)
 
-	o, ok := obj.(*token.Token)
+	slist, ok := list.([]*Expression)
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for id. Expected Token")
+		return nil, errutil.NewNoPosf("Invalid type for statementList. expected []Statement")
 	}
-	b := string(obj.Lit)
 
-	return &ClassFunctionCall{d, b, make([]*Expression, 0), i}, nil
+	slist = append(slist, s)
+
+	return slist, nil
 }
 
 // NewConstantBool
@@ -341,20 +339,7 @@ func NewConstantChar(value interface{}) (*ConstantValue, error) {
 	return &ConstantValue{types.NewDataType(types.Char, 0), v, val}, nil
 }
 
-// AppendConstant
-func AppendConstant(start, list interface{}) (*ConstantList, error) {
-	val, ok := start.(*token.Token)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for start. Expected token")
-	}
-	l, ok := list.([]Statement)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for statement list. Expected []Statement")
-	}
-
-	return &ConstantList{l, val, nil}, nil
-}
-
+// NewStringConstant
 func NewStringConstant(str interface{}) (*ConstantValue, error) {
     val, ok := str.(*token.Token)
     if !ok {
@@ -373,10 +358,10 @@ func NewReturn(returnToken, exp interface{} ) (*Return, error) { //OK
 		return nil, errutil.NewNoPosf("Invalid type for return keyword. Expected token")
 	}
 	
-	if e, ok := exp.(Expression); ok {
+	if e, ok := exp.(*Expression); ok {
 		return &Return{e, retTok}, nil
 	}
-	return nil, errutil.Newf("invalid return statement result type; expected Expression, got %T", exp)
+	return nil, errutil.Newf("invalid return statement result type; expected *Expression, got %T", exp)
 }
 
 // NewWhile
@@ -386,18 +371,34 @@ func NewWhile(tok, exp, block interface{}) (*While, error) {
 		return nil, errutil.NewNoPosf("Invalid type for while keyword. Expected token")
 	}
 
-	e, ok := exp.(Expression)
+	e, ok := exp.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for condition. Expected Expression")
 	}
 
-	b, ok := typ.([]Statement])
+	b, ok := block.([]Statement)
 	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for typ. Expected *types.Type")
+		return nil, errutil.NewNoPosf("Invalid type for block. Expected []Statement")
 	}
 
 
 	return &While{e, b, t}, nil
+}
+
+// NewWrite
+func NewWrite(tok, exp interface{}) (*Write, error) {
+	t, ok := tok.(*token.Token)
+	if !ok {
+		return nil, errutil.NewNoPosf("Invalid type for write keyword. Expected token")
+	}
+
+	e, ok := exp.(*Expression)
+	if !ok {
+		return nil, errutil.NewNoPosf("Invalid type for write. Expected Expression")
+	}
+
+
+	return &Write{e, t}, nil
 }
 
 // NewFor
@@ -407,17 +408,17 @@ func NewFor(tok, init, cond, op, block interface{}) (*For, error) {
 		return nil, errutil.NewNoPosf("Invalid type for while keyword. Expected token")
 	}
 
-	i, ok := init.(Assign)
+	i, ok := init.(*Assign)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for init. Expected Assign")
 	}
 
-	c, ok := cond.(Expression)
+	c, ok := cond.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for cond. Expected Expression")
 	}
 
-	o, ok := op.(Expression)
+	o, ok := op.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for operation. Expected Expression")
 	}
@@ -431,8 +432,8 @@ func NewFor(tok, init, cond, op, block interface{}) (*For, error) {
 	return &For{i, c, o, b, t}, nil
 }
 
-// NewAssignNoAttr probablement está mal lo del return por el attribute
-func NewAssignNoAttr(id, tok, exp interface{}) (*Assign, error) {
+// NewAssignWithoutAttr
+func NewAssignWithoutAttr(id, exp interface{}) (*Assign, error) {
 	i, ok := id.(*token.Token)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for id. Expected token")
@@ -440,41 +441,43 @@ func NewAssignNoAttr(id, tok, exp interface{}) (*Assign, error) {
 
 	idstr := string(i.Lit)
 
-	t, ok := tok.(*token.Token)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for equal assign token. Expected *token.Token")
-	}
-
 	e, ok := exp.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for assign expression. Expected Expression")
 	}
 
-	a := new(Attribute)
+	a := &Attribute{idstr, "", i}
 
-	return &Assign{idstr, a, e, t}, nil
+	return &Assign{a, e, i}, nil
 }
 
-// NewAssignNoId probablement está mal lo del return por el id
-func NewAssignNoId(attr, tok, exp interface{}) (*Assign, error) {
-	a, ok := attr.(Attribute)
+// NewAssignWithAttr
+func NewAssignWithAttr(attr, exp interface{}) (*Assign, error) {
+	a, ok := attr.(*Attribute)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for obj attribute. Expected Attribute")
 	}
 
-	t, ok := tok.(*token.Token)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for equal assign token. Expected *token.Token")
-	}
-
 	e, ok := exp.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for assign expression. Expected Expression")
 	}
 
-	i := new(string)
+	return &Assign{a, e, a.tok}, nil
+}
 
-	return &Assign{i, a, e, t}, nil
+func NewAttribute(id1, id2 interface{}) (*Attribute, error) {
+	id1t, ok := id1.(*token.Token)
+	if !ok {
+		return nil, errutil.NewNoPosf("Invalid type for obj attribute. Expected Attribute")
+	}
+
+	id2t, ok := id2.(*token.Token)
+	if !ok {
+		return nil, errutil.NewNoPosf("Invalid type for obj attribute. Expected Attribute")
+	}
+
+	return &Attribute{string(id1t.Lit), string(id2t.Lit), id1t}, nil
 }
 
 // NewCondition
@@ -484,7 +487,7 @@ func NewCondition(id, exp, stmts, elseStmts interface{}) (*Condition, error) {
 		return nil, errutil.NewNoPosf("Invalid type for id. Expected token")
 	}
 
-	e, ok := exp.(Expression)
+	e, ok := exp.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for obj attribute. Expected Attribute")
 	}
@@ -502,14 +505,14 @@ func NewCondition(id, exp, stmts, elseStmts interface{}) (*Condition, error) {
 	return &Condition{e, s, els, i}, nil
 }
 
-// NewCondition probablemente está mal el return por el els
+// NewCondition
 func NewConditionNoElseStmts(id, exp, stmts interface{}) (*Condition, error) {
 	i, ok := id.(*token.Token)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for id. Expected token")
 	}
 
-	e, ok := exp.(Expression)
+	e, ok := exp.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for obj attribute. Expected Attribute")
 	}
@@ -519,9 +522,7 @@ func NewConditionNoElseStmts(id, exp, stmts interface{}) (*Condition, error) {
 		return nil, errutil.NewNoPosf("Invalid type for equal assign token. Expected *token.Token")
 	}
 
-	els := new([Statement])
-
-	return &Condition{e, s, els, i}, nil
+	return &Condition{e, s, make([]Statement, 0), i}, nil
 }
 
 // New Expression
@@ -531,12 +532,12 @@ func NewExpression(exp interface{}) (*Expression, error) {
 		return nil, errutil.NewNoPosf("Invalid type for exp. Expected *Exp")
 	}
 
-	return &Expression{[]*Exp{e}, make(string, 0), e.tok}, nil
+	return &Expression{[]*Exp{e}, make([]string, 0), e.tok}, nil
 }
 
 // AppendExpression
 func AppendExpression(exp, op, expre interface{}) (*Expression, error) {
-	e, ok := exp.(Exp)
+	e, ok := exp.(*Exp)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for exps. Expected []*Exp")
 	}
@@ -553,8 +554,8 @@ func AppendExpression(exp, op, expre interface{}) (*Expression, error) {
 		return nil, errutil.NewNoPosf("Invalid type for expression. Expected *Expression")
 	}
 
-	append(expression.exps, e)
-	append(expression.ops, ostr)
+	expression.exps = append(expression.exps, e)
+	expression.ops = append(expression.ops, ostr)
 
 	return expression, nil
 }
@@ -566,12 +567,12 @@ func NewExp(term interface{}) (*Exp, error) {
 		return nil, errutil.NewNoPosf("Invalid type for terms. Expected *Term")
 	}
 
-	return &Exp{[]*Term{t}, make(string, 0), t.tok}
+	return &Exp{[]*Term{t}, make([]string, 0), t.tok}, nil
 }
 
 // AppendExp
 func AppendExp(term, op, exp interface{}) (*Exp, error) {
-	t, ok := term.(Term)
+	t, ok := term.(*Term)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for exps. Expected Term")
 	}
@@ -588,8 +589,8 @@ func AppendExp(term, op, exp interface{}) (*Exp, error) {
 		return nil, errutil.NewNoPosf("Invalid type for exp. Expected *Exp")
 	}
 
-	append(e.terms, t)
-	append(e.ops, ostr)
+	e.terms = append(e.terms, t)
+	e.ops = append(e.ops, ostr)
 
 	return e, nil
 }
@@ -601,12 +602,12 @@ func NewTerm(factor interface{}) (*Term, error) {
 		return nil, errutil.NewNoPosf("Invalid type for factors. Expected *Factor")
 	}
 
-	return &Term{[]*Factor{f}, make(string, 0), f.tok}
+	return &Term{[]*Factor{f}, make([]string, 0), f.tok}, nil
 }
 
 // AppendTerm
 func AppendTerm(factor, op, term interface{}) (*Term, error) {
-	f, ok := factor.(Factor)
+	f, ok := factor.(*Factor)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for exps. Expected Factor")
 	}
@@ -623,53 +624,29 @@ func AppendTerm(factor, op, term interface{}) (*Term, error) {
 		return nil, errutil.NewNoPosf("Invalid type for exp. Expected *Exp")
 	}
 
-	append(t.factors, f)
-	append(t.ops, ostr)
+	t.facs = append(t.facs, f)
+	t.ops = append(t.ops, ostr)
 
 	return t, nil
 }
 
-// NewFactor probablemente está mal el return lo de cv y op
+// NewFactor
 func NewFactor(expre interface{}) (*Factor, error) {
 	expression, ok := expre.(*Expression)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for expression. Expected *Expression")
 	}
 
-	cv := new(ConstantValue)
-	op := new(string)
-
-	return &Factor{expression, cv, op, expression.tok}, nil
+	return &Factor{expression, nil, expression.tok}, nil
 }
 
-// AppendFactor probablemente está mal el return lo de expre y op
-func AppendFactor(op, vcte interface{}) (*Factor, error) {
-	o, ok := op.(*token.Token)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for op. Expected *token.Token")
-	}
-
-	ostr := string(o.Lit)
-
+// NewVCFactor
+func NewVCFactor(vcte interface{}) (*Factor, error) {
 	vc, ok := vcte.(*ConstantValue)
 	if !ok {
 		return nil, errutil.NewNoPosf("Invalid type for ConstantValue. Expected *ConstantValue")
 	}
 
-	expre := new(Expression)
-	op := new(string)
+	return &Factor{nil, vc, vc.tok}, nil
 
-	return &Factor(expre, vc, op, o), nil
-}
-
-func AppendVCFactor(vcte interface{}) (*Factor, error) {
-	vc, ok := vcte.(*ConstantValue)
-	if !ok {
-		return nil, errutil.NewNoPosf("Invalid type for ConstantValue. Expected *ConstantValue")
-	}
-
-	expre := new(Expression)
-	op := new(string)
-
-	return &Factor(expre, vc, op, vc.tok), nil
 }

@@ -38,7 +38,7 @@ if: 'i' 'f';
 else: 'e' 'l' 's' 'e';
 while: 'w' 'h' 'i' 'l' 'e';
 for: 'f' 'o' 'r';
-/*print: 'p' 'r' 'i' 'n' 't';*/
+print: 'p' 'r' 'i' 'n' 't';
 return: 'r' 'e' 't' 'u' 'r' 'n';
 relop: '<' | '>' | '<' '=' | '>' '=' | '<' '>' | '=' '=';
 logicalop: '&' '&' | '|' '|';
@@ -76,8 +76,8 @@ render: 'r' 'e' 'n' 'd' 'e' 'r';
 list: 'l' 'i' 's' 't';
 
 
-cteint: _integer;
-ctefloat: _float;
+cteint: ['-'] _integer;
+ctefloat: ['-'] _float;
 ctestring: _string;
 ctebool: _boolean;
 ctechar: '\'' (_letter | _digit | ' ') '\'';
@@ -85,19 +85,21 @@ id: _id;
 
 /*  Syntax Part */
 
-<< import "github.com/sdkvictor/golang-compiler/ast" >>
+<< import (
+    "github.com/sdkvictor/golang-compiler/ast"
+    "github.com/sdkvictor/golang-compiler/directories") >>
 
 Programa
     : program id semicolon leftbracket VarsOp rightbracket Functions    << ast.NewProgram($1, $4, $6) >> 
     ;
 
 VarsOp
-    : Vars                                              
-    | empty
+    : Vars                                << make([]*directories.VarEntry, 0), nil >> 
+    | empty                                 << make([]*directories.VarEntry, 0), nil >>
     ;
 
 Vars
-    : Type Ids semicolon Vars                                            
+    : Type Ids semicolon                                           
     | Type Ids semicolon                                 
     ;
 
@@ -107,8 +109,8 @@ Ids
     ;
 
 Params
-    : ParamsAux 
-    | empty
+    : ParamsAux                         << ($1), nil >>
+    | empty                             << make([]*directories.VarEntry, 0), nil >>
     ;
     
 ParamsAux
@@ -117,7 +119,7 @@ ParamsAux
     ;
 
 Functions
-    : FunctionsAux id leftparenthesis Params rightparenthesis Block Functions  << ast.AppendFunctionList($0, $1, $3, $5, $6) >>
+    : FunctionsAux id leftparenthesis Params rightparenthesis Block Functions  << ast.AppendFunction($0, $1, $3, $5, $6) >>
     | FunctionsAux id leftparenthesis Params rightparenthesis Block            << ast.FirstFunction($0, $1, $3, $5) >> /*Creates Function node and adds it to a new function list */
     ;
 
@@ -127,13 +129,13 @@ FunctionsAux
     ; 
 
 Block
-    :  leftbracket BlockAux rightbracket        
-    |  leftbracket rightbracket                 
+    :  leftbracket BlockAux rightbracket        << ($1), nil >>
+    |  leftbracket rightbracket                 << make([]ast.Statement, 0), nil >>
     ;
 
 BlockAux
-    : Statement                     <<ast.NewStatementList($0) >> 
-    | Statement BlockAux            <<ast.AppendStatement($0, $1) >>
+    : Statement                     << ast.NewStatementList($0) >> 
+    | Statement BlockAux            << ast.AppendStatementList($0, $1) >>
     ;
 
 Statement
@@ -143,8 +145,8 @@ Statement
     | Return                        << ast.NewStatement($0) >>
     | For                           << ast.NewStatement($0) >>
     | While                         << ast.NewStatement($0) >>
+    | Write                         << ast.NewStatement($0) >>
     | CallFunction semicolon        << ast.NewStatement($0) >>
-    | CallClassFunction semicolon   << ast.NewStatement($0) >>
     ;
 
 BasicType
@@ -194,14 +196,16 @@ Term
 
 Factor
     : leftparenthesis Expression rightparenthesis   << ast.NewFactor($0) >> /*creas Factor con Expression adentro */ 
-    | plus Varcte                                   << ast.AppendFactor($0, $1) >>
-    | minus Varcte                                  << ast.AppendFactor($0, $1) >>
-    | Varcte                                        << ast.AppendVCFactor($0) >>/* creas el nodo Factor con varcte adentro*/
+    | Varcte                                        << ast.NewVCFactor($0) >>/* creas el nodo Factor con varcte adentro*/
     ;
 
 Assign
-    : id equals Expression semicolon                                    << ast.NewAssignNoAttr($0, $1, $2) >>
-	| Attribute equals Expression semicolon                             << ast.NewAssignNoId($0, $1, $2) >>
+    : id equals Expression semicolon                                    << ast.NewAssignWithoutAttr($0, $2) >>
+	| Attribute equals Expression semicolon                             << ast.NewAssignWithAttr($0, $2) >>
+    ;
+
+Write
+    : print leftparenthesis Expression rightparenthesis semicolon         << ast.NewWrite($0, $2) >>
     ;
 
 Condition
@@ -227,15 +231,9 @@ CallFunction
     | id leftparenthesis rightparenthesis                               << ast.NewFunctionCallId($0) >>
     ;
 
-CallClassFunction
-    : id dot id leftparenthesis CallFunctionAux rightparenthesis        << ast.NewFunctionCallClass($0, $2, $4) >>
-    | id dot id leftparenthesis rightparenthesis                        << ast.NewFunctionCallClassNoAux($0, $2) >>
-    ;
-                 
-
 CallFunctionAux
-    : Expression                                                        
-    | Expression comma CallFunctionAux                                  
+    : Expression                                                        << ast.NewArgumentExpression($0) >>
+    | Expression comma CallFunctionAux                                  << ast.AppendArgumentExpression($0, $2) >>                              
     ;
 
 Varcte
@@ -248,7 +246,6 @@ Varcte
     | ctebool                                                           << ast.NewConstantBool($0) >>
     | Attribute
     | CallFunction                                                      
-    | CallClassFunction                                                 
     ;
 
 ListElem
