@@ -16,6 +16,7 @@ const (
 	Null
 )
 
+
 func (t BasicType) convert() rune {
 	if t == Int {
 		return '1'
@@ -42,6 +43,7 @@ func (t BasicType) convert() rune {
 	return 'n'
 }
 
+
 type ObjType int
 
 const (
@@ -52,6 +54,7 @@ const (
 	Background
 	NullObj
 )
+
 
 func (t ObjType) convert() rune {
 	if t == Square {
@@ -94,12 +97,14 @@ func (l Type) String() string {
 		builder.WriteRune('[')
 	}
 	
+	
 	if l.isObject {
 		builder.WriteRune(l.object.convert())
 
 	} else {
 		builder.WriteRune(l.basic.convert())
 	}
+	
 	
 	for i := 0; i < l.list; i++ {
 		builder.WriteRune(']')

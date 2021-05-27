@@ -70,6 +70,7 @@ func (f *Function) Token() *token.Token {
 
 // Statement interface represents the body of the function
 type Statement interface {
+	isVars() 				bool
 	isAssign() 				bool
 	isCondition() 			bool
 	isWrite() 				bool
@@ -173,6 +174,56 @@ func (a *Attribute) Token() *token.Token{
 	return a.tok
 }
 
+type Vars struct {
+	variables 	[]*directories.VarEntry
+	tok 		*token.Token
+}
+
+func (a Vars) Variables() []*directories.VarEntry {
+	return a.variables
+}
+
+func (a Vars) isVars() bool {
+	return true
+}
+
+func (a Vars) isAssign() bool {
+	return false
+}
+
+func (a Vars) isCondition() bool {
+	return true
+}
+
+func (a Vars) isWrite() bool {
+	return true
+}
+
+func (a Vars) isReturn() bool {
+	return false
+}
+
+func (a Vars) isFor() bool {
+	return false
+}
+
+func (a Vars) isWhile() bool {
+	return false
+}
+
+func (a Vars) isFunctionCall() bool {
+	return false
+}
+
+func (a Vars) isPredefinedFunction() bool {
+	return false
+}
+
+func (a *Vars) Token() *token.Token {
+	return a.tok
+}
+
+
 type Assign struct {
 	attr 	*Attribute
 	exp 	*Expression
@@ -186,6 +237,10 @@ func (a *Assign) Attribute() *Attribute {
 
 func (a *Assign) Expression() *Expression {
 	return a.exp
+}
+
+func (a Assign) isVars() bool {
+	return false
 }
 
 func (a Assign) isAssign() bool {
@@ -233,6 +288,10 @@ type Write struct {
 
 func (a *Write) Expression() *Expression {
 	return a.exp
+}
+
+func (a Write) isVars() bool {
+	return false
 }
 
 func (a Write) isAssign() bool {
@@ -294,6 +353,11 @@ func (c *Condition) Token() *token.Token {
 	return c.tok
 }
 
+
+func (s Condition) isVars() bool {
+	return false
+}
+
 func (s Condition) isAssign() bool {
 	return false
 }
@@ -337,6 +401,9 @@ func (r *Return) Expression() *Expression {
 	return r.exp
 }
 
+func (r Return) isVars() bool {
+	return false
+}
 
 func (r Return) isAssign() bool {
 	return false
@@ -398,6 +465,10 @@ func (f *For) Block() []Statement {
 	return f.blck
 }
 
+func (f For) isVars() bool {
+	return false
+}
+
 func (f For) isAssign() bool {
 	return false
 }
@@ -447,6 +518,12 @@ func (w *While) Expression() *Expression {
 func (w *While) Block() []Statement {
 	return w.blck
 }
+
+
+func (w While) isVars() bool {
+	return false
+}
+
 
 func (w While) isAssign() bool {
 	return false
@@ -498,6 +575,12 @@ func (fc *FunctionCall) Id() string {
 func (fc *FunctionCall) Params() []*Expression {
 	return fc.params
 }
+
+func (fc FunctionCall) isVars() bool {
+	return false
+}
+
+
 func (fc FunctionCall) isAssign() bool {
 	return false
 }

@@ -28,6 +28,7 @@ inttype: 'i' 'n' 't';
 floattype: 'f' 'l' 'o' 'a' 't';
 stringtype: 's' 't' 'r' 'i' 'n' 'g';
 booltype: 'b' 'o' 'o' 'l';
+chartype: 'c' 'h' 'a' 'r';
 voidtype: 'v' 'o' 'i' 'd';
 squaretype: 'S' 'q' 'u' 'a' 'r' 'e';
 circletype: 'C' 'i' 'r' 'c' 'l' 'e';
@@ -94,22 +95,26 @@ Programa
     ;
 
 VarsOp
-    : Vars                                << make([]*directories.VarEntry, 0), nil >> 
+    : Vars                                  << ($0), nil >> 
     | empty                                 << make([]*directories.VarEntry, 0), nil >>
     ;
 
-Vars
-    : Type Ids semicolon                                           
-    | Type Ids semicolon                                 
+Vars /*Arreglo de vars*/
+    : Type Ids semicolon Vars                    << ast.AppendVarsList($0, $1, $3) >>                      
+    | Type Ids semicolon                         << ast.NewVarsList($0, $1) >>      
     ;
 
-Ids
-    : id comma Ids
-    | id
+VarsDec 
+    : Vars                                      << ast.NewVarsDec($0) >>
+    ;
+
+Ids /* Arreglo de strings */
+    : id comma Ids                              << ast.AppendIdList($0, $2) >>
+    | id                                        << ast.NewIdList($0) >>
     ;
 
 Params
-    : ParamsAux                         << ($1), nil >>
+    : ParamsAux                         << ($0), nil >>
     | empty                             << make([]*directories.VarEntry, 0), nil >>
     ;
     
@@ -124,7 +129,7 @@ Functions
     ;
 
 FunctionsAux
-    : Type                                  << ast.NewType($0) >>
+    : Type                                  << $0, nil >>
     | voidtype                              << ast.NewType($0) >>
     ; 
 
@@ -139,7 +144,7 @@ BlockAux
     ;
 
 Statement
-    : Vars                          << ast.NewStatement($0) >>
+    : VarsDec                       << ast.NewStatement($0) >>
     | Assign                        << ast.NewStatement($0) >>
     | Condition                     << ast.NewStatement($0) >>
     | Return                        << ast.NewStatement($0) >>
@@ -154,6 +159,7 @@ BasicType
     | floattype                     << ast.NewType($0) >>
     | booltype                      << ast.NewType($0) >>
     | stringtype                    << ast.NewType($0) >>
+    | chartype                      << ast.NewType($0) >>
     | Object                        << ast.NewType($0) >>
     ;
 
@@ -237,22 +243,22 @@ CallFunctionAux
     ;
 
 Varcte
-    : id
+    : id                                                                << ast.NewIdList($0) >>
     | cteint                                                            << ast.NewConstantInt($0) >>
     | ctefloat                                                          << ast.NewConstantFloat($0) >>
     | ctestring                                                         << ast.NewStringConstant($0) >>
     | ctechar                                                           << ast.NewConstantChar($0) >>
     | ListElem
     | ctebool                                                           << ast.NewConstantBool($0) >>
-    | Attribute
-    | CallFunction                                                      
+    | Attribute                                                         << $0, nil >>
+    | CallFunction                                                      << $0, nil >>
     ;
 
 ListElem
     : id leftsqrbracket Expression rightsqrbracket                      
     ;
 Type 
-    : BasicType                                                         << $0, nil>>
+    : BasicType                                                         << ($0), nil>>
     | list leftsqrbracket BasicType rightsqrbracket                     << ast.AppendType($2) >>
     ;
 
