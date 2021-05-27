@@ -1,0 +1,45 @@
+program myGame;
+
+{
+    bool b, d;
+}
+
+int calcula(int ayaya) {
+    if (bababa) {
+        ayaya = 324234;
+    }
+
+    return papapapap;
+}
+
+void tick(){
+    int x;
+    choca(x);
+
+    if (4 < 2) {
+        mata(jugador);
+    }
+    else {
+        vive(jugador);
+    }
+
+    while (patito) {
+        bool bbb;
+        bbb = true;
+
+        int xxx;
+        if (bbb) {
+            xxx = 233 / d;
+        }
+    }
+
+    Square s;
+    Circle c;
+
+    s.culo(348729/dfjhsdkfhjsdkj);
+    x = a || b || c || d;
+}
+
+void main(){
+
+}

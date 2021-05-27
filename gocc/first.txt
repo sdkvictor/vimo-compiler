@@ -1,0 +1,246 @@
+S': {
+	program
+}
+Programa: {
+	program
+}
+VarsOp: {
+	backgroundtype
+	booltype
+	circletype
+	empty
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+}
+Vars: {
+	backgroundtype
+	booltype
+	circletype
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+}
+Ids: {
+	id
+}
+Params: {
+	backgroundtype
+	booltype
+	circletype
+	empty
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+}
+ParamsAux: {
+	backgroundtype
+	booltype
+	circletype
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+}
+Functions: {
+	backgroundtype
+	booltype
+	circletype
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+	voidtype
+}
+FunctionsAux: {
+	backgroundtype
+	booltype
+	circletype
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+	voidtype
+}
+Block: {
+	leftbracket
+}
+BlockAux: {
+	backgroundtype
+	booltype
+	circletype
+	floattype
+	for
+	id
+	if
+	imagetype
+	inttype
+	list
+	return
+	squaretype
+	stringtype
+	texttype
+	while
+}
+Statement: {
+	backgroundtype
+	booltype
+	circletype
+	floattype
+	for
+	id
+	if
+	imagetype
+	inttype
+	list
+	return
+	squaretype
+	stringtype
+	texttype
+	while
+}
+BasicType: {
+	backgroundtype
+	booltype
+	circletype
+	floattype
+	imagetype
+	inttype
+	squaretype
+	stringtype
+	texttype
+}
+Object: {
+	backgroundtype
+	circletype
+	imagetype
+	squaretype
+	texttype
+}
+Expression: {
+	ctebool
+	ctechar
+	ctefloat
+	cteint
+	ctestring
+	id
+	leftparenthesis
+	minus
+	plus
+}
+Operations: {
+	logicalop
+	relop
+}
+Exp: {
+	ctebool
+	ctechar
+	ctefloat
+	cteint
+	ctestring
+	id
+	leftparenthesis
+	minus
+	plus
+}
+Term: {
+	ctebool
+	ctechar
+	ctefloat
+	cteint
+	ctestring
+	id
+	leftparenthesis
+	minus
+	plus
+}
+Factor: {
+	ctebool
+	ctechar
+	ctefloat
+	cteint
+	ctestring
+	id
+	leftparenthesis
+	minus
+	plus
+}
+Assign: {
+	id
+}
+Condition: {
+	if
+}
+Return: {
+	return
+}
+For: {
+	for
+}
+While: {
+	while
+}
+CallFunction: {
+	id
+}
+CallClassFunction: {
+	id
+}
+CallFunctionAux: {
+	ctebool
+	ctechar
+	ctefloat
+	cteint
+	ctestring
+	id
+	leftparenthesis
+	minus
+	plus
+}
+Varcte: {
+	ctebool
+	ctechar
+	ctefloat
+	cteint
+	ctestring
+	id
+}
+ListElem: {
+	id
+}
+Type: {
+	backgroundtype
+	booltype
+	circletype
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+}
+Attribute: {
+	id
+}

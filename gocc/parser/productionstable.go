@@ -2,7 +2,7 @@
 
 package parser
 
-
+import "github.com/sdkvictor/golang-compiler/ast"
 
 type (
 	ProdTab      [numProductions]ProdTabEntry
@@ -30,48 +30,48 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Programa : program id semicolon Vars Functions Tick Main	<<  >>`,
+		String: `Programa : program id semicolon leftbracket VarsOp rightbracket Functions	<< ast.NewProgram(X[1], X[4], X[6]) >>`,
 		Id:         "Programa",
 		NTType:     1,
 		Index:      1,
 		NumSymbols: 7,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewProgram(X[1], X[4], X[6])
 		},
 	},
 	ProdTabEntry{
-		String: `Programa : program id semicolon Tick Main	<<  >>`,
-		Id:         "Programa",
-		NTType:     1,
-		Index:      2,
-		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Programa : program id semicolon Functions Tick Main	<<  >>`,
-		Id:         "Programa",
-		NTType:     1,
-		Index:      3,
-		NumSymbols: 6,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Vars : Type VarsAux	<<  >>`,
-		Id:         "Vars",
+		String: `VarsOp : Vars	<<  >>`,
+		Id:         "VarsOp",
 		NTType:     2,
-		Index:      4,
-		NumSymbols: 2,
+		Index:      2,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `VarsAux : Ids semicolon Vars	<<  >>`,
-		Id:         "VarsAux",
+		String: `VarsOp : empty	<<  >>`,
+		Id:         "VarsOp",
+		NTType:     2,
+		Index:      3,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `Vars : Type Ids semicolon Vars	<<  >>`,
+		Id:         "Vars",
+		NTType:     3,
+		Index:      4,
+		NumSymbols: 4,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `Vars : Type Ids semicolon	<<  >>`,
+		Id:         "Vars",
 		NTType:     3,
 		Index:      5,
 		NumSymbols: 3,
@@ -80,20 +80,10 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `VarsAux : Ids semicolon	<<  >>`,
-		Id:         "VarsAux",
-		NTType:     3,
-		Index:      6,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
 		String: `Ids : id comma Ids	<<  >>`,
 		Id:         "Ids",
 		NTType:     4,
-		Index:      7,
+		Index:      6,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -103,6 +93,16 @@ var productionsTable = ProdTab{
 		String: `Ids : id	<<  >>`,
 		Id:         "Ids",
 		NTType:     4,
+		Index:      7,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `Params : ParamsAux	<<  >>`,
+		Id:         "Params",
+		NTType:     5,
 		Index:      8,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
@@ -110,180 +110,320 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Functions : FunctionsAux id leftparenthesis Vars rightparenthesis Block Functions	<<  >>`,
-		Id:         "Functions",
+		String: `Params : empty	<<  >>`,
+		Id:         "Params",
 		NTType:     5,
 		Index:      9,
-		NumSymbols: 7,
+		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `Functions : FunctionsAux id leftparenthesis Vars rightparenthesis Block	<<  >>`,
-		Id:         "Functions",
-		NTType:     5,
+		String: `ParamsAux : Type id comma ParamsAux	<< ast.AppendParamsList(X[0], X[1], X[3]) >>`,
+		Id:         "ParamsAux",
+		NTType:     6,
 		Index:      10,
-		NumSymbols: 6,
+		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.AppendParamsList(X[0], X[1], X[3])
 		},
 	},
 	ProdTabEntry{
-		String: `FunctionsAux : Type	<<  >>`,
-		Id:         "FunctionsAux",
+		String: `ParamsAux : Type id	<< ast.NewParamsList(X[0], X[1]) >>`,
+		Id:         "ParamsAux",
 		NTType:     6,
 		Index:      11,
-		NumSymbols: 1,
+		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewParamsList(X[0], X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `FunctionsAux : voidtype	<<  >>`,
-		Id:         "FunctionsAux",
-		NTType:     6,
+		String: `Functions : FunctionsAux id leftparenthesis Params rightparenthesis Block Functions	<< ast.AppendFunctionList(X[0], X[1], X[3], X[5], X[6]) >>`,
+		Id:         "Functions",
+		NTType:     7,
 		Index:      12,
-		NumSymbols: 1,
+		NumSymbols: 7,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.AppendFunctionList(X[0], X[1], X[3], X[5], X[6])
 		},
 	},
 	ProdTabEntry{
-		String: `Block : leftbracket BlockAux	<<  >>`,
-		Id:         "Block",
+		String: `Functions : FunctionsAux id leftparenthesis Params rightparenthesis Block	<< ast.FirstFunction(X[0], X[1], X[3], X[5]) >>`,
+		Id:         "Functions",
 		NTType:     7,
 		Index:      13,
-		NumSymbols: 2,
+		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.FirstFunction(X[0], X[1], X[3], X[5])
 		},
 	},
 	ProdTabEntry{
-		String: `BlockAux : Statement rightbracket	<<  >>`,
-		Id:         "BlockAux",
+		String: `FunctionsAux : Type	<< ast.NewType(X[0]) >>`,
+		Id:         "FunctionsAux",
 		NTType:     8,
 		Index:      14,
-		NumSymbols: 2,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewType(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `BlockAux : Statement BlockAux	<<  >>`,
-		Id:         "BlockAux",
+		String: `FunctionsAux : voidtype	<< ast.NewType(X[0]) >>`,
+		Id:         "FunctionsAux",
 		NTType:     8,
 		Index:      15,
-		NumSymbols: 2,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewType(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `Statement : Assign	<<  >>`,
-		Id:         "Statement",
+		String: `Block : leftbracket BlockAux rightbracket	<<  >>`,
+		Id:         "Block",
 		NTType:     9,
 		Index:      16,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Statement : Condition	<<  >>`,
-		Id:         "Statement",
-		NTType:     9,
-		Index:      17,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Statement : Write	<<  >>`,
-		Id:         "Statement",
-		NTType:     9,
-		Index:      18,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Statement : Return	<<  >>`,
-		Id:         "Statement",
-		NTType:     9,
-		Index:      19,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Statement : For	<<  >>`,
-		Id:         "Statement",
-		NTType:     9,
-		Index:      20,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Statement : While	<<  >>`,
-		Id:         "Statement",
-		NTType:     9,
-		Index:      21,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Statement : CallFunction	<<  >>`,
-		Id:         "Statement",
-		NTType:     9,
-		Index:      22,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Statement : PredefinedFunction	<<  >>`,
-		Id:         "Statement",
-		NTType:     9,
-		Index:      23,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Expression : Exp	<<  >>`,
-		Id:         "Expression",
-		NTType:     10,
-		Index:      24,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Expression : Exp Operations Exp	<<  >>`,
-		Id:         "Expression",
-		NTType:     10,
-		Index:      25,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `Operations : relop	<<  >>`,
-		Id:         "Operations",
+		String: `Block : leftbracket rightbracket	<<  >>`,
+		Id:         "Block",
+		NTType:     9,
+		Index:      17,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `BlockAux : Statement	<< ast.NewStatementList(X[0]) >>`,
+		Id:         "BlockAux",
+		NTType:     10,
+		Index:      18,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatementList(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `BlockAux : Statement BlockAux	<< ast.AppendStatement(X[0], X[1]) >>`,
+		Id:         "BlockAux",
+		NTType:     10,
+		Index:      19,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.AppendStatement(X[0], X[1])
+		},
+	},
+	ProdTabEntry{
+		String: `Statement : Vars	<< ast.NewStatement(X[0]) >>`,
+		Id:         "Statement",
+		NTType:     11,
+		Index:      20,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatement(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Statement : Assign	<< ast.NewStatement(X[0]) >>`,
+		Id:         "Statement",
+		NTType:     11,
+		Index:      21,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatement(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Statement : Condition	<< ast.NewStatement(X[0]) >>`,
+		Id:         "Statement",
+		NTType:     11,
+		Index:      22,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatement(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Statement : Return	<< ast.NewStatement(X[0]) >>`,
+		Id:         "Statement",
+		NTType:     11,
+		Index:      23,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatement(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Statement : For	<< ast.NewStatement(X[0]) >>`,
+		Id:         "Statement",
+		NTType:     11,
+		Index:      24,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatement(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Statement : While	<< ast.NewStatement(X[0]) >>`,
+		Id:         "Statement",
+		NTType:     11,
+		Index:      25,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatement(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Statement : CallFunction semicolon	<< ast.NewStatement(X[0]) >>`,
+		Id:         "Statement",
 		NTType:     11,
 		Index:      26,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatement(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Statement : CallClassFunction semicolon	<< ast.NewStatement(X[0]) >>`,
+		Id:         "Statement",
+		NTType:     11,
+		Index:      27,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStatement(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `BasicType : inttype	<< ast.NewType(X[0]) >>`,
+		Id:         "BasicType",
+		NTType:     12,
+		Index:      28,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `BasicType : floattype	<< ast.NewType(X[0]) >>`,
+		Id:         "BasicType",
+		NTType:     12,
+		Index:      29,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `BasicType : booltype	<< ast.NewType(X[0]) >>`,
+		Id:         "BasicType",
+		NTType:     12,
+		Index:      30,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `BasicType : stringtype	<< ast.NewType(X[0]) >>`,
+		Id:         "BasicType",
+		NTType:     12,
+		Index:      31,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `BasicType : Object	<< ast.NewType(X[0]) >>`,
+		Id:         "BasicType",
+		NTType:     12,
+		Index:      32,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Object : squaretype	<< ast.NewType(X[0]) >>`,
+		Id:         "Object",
+		NTType:     13,
+		Index:      33,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Object : circletype	<< ast.NewType(X[0]) >>`,
+		Id:         "Object",
+		NTType:     13,
+		Index:      34,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Object : imagetype	<< ast.NewType(X[0]) >>`,
+		Id:         "Object",
+		NTType:     13,
+		Index:      35,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Object : texttype	<< ast.NewType(X[0]) >>`,
+		Id:         "Object",
+		NTType:     13,
+		Index:      36,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Object : backgroundtype	<< ast.NewType(X[0]) >>`,
+		Id:         "Object",
+		NTType:     13,
+		Index:      37,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Expression : Exp	<< ast.NewExpression(X[0]) >>`,
+		Id:         "Expression",
+		NTType:     14,
+		Index:      38,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewExpression(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Expression : Exp Operations Expression	<< ast.AppendExpression(X[0], X[1], X[2]) >>`,
+		Id:         "Expression",
+		NTType:     14,
+		Index:      39,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.AppendExpression(X[0], X[1], X[2])
+		},
+	},
+	ProdTabEntry{
+		String: `Operations : relop	<<  >>`,
+		Id:         "Operations",
+		NTType:     15,
+		Index:      40,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -292,146 +432,6 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Operations : logicalop	<<  >>`,
 		Id:         "Operations",
-		NTType:     11,
-		Index:      27,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `BasicType : inttype	<<  >>`,
-		Id:         "BasicType",
-		NTType:     12,
-		Index:      28,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `BasicType : floattype	<<  >>`,
-		Id:         "BasicType",
-		NTType:     12,
-		Index:      29,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `BasicType : booltype	<<  >>`,
-		Id:         "BasicType",
-		NTType:     12,
-		Index:      30,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `BasicType : stringtype	<<  >>`,
-		Id:         "BasicType",
-		NTType:     12,
-		Index:      31,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `BasicType : Object	<<  >>`,
-		Id:         "BasicType",
-		NTType:     12,
-		Index:      32,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Object : squaretype	<<  >>`,
-		Id:         "Object",
-		NTType:     13,
-		Index:      33,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Object : circletype	<<  >>`,
-		Id:         "Object",
-		NTType:     13,
-		Index:      34,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Object : imagetype	<<  >>`,
-		Id:         "Object",
-		NTType:     13,
-		Index:      35,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Object : texttype	<<  >>`,
-		Id:         "Object",
-		NTType:     13,
-		Index:      36,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Object : backgroundtype	<<  >>`,
-		Id:         "Object",
-		NTType:     13,
-		Index:      37,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Term : Factor	<<  >>`,
-		Id:         "Term",
-		NTType:     14,
-		Index:      38,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Term : Factor mult Factor	<<  >>`,
-		Id:         "Term",
-		NTType:     14,
-		Index:      39,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Term : Factor div Factor	<<  >>`,
-		Id:         "Term",
-		NTType:     14,
-		Index:      40,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Exp : Term	<<  >>`,
-		Id:         "Exp",
 		NTType:     15,
 		Index:      41,
 		NumSymbols: 1,
@@ -440,19 +440,19 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Exp : Term plus Term	<<  >>`,
+		String: `Exp : Term	<<  >>`,
 		Id:         "Exp",
-		NTType:     15,
+		NTType:     16,
 		Index:      42,
-		NumSymbols: 3,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `Exp : Term minus Term	<<  >>`,
+		String: `Exp : Term plus Exp	<<  >>`,
 		Id:         "Exp",
-		NTType:     15,
+		NTType:     16,
 		Index:      43,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
@@ -460,8 +460,8 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Factor : leftparenthesis Expression rightparenthesis	<<  >>`,
-		Id:         "Factor",
+		String: `Exp : Term minus Exp	<<  >>`,
+		Id:         "Exp",
 		NTType:     16,
 		Index:      44,
 		NumSymbols: 3,
@@ -470,10 +470,50 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
+		String: `Term : Factor	<<  >>`,
+		Id:         "Term",
+		NTType:     17,
+		Index:      45,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `Term : Factor mult Term	<<  >>`,
+		Id:         "Term",
+		NTType:     17,
+		Index:      46,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `Term : Factor div Term	<<  >>`,
+		Id:         "Term",
+		NTType:     17,
+		Index:      47,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `Factor : leftparenthesis Expression rightparenthesis	<<  >>`,
+		Id:         "Factor",
+		NTType:     18,
+		Index:      48,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
 		String: `Factor : plus Varcte	<<  >>`,
 		Id:         "Factor",
-		NTType:     16,
-		Index:      45,
+		NTType:     18,
+		Index:      49,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -482,8 +522,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : minus Varcte	<<  >>`,
 		Id:         "Factor",
-		NTType:     16,
-		Index:      46,
+		NTType:     18,
+		Index:      50,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -492,169 +532,139 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : Varcte	<<  >>`,
 		Id:         "Factor",
-		NTType:     16,
-		Index:      47,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Assign : id equals Expression semicolon	<<  >>`,
-		Id:         "Assign",
-		NTType:     17,
-		Index:      48,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Assign : Attribute equals Expression semicolon	<<  >>`,
-		Id:         "Assign",
-		NTType:     17,
-		Index:      49,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Condition : if leftparenthesis Expression rightparenthesis Block semicolon	<<  >>`,
-		Id:         "Condition",
-		NTType:     18,
-		Index:      50,
-		NumSymbols: 6,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Condition : if leftparenthesis Expression rightparenthesis else Block semicolon	<<  >>`,
-		Id:         "Condition",
 		NTType:     18,
 		Index:      51,
-		NumSymbols: 7,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `Write : print leftparenthesis WriteAux rightparenthesis semicolon	<<  >>`,
-		Id:         "Write",
+		String: `Assign : id equals Expression semicolon	<< ast.NewAssign(X[0], nil, X[1], X[2]) >>`,
+		Id:         "Assign",
 		NTType:     19,
 		Index:      52,
-		NumSymbols: 5,
+		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewAssign(X[0], nil, X[1], X[2])
 		},
 	},
 	ProdTabEntry{
-		String: `WriteAux : Expression comma WriteAux	<<  >>`,
-		Id:         "WriteAux",
-		NTType:     20,
+		String: `Assign : Attribute equals Expression semicolon	<< ast.NewAssign(nil, X[0], X[1], X[2]) >>`,
+		Id:         "Assign",
+		NTType:     19,
 		Index:      53,
-		NumSymbols: 3,
+		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewAssign(nil, X[0], X[1], X[2])
 		},
 	},
 	ProdTabEntry{
-		String: `WriteAux : ctestring comma WriteAux	<<  >>`,
-		Id:         "WriteAux",
+		String: `Condition : if leftparenthesis Expression rightparenthesis Block	<< ast.NewCondition(X[0], X[2], X[4], nil) >>`,
+		Id:         "Condition",
 		NTType:     20,
 		Index:      54,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `WriteAux : Expression	<<  >>`,
-		Id:         "WriteAux",
-		NTType:     20,
-		Index:      55,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `WriteAux : ctestring	<<  >>`,
-		Id:         "WriteAux",
-		NTType:     20,
-		Index:      56,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Return : return Expression semicolon	<<  >>`,
-		Id:         "Return",
-		NTType:     21,
-		Index:      57,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `For : for leftparenthesis Assign semicolon Expression semicolon Expression semicolon rightparenthesis Block	<<  >>`,
-		Id:         "For",
-		NTType:     22,
-		Index:      58,
-		NumSymbols: 10,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `While : while leftparenthesis Expression rightparenthesis Block	<<  >>`,
-		Id:         "While",
-		NTType:     23,
-		Index:      59,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewCondition(X[0], X[2], X[4], nil)
 		},
 	},
 	ProdTabEntry{
-		String: `CallFunction : id CallFunctionAux	<<  >>`,
+		String: `Condition : if leftparenthesis Expression rightparenthesis Block else Block	<< ast.NewCondition(X[0], X[2], X[4], X[6] ) >>`,
+		Id:         "Condition",
+		NTType:     20,
+		Index:      55,
+		NumSymbols: 7,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewCondition(X[0], X[2], X[4], X[6] )
+		},
+	},
+	ProdTabEntry{
+		String: `Return : return Expression semicolon	<< ast.NewReturn(X[0], X[1]) >>`,
+		Id:         "Return",
+		NTType:     21,
+		Index:      56,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewReturn(X[0], X[1])
+		},
+	},
+	ProdTabEntry{
+		String: `For : for leftparenthesis Assign semicolon Expression semicolon Expression semicolon rightparenthesis Block	<< ast.NewFor(X[0], X[2], X[4], X[6], X[9]) >>`,
+		Id:         "For",
+		NTType:     22,
+		Index:      57,
+		NumSymbols: 10,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewFor(X[0], X[2], X[4], X[6], X[9])
+		},
+	},
+	ProdTabEntry{
+		String: `While : while leftparenthesis Expression rightparenthesis Block	<< ast.NewWhile(X[0], X[2], X[4]) >>`,
+		Id:         "While",
+		NTType:     23,
+		Index:      58,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewWhile(X[0], X[2], X[4])
+		},
+	},
+	ProdTabEntry{
+		String: `CallFunction : id leftparenthesis CallFunctionAux rightparenthesis	<< ast.NewFunctionCall(X[0], X[2]) >>`,
+		Id:         "CallFunction",
+		NTType:     24,
+		Index:      59,
+		NumSymbols: 4,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewFunctionCall(X[0], X[2])
+		},
+	},
+	ProdTabEntry{
+		String: `CallFunction : id leftparenthesis rightparenthesis	<< ast.NewFunctionCall(X[0], nil) >>`,
 		Id:         "CallFunction",
 		NTType:     24,
 		Index:      60,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `CallFunctionAux : leftparenthesis Expression rightparenthesis	<<  >>`,
-		Id:         "CallFunctionAux",
-		NTType:     25,
-		Index:      61,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewFunctionCall(X[0], nil)
 		},
 	},
 	ProdTabEntry{
-		String: `CallFunctionAux : leftparenthesis Expression comma CallFunctionAux	<<  >>`,
-		Id:         "CallFunctionAux",
+		String: `CallClassFunction : id dot id leftparenthesis CallFunctionAux rightparenthesis	<< ast.NewFunctionCallClass(X[0], X[2], X[4]) >>`,
+		Id:         "CallClassFunction",
+		NTType:     25,
+		Index:      61,
+		NumSymbols: 6,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewFunctionCallClass(X[0], X[2], X[4])
+		},
+	},
+	ProdTabEntry{
+		String: `CallClassFunction : id dot id leftparenthesis rightparenthesis	<< ast.NewFunctionCallClass(X[0], X[2], nil) >>`,
+		Id:         "CallClassFunction",
 		NTType:     25,
 		Index:      62,
-		NumSymbols: 4,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewFunctionCallClass(X[0], X[2], nil)
+		},
+	},
+	ProdTabEntry{
+		String: `CallFunctionAux : Expression	<<  >>`,
+		Id:         "CallFunctionAux",
+		NTType:     26,
+		Index:      63,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `CallFunctionAux : leftparenthesis rightparenthesis	<<  >>`,
+		String: `CallFunctionAux : Expression comma CallFunctionAux	<<  >>`,
 		Id:         "CallFunctionAux",
-		NTType:     25,
-		Index:      63,
-		NumSymbols: 2,
+		NTType:     26,
+		Index:      64,
+		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
@@ -662,17 +672,7 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Varcte : id	<<  >>`,
 		Id:         "Varcte",
-		NTType:     26,
-		Index:      64,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Varcte : cteint	<<  >>`,
-		Id:         "Varcte",
-		NTType:     26,
+		NTType:     27,
 		Index:      65,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
@@ -680,49 +680,49 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Varcte : ctefloat	<<  >>`,
+		String: `Varcte : cteint	<< ast.NewConstantInt(X[0]) >>`,
 		Id:         "Varcte",
-		NTType:     26,
+		NTType:     27,
 		Index:      66,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewConstantInt(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `Varcte : ctestring	<<  >>`,
+		String: `Varcte : ctefloat	<< ast.NewConstantFloat(X[0]) >>`,
 		Id:         "Varcte",
-		NTType:     26,
+		NTType:     27,
 		Index:      67,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewConstantFloat(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Varcte : ctestring	<< ast.NewStringConstant(X[0]) >>`,
+		Id:         "Varcte",
+		NTType:     27,
+		Index:      68,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStringConstant(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `Varcte : ctechar	<< ast.NewConstantChar(X[0]) >>`,
+		Id:         "Varcte",
+		NTType:     27,
+		Index:      69,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewConstantChar(X[0])
 		},
 	},
 	ProdTabEntry{
 		String: `Varcte : ListElem	<<  >>`,
 		Id:         "Varcte",
-		NTType:     26,
-		Index:      68,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Varcte : ctebool	<<  >>`,
-		Id:         "Varcte",
-		NTType:     26,
-		Index:      69,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Varcte : Attribute	<<  >>`,
-		Id:         "Varcte",
-		NTType:     26,
+		NTType:     27,
 		Index:      70,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
@@ -730,323 +730,83 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Main : voidtype main leftparenthesis rightparenthesis Block	<<  >>`,
-		Id:         "Main",
+		String: `Varcte : ctebool	<< ast.NewConstantBool(X[0]) >>`,
+		Id:         "Varcte",
 		NTType:     27,
 		Index:      71,
-		NumSymbols: 5,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewConstantBool(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `Tick : voidtype tick leftparenthesis rightparenthesis Block	<<  >>`,
-		Id:         "Tick",
-		NTType:     28,
+		String: `Varcte : Attribute	<<  >>`,
+		Id:         "Varcte",
+		NTType:     27,
 		Index:      72,
-		NumSymbols: 5,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `SetColor : setColor leftparenthesis ctestring rightparenthesis	<<  >>`,
-		Id:         "SetColor",
-		NTType:     29,
+		String: `Varcte : CallFunction	<<  >>`,
+		Id:         "Varcte",
+		NTType:     27,
 		Index:      73,
-		NumSymbols: 4,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `ListElem : id leftsqrbracket cteint rightsqrbracket	<<  >>`,
-		Id:         "ListElem",
-		NTType:     30,
+		String: `Varcte : CallClassFunction	<<  >>`,
+		Id:         "Varcte",
+		NTType:     27,
 		Index:      74,
-		NumSymbols: 4,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `SetSize : setSize leftparenthesis cteint comma cteint rightparenthesis	<<  >>`,
-		Id:         "SetSize",
-		NTType:     31,
+		String: `ListElem : id leftsqrbracket Expression rightsqrbracket	<<  >>`,
+		Id:         "ListElem",
+		NTType:     28,
 		Index:      75,
-		NumSymbols: 6,
+		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `SetPosition : setPosition leftparenthesis cteint comma cteint rightparenthesis	<<  >>`,
-		Id:         "SetPosition",
-		NTType:     32,
+		String: `Type : BasicType	<< X[0], nil >>`,
+		Id:         "Type",
+		NTType:     29,
 		Index:      76,
-		NumSymbols: 6,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `Move : move leftparenthesis cteint comma cteint rightparenthesis	<<  >>`,
-		Id:         "Move",
-		NTType:     33,
+		String: `Type : list leftsqrbracket BasicType rightsqrbracket	<< ast.AppendType(X[2]) >>`,
+		Id:         "Type",
+		NTType:     29,
 		Index:      77,
-		NumSymbols: 6,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `SetText : setText leftparenthesis ctestring rightparenthesis	<<  >>`,
-		Id:         "SetText",
-		NTType:     34,
-		Index:      78,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.AppendType(X[2])
 		},
 	},
 	ProdTabEntry{
-		String: `Render : render leftparenthesis rightparenthesis	<<  >>`,
-		Id:         "Render",
-		NTType:     35,
-		Index:      79,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `KeyPressed : keyPressed leftparenthesis ctestring rightparenthesis	<<  >>`,
-		Id:         "KeyPressed",
-		NTType:     36,
-		Index:      80,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `SetFontSize : setFontSize leftparenthesis cteint rightparenthesis	<<  >>`,
-		Id:         "SetFontSize",
-		NTType:     37,
-		Index:      81,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Type : BasicType	<<  >>`,
-		Id:         "Type",
-		NTType:     38,
-		Index:      82,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Type : list greaterthan BasicType lessthan	<<  >>`,
-		Id:         "Type",
-		NTType:     38,
-		Index:      83,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Attribute : id dot id	<<  >>`,
+		String: `Attribute : id dot id	<< ast.NewAttribute(X[0], X[2]) >>`,
 		Id:         "Attribute",
-		NTType:     39,
-		Index:      84,
+		NTType:     30,
+		Index:      78,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `LoadImage : loadImage leftparenthesis ctestring rightparenthesis	<<  >>`,
-		Id:         "LoadImage",
-		NTType:     40,
-		Index:      85,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `CheckCollision : checkCollision leftparenthesis Object dot Object rightparenthesis	<<  >>`,
-		Id:         "CheckCollision",
-		NTType:     41,
-		Index:      86,
-		NumSymbols: 6,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `SetImage : setImage leftparenthesis ctestring rightparenthesis	<<  >>`,
-		Id:         "SetImage",
-		NTType:     42,
-		Index:      87,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `Pow : pow leftparenthesis ctefloat comma ctefloat rightparenthesis	<<  >>`,
-		Id:         "Pow",
-		NTType:     43,
-		Index:      88,
-		NumSymbols: 6,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `SquareRoot : squareRoot leftparenthesis ctefloat rightparenthesis	<<  >>`,
-		Id:         "SquareRoot",
-		NTType:     44,
-		Index:      89,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : SetColor	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      90,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : SetSize	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      91,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : SetPosition	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      92,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : Move	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      93,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : SetText	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      94,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : KeyPressed	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      95,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : SetFontSize	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      96,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : Render	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      97,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : LoadImage	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      98,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : CheckCollision	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      99,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : SetImage	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      100,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : Pow	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      101,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `PredefinedFunction : SquareRoot	<<  >>`,
-		Id:         "PredefinedFunction",
-		NTType:     45,
-		Index:      102,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewAttribute(X[0], X[2])
 		},
 	},
 }

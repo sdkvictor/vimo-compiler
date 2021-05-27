@@ -7,15 +7,18 @@ import (
 type BasicType int
 
 const (
-	Num BasicType = iota
+	Int BasicType = iota
+	Float
 	Char
 	Bool
 	Void
+	String
 	Null
 )
 
+
 func (t BasicType) convert() rune {
-	if t == Num {
+	if t == Int {
 		return '1'
 	}
 
@@ -30,8 +33,16 @@ func (t BasicType) convert() rune {
 		return '4'
 	}
 
+	if t == Float {
+		return '5'
+	}
+	if t == String {
+		return '6'
+	}
+
 	return 'n'
 }
+
 
 type ObjType int
 
@@ -43,6 +54,7 @@ const (
 	Background
 	NullObj
 )
+
 
 func (t ObjType) convert() rune {
 	if t == Square {
@@ -85,12 +97,14 @@ func (l Type) String() string {
 		builder.WriteRune('[')
 	}
 	
+	
 	if l.isObject {
 		builder.WriteRune(l.object.convert())
 
 	} else {
 		builder.WriteRune(l.basic.convert())
 	}
+	
 	
 	for i := 0; i < l.list; i++ {
 		builder.WriteRune(']')

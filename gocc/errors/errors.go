@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"golang-compiler/token"
+	"github.com/sdkvictor/golang-compiler/gocc/token"
 )
 
 type ErrorSymbol interface {

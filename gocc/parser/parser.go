@@ -6,14 +6,14 @@ import (
 	"fmt"
 	"strings"
 
-	parseError "golang-compiler/errors"
-	"golang-compiler/token"
+	parseError "github.com/sdkvictor/golang-compiler/gocc/errors"
+	"github.com/sdkvictor/golang-compiler/gocc/token"
 )
 
 const (
-	numProductions = 103
-	numStates      = 834
-	numSymbols     = 105
+	numProductions = 79
+	numStates      = 318
+	numSymbols     = 74
 )
 
 // Stack
