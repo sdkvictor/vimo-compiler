@@ -88,7 +88,8 @@ id: _id;
 
 << import (
     "github.com/sdkvictor/golang-compiler/ast"
-    "github.com/sdkvictor/golang-compiler/directories") >>
+    "github.com/sdkvictor/golang-compiler/directories"
+    "github.com/sdkvictor/golang-compiler/gocc/token") >>
 
 Programa
     : program id semicolon leftbracket VarsOp rightbracket Functions    << ast.NewProgram($1, $4, $6) >> 
@@ -201,7 +202,7 @@ Term
     ;
 
 Factor
-    : leftparenthesis Expression rightparenthesis   << ast.NewFactor($0) >> /*creas Factor con Expression adentro */ 
+    : leftparenthesis Expression rightparenthesis   << ast.NewFactor($1) >> /*creas Factor con Expression adentro */ 
     | Varcte                                        << ast.NewVCFactor($0) >>/* creas el nodo Factor con varcte adentro*/
     ;
 
@@ -225,7 +226,7 @@ Return
     ;
 
 For
-    : for leftparenthesis Assign semicolon Expression semicolon Expression semicolon rightparenthesis Block << ast.NewFor($0, $2, $4, $6, $9) >>
+    : for leftparenthesis Assign Expression semicolon Expression rightparenthesis Block << ast.NewFor($0, $2, $3, $5, $7) >>
     ;
 
 While
@@ -243,19 +244,19 @@ CallFunctionAux
     ;
 
 Varcte
-    : id                                                                << ast.NewIdList($0) >>
+    : id                                                                << ast.NewAttribute($0, &token.Token{Lit: []byte("")}) >>
     | cteint                                                            << ast.NewConstantInt($0) >>
     | ctefloat                                                          << ast.NewConstantFloat($0) >>
-    | ctestring                                                         << ast.NewStringConstant($0) >>
+    | ctestring                                                         << ast.NewConstantString($0) >>
     | ctechar                                                           << ast.NewConstantChar($0) >>
-    | ListElem
     | ctebool                                                           << ast.NewConstantBool($0) >>
+    | ListElem                                                          << $0, nil >>
     | Attribute                                                         << $0, nil >>
     | CallFunction                                                      << $0, nil >>
     ;
 
 ListElem
-    : id leftsqrbracket Expression rightsqrbracket                      
+    : id leftsqrbracket Expression rightsqrbracket                      << ast.NewListElem($0, $2) >>
     ;
 Type 
     : BasicType                                                         << ($0), nil>>

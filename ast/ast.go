@@ -86,7 +86,7 @@ type Statement interface {
 
 type Factor struct {
 	exp 	*Expression
-	cv 		*ConstantValue
+	cv 		Constant	
 	tok 	*token.Token
 }
 
@@ -94,7 +94,7 @@ func (f *Factor) Expression() *Expression {
 	return f.exp
 }
 
-func (f *Factor) ConstantValue() *ConstantValue {
+func (f *Factor) ConstantValue() Constant {
 	return f.cv
 }
 
@@ -170,7 +170,58 @@ func (a *Attribute) VarId() string{
 	return a.varId
 }
 
+func (a Attribute) isConstantValue() bool {
+	return false
+}
+
+func (a Attribute) isAttribute() bool {
+	return true
+}
+
+func (a Attribute) isFunctionCall() bool {
+	return false
+}
+
+func (a Attribute) isListElem() bool {
+	return false
+}
+
+
 func (a *Attribute) Token() *token.Token{
+	return a.tok
+}
+
+type ListElem struct{
+	id 		string
+	index 	*Expression
+	tok 	*token.Token
+}
+
+func (a *ListElem) Id() string{
+	return a.id
+}
+
+func (a *ListElem) Index() *Expression{
+	return a.index
+}
+
+func (a ListElem) isConstantValue() bool {
+	return false
+}
+
+func (a ListElem) isAttribute() bool {
+	return false
+}
+
+func (a ListElem) isFunctionCall() bool {
+	return false
+}
+
+func (a ListElem) isListElem() bool {
+	return true
+}
+
+func (a *ListElem) Token() *token.Token{
 	return a.tok
 }
 
@@ -520,32 +571,32 @@ func (w *While) Block() []Statement {
 }
 
 
-func (w While) isVars() bool {
+func (w *While) isVars() bool {
 	return false
 }
 
 
-func (w While) isAssign() bool {
+func (w *While) isAssign() bool {
 	return false
 }
 
-func (w While) isCondition() bool {
+func (w *While) isCondition() bool {
 	return false
 }
 
-func (w While) isWrite() bool {
+func (w *While) isWrite() bool {
 	return false
 }
 
-func (w While) isReturn() bool {
+func (w *While) isReturn() bool {
 	return false
 }
 
-func (w While) isFor() bool {
+func (w *While) isFor() bool {
 	return false
 }
 
-func (w While) isWhile() bool {
+func (w *While) isWhile() bool {
 	return true
 }
 
@@ -581,35 +632,47 @@ func (fc FunctionCall) isVars() bool {
 }
 
 
-func (fc FunctionCall) isAssign() bool {
+func (fc *FunctionCall) isAssign() bool {
 	return false
 }
 
-func (fc FunctionCall) isCondition() bool {
+func (fc *FunctionCall) isCondition() bool {
 	return false
 }
 
-func (fc FunctionCall) isWrite() bool {
+func (fc *FunctionCall) isWrite() bool {
 	return false
 }
 
-func (fc FunctionCall) isReturn() bool {
+func (fc *FunctionCall) isReturn() bool {
 	return false
 }
 
-func (fc FunctionCall) isFor() bool {
+func (fc *FunctionCall) isFor() bool {
 	return false
 }
 
-func (fc FunctionCall) isWhile() bool {
+func (fc *FunctionCall) isWhile() bool {
 	return false
 }
 
-func (fc FunctionCall) isFunctionCall() bool {
+func (fc *FunctionCall) isFunctionCall() bool {
 	return true
 }
 
-func (fc FunctionCall) isPredefinedFunction() bool {
+func (fc *FunctionCall) isPredefinedFunction() bool {
+	return false
+}
+
+func (fc *FunctionCall) isConstantValue() bool {
+	return true
+}
+
+func (fc *FunctionCall) isAttribute() bool {
+	return false
+}
+
+func (fc *FunctionCall) isListElem() bool {
 	return false
 }
 
@@ -641,10 +704,18 @@ func (fc *ClassFunctionCall) Token() *token.Token {
 }
 */
 // ConstantValue defines a type with a single basic value
+type Constant interface {
+	isConstantValue() 			bool
+	isAttribute()				bool
+	isFunctionCall()			bool
+	isListElem()				bool
+	Token()   					*token.Token
+}
+
 type ConstantValue struct {
-	t     *types.Type
-	value string
-	tok   *token.Token
+	t     	*types.Type
+	value 	string
+	tok   	*token.Token
 }
 
 func (c *ConstantValue) Type() *types.Type {
@@ -658,6 +729,23 @@ func (c *ConstantValue) Token() *token.Token {
 func (c *ConstantValue) Value() string {
 	return c.value
 }
+
+func (c ConstantValue) isConstantValue() bool {
+	return true
+}
+
+func (c ConstantValue) isAttribute() bool {
+	return false
+}
+
+func (c ConstantValue) isFunctionCall() bool {
+	return false
+}
+
+func (c ConstantValue) isListElem() bool {
+	return false
+}
+
 
 /*
 
