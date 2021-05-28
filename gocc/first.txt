@@ -7,6 +7,7 @@ Programa: {
 VarsOp: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	empty
 	floattype
@@ -20,6 +21,20 @@ VarsOp: {
 Vars: {
 	backgroundtype
 	booltype
+	chartype
+	circletype
+	floattype
+	imagetype
+	inttype
+	list
+	squaretype
+	stringtype
+	texttype
+}
+VarsDec: {
+	backgroundtype
+	booltype
+	chartype
 	circletype
 	floattype
 	imagetype
@@ -35,6 +50,7 @@ Ids: {
 Params: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	empty
 	floattype
@@ -48,6 +64,7 @@ Params: {
 ParamsAux: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	floattype
 	imagetype
@@ -60,6 +77,7 @@ ParamsAux: {
 Functions: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	floattype
 	imagetype
@@ -73,6 +91,7 @@ Functions: {
 FunctionsAux: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	floattype
 	imagetype
@@ -89,6 +108,7 @@ Block: {
 BlockAux: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	floattype
 	for
@@ -97,6 +117,7 @@ BlockAux: {
 	imagetype
 	inttype
 	list
+	print
 	return
 	squaretype
 	stringtype
@@ -106,6 +127,7 @@ BlockAux: {
 Statement: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	floattype
 	for
@@ -114,6 +136,7 @@ Statement: {
 	imagetype
 	inttype
 	list
+	print
 	return
 	squaretype
 	stringtype
@@ -123,6 +146,7 @@ Statement: {
 BasicType: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	floattype
 	imagetype
@@ -146,8 +170,6 @@ Expression: {
 	ctestring
 	id
 	leftparenthesis
-	minus
-	plus
 }
 Operations: {
 	logicalop
@@ -161,8 +183,6 @@ Exp: {
 	ctestring
 	id
 	leftparenthesis
-	minus
-	plus
 }
 Term: {
 	ctebool
@@ -172,8 +192,6 @@ Term: {
 	ctestring
 	id
 	leftparenthesis
-	minus
-	plus
 }
 Factor: {
 	ctebool
@@ -183,11 +201,12 @@ Factor: {
 	ctestring
 	id
 	leftparenthesis
-	minus
-	plus
 }
 Assign: {
 	id
+}
+Write: {
+	print
 }
 Condition: {
 	if
@@ -204,9 +223,6 @@ While: {
 CallFunction: {
 	id
 }
-CallClassFunction: {
-	id
-}
 CallFunctionAux: {
 	ctebool
 	ctechar
@@ -215,8 +231,6 @@ CallFunctionAux: {
 	ctestring
 	id
 	leftparenthesis
-	minus
-	plus
 }
 Varcte: {
 	ctebool
@@ -232,6 +246,7 @@ ListElem: {
 Type: {
 	backgroundtype
 	booltype
+	chartype
 	circletype
 	floattype
 	imagetype

@@ -14,6 +14,7 @@ inttype
 floattype
 booltype
 stringtype
+chartype
 squaretype
 circletype
 imagetype
@@ -26,12 +27,12 @@ minus
 mult
 div
 equals
+print
 if
 else
 return
 for
 while
-dot
 cteint
 ctefloat
 ctestring
@@ -40,3 +41,4 @@ ctebool
 leftsqrbracket
 rightsqrbracket
 list
+dot
