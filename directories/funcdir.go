@@ -107,5 +107,5 @@ func NewFuncDirectory() *FuncDirectory {
 
 // MainFuncEntry Initialization of the function directory with the initial parameters of the main program
 func MainFuncEntry() *FuncEntry {
-	return &FuncEntry{"main", types.NewDataType(types.Int, 0), make([]*types.Type, 0), NewVarDirectory(), mem.Address(-1), 0}
+	return &FuncEntry{"main", types.NewDataType(types.Int, 0, 0), make([]*types.Type, 0), NewVarDirectory(), mem.Address(-1), 0}
 }

@@ -1,0 +1,39 @@
+program test1;
+
+{
+    int x;
+    int i;
+}
+
+bool isBigger(int a, int b) {
+    if (a > b) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int function(int xd, string hola) {
+    xd = 5;
+    hola = "papapapa";
+
+    xd = 5 + 4 * (xd + 3) / 5;
+
+    bool verdict;
+    verdict = isBigger(xd, 6);
+
+    for (i = 0; i < 10000; i = i + 3) {
+
+        if (3 == 4) {
+            main();
+        }
+    }
+}
+
+void tick(){
+    
+}
+
+void main(){
+    
+}

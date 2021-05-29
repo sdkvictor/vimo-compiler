@@ -21,6 +21,11 @@ func (p *Program) Functions() []*Function {
 func (p *Program) Id() string {
 	return p.id
 }
+
+func (p *Program) Vars() []*directories.VarEntry {
+	return p.vars
+}
+
 /*
 
 type Object struct {
@@ -94,7 +99,7 @@ func (f *Factor) Expression() *Expression {
 	return f.exp
 }
 
-func (f *Factor) ConstantValue() Constant {
+func (f *Factor) Constant() Constant {
 	return f.cv
 }
 
@@ -495,7 +500,7 @@ func (r *Return) Token() *token.Token {
 type For struct {
 	init 	*Assign
 	cond 	*Expression
-	op 		*Expression
+	op 		*Assign
 	blck 	[]Statement
 	tok 	*token.Token
 }
@@ -508,7 +513,7 @@ func (f *For) Condition() *Expression {
 	return f.cond
 }
 
-func (f *For) Operation() *Expression {
+func (f *For) Operation() *Assign {
 	return f.op
 }
 

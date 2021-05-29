@@ -18,7 +18,7 @@ const (
 
 
 func (t BasicType) convert() rune {
-	if t == Int {
+	if t == Float {
 		return '1'
 	}
 
@@ -29,14 +29,16 @@ func (t BasicType) convert() rune {
 	if t == Bool {
 		return '3'
 	}
-	if t == Void {
+
+	if t == Int {
 		return '4'
 	}
 
-	if t == Float {
+	if t == String {
 		return '5'
 	}
-	if t == String {
+
+	if t == Void {
 		return '6'
 	}
 
@@ -58,23 +60,23 @@ const (
 
 func (t ObjType) convert() rune {
 	if t == Square {
-		return '1'
+		return '7'
 	}
 
 	if t == Circle {
-		return '2'
+		return '8'
 	}
 
 	if t == Image {
-		return '3'
+		return '9'
 	}
 
 	if t == Text {
-		return '4'
+		return 'a'
 	}
 
 	if t == Background {
-		return '5'
+		return 'b'
 	}
 
 	return 'n'
@@ -86,6 +88,7 @@ type Type struct {
 	object		ObjType
 	list    	int
 	isObject	bool
+	size 		int
 }
 
 // String converts the type to its string representation which is used only in the dirfunc package
@@ -132,6 +135,11 @@ func (lt *Type) IsObject() bool {
 	return lt.isObject
 }
 
+// Size
+func (lt *Type) Size() int {
+	return lt.size
+}
+
 // List
 func (lt *Type) DecreaseList() {
 	lt.list = lt.list - 1
@@ -148,12 +156,12 @@ func (lt *Type) Equal(lt2 *Type) bool {
 }
 
 // NewDataType Declares a new, basic  type
-func NewDataType(b BasicType, list int) *Type {
-	return &Type{b, NullObj, list, false}
+func NewDataType(b BasicType, list int, size int) *Type {
+	return &Type{b, NullObj, list, false, size}
 }
 
 // NewDataType Declares a new, object  type
-func NewObjectType(o ObjType, list int) *Type {
-	return &Type{Null, o, list, true}
+func NewObjectType(o ObjType, list int, size int) *Type {
+	return &Type{Null, o, list, true, size}
 }
 

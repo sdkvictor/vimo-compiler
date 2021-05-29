@@ -146,7 +146,7 @@ BlockAux
 
 Statement
     : VarsDec                       << ast.NewStatement($0) >>
-    | Assign                        << ast.NewStatement($0) >>
+    | Assign semicolon              << ast.NewStatement($0) >>
     | Condition                     << ast.NewStatement($0) >>
     | Return                        << ast.NewStatement($0) >>
     | For                           << ast.NewStatement($0) >>
@@ -161,7 +161,7 @@ BasicType
     | booltype                      << ast.NewType($0) >>
     | stringtype                    << ast.NewType($0) >>
     | chartype                      << ast.NewType($0) >>
-    | Object                        << ast.NewType($0) >>
+    | Object                        << ($0), nil >>
     ;
 
 Object
@@ -207,8 +207,8 @@ Factor
     ;
 
 Assign
-    : id equals Expression semicolon                                    << ast.NewAssignWithoutAttr($0, $2) >>
-	| Attribute equals Expression semicolon                             << ast.NewAssignWithAttr($0, $2) >>
+    : id equals Expression                                     << ast.NewAssignWithoutAttr($0, $2) >>
+	| Attribute equals Expression                              << ast.NewAssignWithAttr($0, $2) >>
     ;
 
 Write
@@ -226,7 +226,7 @@ Return
     ;
 
 For
-    : for leftparenthesis Assign Expression semicolon Expression rightparenthesis Block << ast.NewFor($0, $2, $3, $5, $7) >>
+    : for leftparenthesis Assign semicolon Expression semicolon Assign rightparenthesis Block << ast.NewFor($0, $2, $4, $6, $8) >>
     ;
 
 While
@@ -260,7 +260,7 @@ ListElem
     ;
 Type 
     : BasicType                                                         << ($0), nil>>
-    | list leftsqrbracket BasicType rightsqrbracket                     << ast.AppendType($2) >>
+    | BasicType leftsqrbracket cteint rightsqrbracket                   << ast.NewTypeArray($0, $2) >>
     ;
 
 Attribute 

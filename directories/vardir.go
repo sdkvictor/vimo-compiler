@@ -5,6 +5,7 @@ import (
 	"github.com/sdkvictor/golang-compiler/gocc/token"
 	"github.com/sdkvictor/golang-compiler/mem"
 	"github.com/sdkvictor/golang-compiler/types"
+	"github.com/mewkiz/pkg/errutil"
 )
 
 type VarEntry struct {
@@ -79,6 +80,17 @@ func (vd *VarDirectory) Exists(key string) bool {
 
 func (vd *VarDirectory) Table() map[string]*VarEntry {
 	return vd.table
+}
+
+func CreateVarDirectoryFromVarEntries(ves []*VarEntry) (*VarDirectory, error) {
+	vd := NewVarDirectory()
+	for _, ve := range ves {
+		if !vd.Add(ve) {
+			return nil, errutil.Newf("Redeclaration of %s in %v", ve.String(), ve.Token())
+		}
+	}
+
+	return vd, nil
 }
 
 //NewVarDirectory New directory of variables that stores the var entry
