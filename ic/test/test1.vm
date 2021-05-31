@@ -1,0 +1,62 @@
+program test1;
+
+{
+    int x;
+    float i;
+}
+
+int max(int a, int b) {
+    if (a > b) {
+        return a;
+    }
+
+    return b;
+}
+
+int hola(int q) {
+    x = 6 + 3 / 7 * (234 + 111);
+    bool b;
+    b = true;
+    if(b==false){
+        x = x +5;
+    }
+    else{
+        x = 1+2;
+    }
+    b = false;
+
+    return 0;
+}
+
+int checar(int[10] ayay) {
+    int y;
+    int z;
+
+    ayay[0] = y;
+}
+
+void tick(){
+    
+}
+
+void main(){
+    int n;
+    n = 1;
+    while(n < 3){
+        n = n + 1;
+    } 
+    for(n=0; n<4; n = n+1){
+        print(n);
+    }
+
+    x = hola(n);
+
+    int max;
+    max = max(n / 7 + 3, x);
+
+    int[10] arr;
+    arr[3] = arr[23+x] + 10;
+
+    Square sqr;
+    sqr.x = 3.0;
+}
