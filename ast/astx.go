@@ -249,6 +249,10 @@ func NewTypeArray(typ, size interface{}) (*types.Type, error) { // OK?
 		return nil, errutil.Newf("Cannot parse %s to int", string(s.Lit)) 
 	}
 
+	if sint < 1 {
+		return nil, errutil.Newf("%+v: Cannot declare array of size less than 1", s)
+	}
+
 	if t.IsObject() {
 		return types.NewObjectType(t.Object(), 1, sint), nil
 	} else {
@@ -488,7 +492,7 @@ func NewAssignWithoutAttr(id, exp interface{}) (*Assign, error) {
 		return nil, errutil.Newf("Invalid type for assign expression. Expected Expression")
 	}
 
-	a := &Attribute{idstr, "", i}
+	a := &Attribute{idstr, "", nil, i}
 
 	return &Assign{a, e, i}, nil
 }
@@ -508,6 +512,22 @@ func NewAssignWithAttr(attr, exp interface{}) (*Assign, error) {
 	return &Assign{a, e, a.tok}, nil
 }
 
+func NewAssignWithIndex(le, exp interface{}) (*Assign, error) {
+	listelem, ok := le.(*ListElem)
+	if !ok {
+		return nil, errutil.Newf("Invalid type for list element. Expected ListElem")
+	}
+
+	e, ok := exp.(*Expression)
+	if !ok {
+		return nil, errutil.Newf("Invalid type for assign expression. Expected Expression")
+	}
+
+	attr := &Attribute{listelem.Id(), "", listelem.Index(), listelem.Token()}
+
+	return &Assign{attr, e, attr.Token()}, nil
+}
+
 func NewAttribute(id1, id2 interface{}) (*Attribute, error) {
 	id1t, ok := id1.(*token.Token)
 	if !ok {
@@ -519,7 +539,7 @@ func NewAttribute(id1, id2 interface{}) (*Attribute, error) {
 		return nil, errutil.Newf("Invalid type for obj attribute. Expected token, got %T", id2)
 	}
 
-	return &Attribute{string(id1t.Lit), string(id2t.Lit), id1t}, nil
+	return &Attribute{string(id1t.Lit), string(id2t.Lit), nil, id1t}, nil
 }
 
 // NewCondition
