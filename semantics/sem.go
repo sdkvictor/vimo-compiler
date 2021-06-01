@@ -1,4 +1,4 @@
-package sem
+package semantics
 
 import (
 	"github.com/sdkvictor/golang-compiler/ast"
@@ -10,6 +10,7 @@ type SemanticContext struct {
 	funcdir *directories.FuncDirectory
 	globals *directories.VarDirectory
 	semcube *SemanticCube
+	hasMain bool
 }
 
 // FuncDir ...
@@ -27,7 +28,9 @@ func (ctx *SemanticContext) SemCube() *SemanticCube {
 	return ctx.semcube
 }
 
-
+func (ctx *SemanticContext) HasMain() bool {
+	return ctx.hasMain
+}
 
 // SemanticCheck calls the 3 main functions that perform the semantic analysis and
 // reports any errors
@@ -39,7 +42,7 @@ func SemanticCheck(program *ast.Program) (*directories.FuncDirectory, *directori
 		return nil, nil, err
 	}
 
-	ctx := &SemanticContext{funcdir, globals, semcube}
+	ctx := &SemanticContext{funcdir, globals, semcube, false}
 
 	// Build the function directory and their corresponding Var directiories
 	// Errors to check:

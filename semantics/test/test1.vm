@@ -28,10 +28,15 @@ int function(int xd, string hola) {
             main();
         }
     }
-}
 
-void tick(){
-    
+    Square s;
+    s.height = 5.0;
+
+    int[10] arr;
+    arr[3+4] = 4;
+    for (i = 0; i < 1000; i = i + 1) {
+        arr[i] = function(xd, "papa");
+    }
 }
 
 void main(){

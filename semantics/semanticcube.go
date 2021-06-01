@@ -1,4 +1,4 @@
-package sem
+package semantics
 
 import (
 	"fmt"
@@ -12,11 +12,35 @@ var reservedFunctions = []string{
 	"KeyPressed",
 	"CheckCollision",
 	"Pow",
-	"SquareRoot",
+	"Sqrt",
     "Render",
+    "Clear",
+	"Update",
 }
 
-var objectAttributes = []string{
+var reservedFunctionsReturn = map[string]*types.Type{
+	"KeyPressed": types.NewDataType(types.Bool, 0, 0),
+	"CheckCollision": types.NewDataType(types.Bool, 0, 0),
+	"Pow": types.NewDataType(types.Float, 0, 0),
+	"Sqrt": types.NewDataType(types.Float, 0, 0),
+    "Render": types.NewDataType(types.Void, 0, 0),
+    "Clear": types.NewDataType(types.Void, 0, 0),
+	"Update": types.NewDataType(types.Void, 0, 0),
+}
+
+// Param amount cannot be greater than 2 under current
+// architecture
+var reservedFunctionsParamAmount = map[string]int{
+	"KeyPressed": 1,
+	"CheckCollision": 2,
+	"Pow": 2,
+	"Sqrt": 1,
+    "Render": 1,
+	"Clear": 0,
+	"Update": 0,
+}
+
+var ObjectAttributes = []string{
 	"height",
 	"width",
 	"x",
@@ -27,7 +51,7 @@ var objectAttributes = []string{
 	"image",
 }
 
-var objectAttributesTypes = map[string]*types.Type{
+var ObjectAttributesTypes = map[string]*types.Type{
 	"height": types.NewDataType(types.Float, 0, 0),
 	"width": types.NewDataType(types.Float, 0, 0),
 	"x": types.NewDataType(types.Float, 0, 0),
@@ -37,6 +61,15 @@ var objectAttributesTypes = map[string]*types.Type{
 	"message": types.NewDataType(types.String, 0, 0),
 	"image": types.NewDataType(types.String, 0, 0),
 }
+
+var objectTypeWithAttribute = map[string][]string{
+	"7": {"height", "width", "x", "y", "color"}, // Square
+	"8": {"height", "width", "x", "y", "color"}, // Circle
+	"9": {"height", "width", "x", "y", "image"}, // Image
+	"a": {"x", "y", "color", "size", "message"}, // Text
+}
+
+var ObjectSize = len(ObjectAttributes) + 1
 
 type Operation int
 
@@ -217,6 +250,31 @@ func GetSemanticCubeKey(operation string, params []*types.Type) string {
 }
 
 func GetObjectAttributeType(objectAtt string) *types.Type {
-	t, _ := objectAttributesTypes[objectAtt]
+	t, _ := ObjectAttributesTypes[objectAtt]
+	return t
+}
+
+func matchTypeWithAttr(ot *types.Type, att string) bool {
+	availAttributes, ok := objectTypeWithAttribute[ot.String()]
+	if !ok {
+		return false
+	}
+
+	for _, a := range availAttributes {
+		if att == a {
+			return true
+		}
+	}
+
+	return false
+}
+
+func GetReservedReturnType(id string) *types.Type {
+	t, _ := reservedFunctionsReturn[id]
+	return t
+}
+
+func GetReservedParamAmount(id string) int {
+	t, _ := reservedFunctionsParamAmount[id]
 	return t
 }

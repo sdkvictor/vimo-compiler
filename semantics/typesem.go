@@ -1,4 +1,4 @@
-package sem
+package semantics
 
 import (
 	"github.com/sdkvictor/golang-compiler/ast"
@@ -15,6 +15,10 @@ func typeCheckProgram(program *ast.Program, ctx *SemanticContext) error {
 		}
 	}
 
+	if !ctx.HasMain() {
+		return errutil.Newf("Main function not declared in program")
+	}
+
 	return nil
 }
 
@@ -24,6 +28,18 @@ func typeCheckFunction(function *ast.Function, ctx *SemanticContext) error {
 	fe := ctx.FuncDir().Get(function.Key())
 	if fe == nil {
 		return errutil.NewNoPosf("%+v: Cannot get function %s from Func Directory", function.Token(), function.Id())
+	}
+
+	// Check que main tenga return void y sin parametros
+	if fe.Id() == "main" {
+		if fe.ReturnType().String() != "6" {
+			return errutil.Newf("Main function must be return type void")
+		}
+		if len(fe.Params()) > 0 {
+			return errutil.Newf("Main function must not have parameters")
+		}
+
+		ctx.hasMain = true
 	}
 
 	if err := typeCheckStatements(function.Statements(), ctx, fe); err != nil {
@@ -175,18 +191,49 @@ func typeCheckWhile(while *ast.While, ctx *SemanticContext , fe *directories.Fun
 }
 
 func typeCheckAttribute(att *ast.Attribute, ctx *SemanticContext, fe *directories.FuncEntry) (*types.Type, error) {
+	ve := fe.VarDir().Get(att.ObjId())
+	if ve == nil {
+		ve = ctx.Globals().Get(att.ObjId())
+		if ve == nil {
+			return nil, errutil.Newf("Id %s could not be found in local or global scope. (check scopecheck?)", att.ObjId())
+		}
+	}
+
+	// Checar que no pueda existir un VarId y un Index al mismo tiempo
+	if att.VarId() != "" && att.Index() != nil {
+		return nil, errutil.Newf("%+v: Cannot index object attribute", att.Token())
+	}
+
+	// Checar si se esta indexando una variable que no es arreglo
+	if ve.Type().List() < 1 && att.Index() != nil {
+		return nil, errutil.Newf("%+v: Variable %s is not array, cannot index", att.Token(), att.ObjId())
+	}
+
+	// Caso donde es variable indexada
+	if att.Index() != nil {
+		t, err := typeCheckExpression(att.Index(), ctx, fe)
+		if err != nil {
+			return nil, err
+		}
+
+		if t.Basic() != types.Int {
+			return nil, errutil.Newf("%+v: Cannot use non-integer as index in array", att.Token())
+		}
+
+		nt := ve.Type().Copy()
+		nt.DecreaseList()
+
+		return nt, nil
+	}
+
 	// Caso donde es variable normal sin object attribute
 	if att.VarId() == "" {
-		ve := fe.VarDir().Get(att.ObjId())
-		if ve == nil {
-			ve = ctx.Globals().Get(att.ObjId())
-			if ve == nil {
-				return nil, errutil.Newf("Id %s could not be found in local or global scope. (check scopecheck?)", att.VarId())
-			}
-		}
 		return ve.Type(), nil
 	} else {
 		// Caso donde es un object attribute
+		if ok := matchTypeWithAttr(ve.Type(), att.VarId()); !ok {
+			return nil, errutil.Newf("%+v: Attribute %s does not exist for object type %s", att.Token(), att.VarId(), ve.Type())
+		}
 		t := GetObjectAttributeType(att.VarId())
 		return t, nil
 	}
@@ -299,7 +346,24 @@ func typeCheckConstant(constant ast.Constant, ctx *SemanticContext, fe *director
 func typeCheckFunctionCall(fc *ast.FunctionCall, ctx *SemanticContext, fe *directories.FuncEntry) (*types.Type, error) {
 	currFe := ctx.FuncDir().Get(fc.Id())
 	if currFe == nil {
-		return nil, errutil.Newf("Cannot get function %s from FuncEntry", fc.Id())
+		if !IdIsReserved(fc.Id()) {
+			return nil, errutil.Newf("Cannot get function %s from FuncEntry", fc.Id())
+		}
+		t := GetReservedReturnType(fc.Id())
+		a := GetReservedParamAmount(fc.Id())
+
+		for _, param := range fc.Params() {
+			_, err := typeCheckExpression(param, ctx, fe)
+			if err != nil {
+				return nil, err
+			}
+		}
+
+		if len(fc.Params()) != a {
+			return nil, errutil.Newf("Reserved function %s requires %d args, %d given", fc.Id(), a, len(fc.Params()))
+		}
+
+		return t, nil
 	}
 
 	argTypes := make([]*types.Type, 0)
@@ -344,5 +408,8 @@ func typeCheckListElem(le *ast.ListElem, ctx *SemanticContext, fe *directories.F
 		return nil, errutil.Newf("Cannot find %s in local or global scope", le.Id())
 	}
 
-	return ve.Type(), nil
+	nt := ve.Type().Copy()
+	nt.DecreaseList()
+
+	return nt, nil
 }

@@ -1,4 +1,4 @@
-package sem
+package semantics
 
 import (
 	"github.com/sdkvictor/golang-compiler/ast"
@@ -23,6 +23,8 @@ func scopeCheckFunction(function *ast.Function, ctx *SemanticContext) error {
 	if fe == nil {
 		return errutil.NewNoPosf("%+v: Function entry %+v not found in FuncDirectory", function.Token(), fe)
 	}
+
+	fe.SetVarcounter(len(fe.VarDir().Table()))
 
 	if err := scopeCheckStatements(function.Statements(), fe, ctx); err != nil {
 		return err
@@ -144,7 +146,9 @@ func scopeCheckWhile(while *ast.While, ctx *SemanticContext, fe *directories.Fun
 func scopeCheckFCall(fcall *ast.FunctionCall, ctx *SemanticContext, fe *directories.FuncEntry) error {
 	//Check func directory
 	if !ctx.FuncDir().Exists(fcall.Id()) {
-		return errutil.Newf("Function %s not declared.", fcall.Id())
+		if !IdIsReserved(fcall.Id()) {
+			return errutil.Newf("Function %s not declared.", fcall.Id())
+		}
 	}
 	//Check params
 	for _, p := range fcall.Params() {
@@ -174,11 +178,10 @@ func scopeCheckExpression(expr *ast.Expression, ctx *SemanticContext, fe *direct
 				} else if le, ok := f.Constant().(*ast.ListElem); ok {
 					//Check if its inside the scope
 					if !fe.VarDir().Exists(le.Id()) {
-						return errutil.Newf("Id %s not declared in local scope.", le.Id())
-					}
-					//Check if its a global variable
-					if !ctx.Globals().Exists(le.Id()) {
-						return errutil.Newf("Id %s not declared in local or global scope.", le.Id())
+						//Check if its a global variable
+						if !ctx.Globals().Exists(le.Id()) {
+							return errutil.Newf("Id %s not declared in local or global scope.", le.Id())
+						}
 					}
 				}		
 			}
@@ -197,9 +200,15 @@ func scopeCheckAttribute(attr *ast.Attribute, ctx *SemanticContext, fe *director
 		}
 	}
 
+	if attr.Index() != nil {
+		if err := scopeCheckExpression(attr.Index(), ctx, fe); err != nil {
+			return err
+		}
+	}
+
 	if(attr.VarId()!= ""){
 		ok := false
-		for _, att := range objectAttributes {
+		for _, att := range ObjectAttributes {
 			if attr.VarId() == att {
 				ok = true
 			}
@@ -235,6 +244,8 @@ func createVarsInFuncEntry(vars *ast.Vars, fe *directories.FuncEntry) error {
 	}
 
 	for _, ve := range vars.Variables() {
+		ve.SetPos(fe.Varcounter())
+		fe.IncreaseVarcounter()
 		if ok := fe.VarDir().Add(ve); !ok {
 			return errutil.Newf("Cannot add var %s to function directory", ve.Id())
 		}

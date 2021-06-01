@@ -1,4 +1,4 @@
-package sem
+package semantics
 
 import (
 	"github.com/sdkvictor/golang-compiler/ast"
@@ -31,9 +31,11 @@ func buildFuncDirFunction(function *ast.Function, funcdir *directories.FuncDirec
 		return errutil.NewNoPosf("%+v: Redeclaration of function %s", function.Token(), id)
 	}
 
-	if idIsReserved(id) {
+	if IdIsReserved(id) {
 		return errutil.NewNoPosf("%+v: Cannot declare a function with reserved keyword %s", function.Token(), id)
 	}
+
+	FixParams(function.Params())
 
 	for _, p := range function.Params() {
 		params = append(params, p.Type())
@@ -62,4 +64,18 @@ func buildVarDirFunction(ve *directories.VarEntry, vardir *directories.VarDirect
 		return errutil.NewNoPosf("%+v: Invalid parameter. This parameter has already been declared.", ve.Token())
 	}
 	return nil
+}
+
+// FixParams invierte el id de pocision en los params ya que se construyen al reves en el AST.
+func FixParams(params []*directories.VarEntry) {
+
+	positions := make([]int, 0)
+
+	for _, p := range params {
+		positions = append(positions, p.Pos())
+	}
+
+	for i, _ := range params {
+		params[len(params)-1-i].SetPos(positions[i])
+	}
 }

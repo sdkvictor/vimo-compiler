@@ -1,13 +1,14 @@
-package sem
+package semantics
 
 import (
 	"github.com/sdkvictor/golang-compiler/ast"
 	"github.com/sdkvictor/golang-compiler/gocc/lexer"
 	"github.com/sdkvictor/golang-compiler/gocc/parser"
-	"github.com/davecgh/go-spew/spew"
+	//"github.com/davecgh/go-spew/spew"
 
 	"os"
 	"testing"
+	//"fmt"
 )
 
 func readFile(path string) ([]byte, error) {
@@ -37,7 +38,7 @@ func readFile(path string) ([]byte, error) {
 func TestSemanticCheck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"test/test1.vm",
+		"test/test2.vm",
 	}
 
 	for _, test := range tests {
@@ -64,6 +65,6 @@ func TestSemanticCheck(t *testing.T) {
 		if err != nil {
 			t.Fatalf("Error from semantic: %v", err)
 		}
-		//spew.Dump(g)
+		//spew.Dump(funcdir)
 	}
 }

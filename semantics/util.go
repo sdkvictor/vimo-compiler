@@ -1,11 +1,16 @@
-package sem
+package semantics
 
 import (
 	"github.com/sdkvictor/golang-compiler/directories"
 )
 
-func idIsReserved(id string) bool {
-	return id == "pow" || id == "sqrt" || id == "loadImage" || id == "keyPressed" || id == "checkCollision"
+func IdIsReserved(id string) bool {
+	for _, f := range reservedFunctions {
+		if id == f {
+			return true
+		}
+	}
+	return false
 }
 
 func checkVarDirReserved(vardir *directories.VarDirectory) (string, bool) {
