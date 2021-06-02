@@ -1,7 +1,7 @@
 package directories
 
 import (
-	"fmt"
+	//"fmt"
 	"github.com/sdkvictor/golang-compiler/gocc/token"
 	"github.com/sdkvictor/golang-compiler/mem"
 	"github.com/sdkvictor/golang-compiler/types"
@@ -40,14 +40,18 @@ func (ve *VarEntry) Pos() int {
 	return ve.pos
 }
 
+func (ve *VarEntry) SetPos(i int) {
+	ve.pos = i
+}
+
 type VarDirectory struct {
 	table map[string]*VarEntry
 }
-
+/*
 func (e *VarEntry) String() string {
 	return fmt.Sprintf("%s", e.id)
 }
-
+*/
 //NewVarEntry Initialization of one entry of the variable with its attributes
 func NewVarEntry(id string, t *types.Type, tok *token.Token, pos int) *VarEntry {
 	return &VarEntry{id, t, tok, 0, pos}
@@ -56,9 +60,9 @@ func NewVarEntry(id string, t *types.Type, tok *token.Token, pos int) *VarEntry 
 //Add Add a varentry to the directory variables using the toString function as key
 func (vd *VarDirectory) Add(e *VarEntry) bool {
 
-	_, ok := vd.table[e.String()]
+	_, ok := vd.table[e.Id()]
 	if !ok {
-		vd.table[e.String()] = e
+		vd.table[e.Id()] = e
 	}
 	return !ok
 }
@@ -86,7 +90,7 @@ func CreateVarDirectoryFromVarEntries(ves []*VarEntry) (*VarDirectory, error) {
 	vd := NewVarDirectory()
 	for _, ve := range ves {
 		if !vd.Add(ve) {
-			return nil, errutil.Newf("Redeclaration of %s in %v", ve.String(), ve.Token())
+			return nil, errutil.Newf("Redeclaration of %s in %v", ve.Id(), ve.Token())
 		}
 	}
 

@@ -832,7 +832,7 @@ func (vm *VirtualMachine) operationAssignIndexInv(lop, rop, r mem.Address) error
 	return nil
 }
 
-func (vm *VirtualMachine) operationRender(lop, rop, r mem.Address) error { //ASSIGNED TO MOISES
+func (vm *VirtualMachine) operationRender(lop, rop, r mem.Address) error { 
 	// lop address del objecto a renderizar
 	// rop no se usa
 	// ni r

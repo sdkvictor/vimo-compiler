@@ -11,12 +11,12 @@ program PingPong;
 }
 
 void movePlayerOne(){
-    if(keyPressed(UP)){
+    if(keyPressed("Up)){
        if(playerOne.y > 10.0){
             playerOne.y = playerOne.y + 10.0;
         }
     }
-    if(keyPressed(DOWN)){
+    if(keyPressed("Down")){
         if(playerOne.y < 440.0){
             playerOne.y = playerOne.y - 10.0;
         }
@@ -37,22 +37,28 @@ void movePlayerTwo(){
 }
 
 void checkCollisionOne(){
-    if (checkCollision(ball, playerOne) ) {
+    if (CheckCollision(ball, playerOne) ) {
         
     bool playerBetween;
     playerBetween = ball.x < playerOne.x  && ball.x < playerOne.x + playerOne.width ;
+    //verify if the ball's upper edge is bewteen the player's height
     bool upBetweenPlayer;
     upBetweenPlayer = ball.x + ball.width < playerOne.x  && ball.x + ball.width > playerOne.x + playerOne.width;               
+    //verify if the ball's lower edge is between the player's height
     bool downBetweenPlayer;
     downBetweenPlayer = ball.x > playerOne.x && ball.x + ball.width < playerOne.x + playerOne.width;
         
         if(playerHit || upBetweenPlayer || downBetweenPlayer){
             if(ball.y>playerOne.y+playerOne.width/2.0){
+                //the ball hits the player from above
+                //make y vel negative
                 if(ballXVel > 0.0){
                     ballYVel = ballYVel * (-1.0);
                 } 
             }
             else{ 
+                //the ball hits the player from the bottom
+                //make y vel positive
                 if(ballYVel < 0.0){
                     ballYVel = ballYVel * (-1.0);
                 }
@@ -60,52 +66,66 @@ void checkCollisionOne(){
         }
 
         else{  
-            int dist;
-            dist = ball.y + ball.height / 2 - (player.y + player.height / 2.0);
+            //ball hits from up
+            //Calculate the distance the ball is from the center of the player pad
+            float dist;
+            dist = ball.y + ball.height / 2.0 - (player.y + player.height / 2.0);
 
-            int deltaVel;
+            //Map the dist value in proportion to the maxVel of the ball
+            float deltaVel;
             deltaVel =  (dist / 50.0) * 10.0;
 
+            //Update ball's yVel accordingly
             ballYVel = ballYVel + deltaVel;
 
+            //Bounce the velocity in the x component
             ballXVel = ballXVel * (-1.0);
         }
     }
 }
 
 void checkCollisionTwo(){
-    if (checkCollision(ball, playerTwo) ) {
+    if (CheckCollision(ball, playerTwo) ) {
         bool playerBetween;
         playerBetween = ball.x > playerTwo.x  && ball.x > playerTwo.x + playerTwo.width ;
 
+        //verify if the ball's upper edge is between the player's height
         bool upBetweenPlayer;
         upBetweenPlayer = ball.x + ball.width > playerTwo.x  && ball.x + ball.width < playerTwo.x + playerTwo.width;               
 
+        //verify if the ball's lower edge is between the player's height
         bool downBetweenPlayer;
         downBetweenPlayer = ball.x < playerTwo.x && ball.x + ball.width > playerTwo.x + playerTwo.width;
         
         if(playerHit || upBetweenPlayer || downBetweenPlayer){
             if(ball.y < playerTwo.y+playerTwo.width/2.0){
+                //the ball hits the player from above
+                //make y vel negative
                 if(ballXVel > 0.1){
                     ballYVel = ballYVel * (-1.0);
                 } 
             }
-            else{ 
+            else{ //the ball hits the player from the bottom
+                //make y vel positive
                 if(ballYVel < 0.1){
                     ballYVel = ballYVel * (-1.0);
                 }
             }
         }
 
-        else{  
-            int dist;
+        else{  //ball hits from up
+            //Calculate the distance the ball is from the center of the player pad
+            float dist;
             dist = ball.y + ball.height / 2.0 - (player.y + player.height / 2.0);
 
-            int deltaVel;
+            //Map the dist value in proportion to the maxVel of the ball
+            float deltaVel;
             deltaVel =  (dist / 50.0) * 10.0;
 
+            //Update ball's yVel accordingly
             ballYVel = ballYVel + deltaVel;
 
+            //Bounce the velocity in the x component
             ballXVel = ballXVel * (-1.0);
         }
     }
@@ -152,10 +172,12 @@ void tick(){
             checkCollisionOne();
             checkCollisionTwo();
             
+            //bounce from top and bottom boundaries
             if((ball.y < 0.1 || ball.y + ball.height > 500.0)  && ball.x > 0.1 && ball.x + ball.width < 750.0){
                 ballYVel = ballYVel * (-1.0);
             }
 
+            //player one scores a point
             if(ball.x + ball.width >= 750.0){
                 playerOnePoints = playerOnePoints + 1;
                 starting = true;
@@ -170,6 +192,7 @@ void tick(){
                 updateScore();
             }
 
+            //player two scores a point
             if(ball.x < 1){
                 playerTwoPoints = playerTwoPoints + 1;
                 starting = true;
@@ -213,7 +236,7 @@ void tick(){
 }
 
 void main(){
-
+    
     Background bg;
 
     playerOnePoints = 0;

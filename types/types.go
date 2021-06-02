@@ -45,6 +45,33 @@ func (t BasicType) convert() rune {
 	return 'n'
 }
 
+func ConvertInverse(t string) BasicType {
+	if t == "1" {
+		return Float
+	}
+
+	if t == "2" {
+		return Char
+	}
+
+	if t == "3" {
+		return Bool
+	}
+
+	if t == "4" {
+		return Int
+	}
+
+	if t == "5" {
+		return String
+	}
+
+	if t == "6" {
+		return Void
+	}
+
+	return Null
+}
 
 type ObjType int
 
@@ -155,6 +182,10 @@ func (lt *Type) Equal(lt2 *Type) bool {
 	return lt.String() == lt2.String()
 }
 
+func (lt *Type) Copy() *Type {
+	return &Type{lt.basic, lt.object, lt.list, lt.isObject, lt.size}
+}
+
 // NewDataType Declares a new, basic  type
 func NewDataType(b BasicType, list int, size int) *Type {
 	return &Type{b, NullObj, list, false, size}
@@ -165,3 +196,18 @@ func NewObjectType(o ObjType, list int, size int) *Type {
 	return &Type{Null, o, list, true, size}
 }
 
+var ObjectAttributesIndex = map[string]int{
+	"height": 1,
+	"width": 2,
+	"x": 3,
+	"y": 4,
+	"size": 5,
+	"color": 6,
+	"message": 7,
+	"image": 8,
+}
+
+func GetAttributeOffset(a string) int {
+	off, _ := ObjectAttributesIndex[a]
+	return off
+}

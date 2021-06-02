@@ -15,6 +15,7 @@ type FuncEntry struct {
 	params 		[]*types.Type
 	vardir		*VarDirectory
 	loc			mem.Address
+	varcounter 	int
 	era			int
 }
 
@@ -53,6 +54,18 @@ func (fe *FuncEntry) Loc() mem.Address {
 	return fe.loc
 }
 
+func (fe *FuncEntry) Varcounter() int {
+	return fe.varcounter
+}
+
+func (fe *FuncEntry) SetVarcounter(i int) {
+	fe.varcounter = i
+}
+
+func (fe *FuncEntry) IncreaseVarcounter() {
+	fe.varcounter++
+}
+
 // SetLocation sets the memory address of a FuncEntry
 func (fe *FuncEntry) SetLocation(loc int) {
 	fe.loc = mem.Address(loc)
@@ -60,7 +73,7 @@ func (fe *FuncEntry) SetLocation(loc int) {
 
 // CreateFuncEntry creates a new FuncEntry struct
 func NewFuncEntry(id string, returntype *types.Type, params []*types.Type, vardir *VarDirectory) *FuncEntry {
-	return &FuncEntry{id, returntype, params, vardir, mem.Address(-1), 0}
+	return &FuncEntry{id, returntype, params, vardir, mem.Address(-1), 0, 0}
 }
 
 // A FuncDirectory is the function directory which represents a table that stores all the instances of FuncEntry
@@ -107,5 +120,5 @@ func NewFuncDirectory() *FuncDirectory {
 
 // MainFuncEntry Initialization of the function directory with the initial parameters of the main program
 func MainFuncEntry() *FuncEntry {
-	return &FuncEntry{"main", types.NewDataType(types.Int, 0, 0), make([]*types.Type, 0), NewVarDirectory(), mem.Address(-1), 0}
+	return &FuncEntry{"main", types.NewDataType(types.Int, 0, 0), make([]*types.Type, 0), NewVarDirectory(), mem.Address(-1), 0, 0}
 }

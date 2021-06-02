@@ -7,52 +7,58 @@ program PingPong;
     float ballXVel, ballYVel;
     bool gameOver, starting;
 
-    Text scoreOne, scoreTwo;
+    Text scoreOne, scoreTwo, oneWins, twoWins;
 }
 
 void movePlayerOne(){
-    if(keyPressed(UP)){
-       if(playerOne.y > 10.0){
+    if(KeyPressed("W")){
+       if(playerOne.y < 390.0){
             playerOne.y = playerOne.y + 10.0;
         }
     }
-    if(keyPressed(DOWN)){
-        if(playerOne.y < 440.0){
+    if(KeyPressed("S")){
+        if(playerOne.y > 10.0){
             playerOne.y = playerOne.y - 10.0;
         }
     }
 }
 
 void movePlayerTwo(){
-    if(keyPressed(W)){
-        if(playerTwo.y > 10.0){
+    if(KeyPressed("Up")){
+        if(playerTwo.y < 390.0){
             playerTwo.y = playerTwo.y + 10.0;
         }
     }
-    if(keyPressed(S)){
-        if(playerTwo.y <= 440.0){
+    if(KeyPressed("Down")){
+        if(playerTwo.y >  10.0){
             playerTwo.y = playerTwo.y - 10.0;
         }
     }
 }
 
 void checkCollisionOne(){
-    if (checkCollision(ball, playerOne) ) {
+    if (CheckCollision(ball, playerOne) ) {
         
     bool playerBetween;
-    playerBetween = ball.x < playerOne.x  && ball.x < playerOne.x + playerOne.width ;
+    playerBetween = (ball.x < playerOne.x)  && (ball.x < playerOne.x + playerOne.width) ;
+    //verify if the ball's upper edge is bewteen the player's height
     bool upBetweenPlayer;
-    upBetweenPlayer = ball.x + ball.width < playerOne.x  && ball.x + ball.width > playerOne.x + playerOne.width;               
+    upBetweenPlayer = (ball.x + ball.width < playerOne.x)  && (ball.x + ball.width > playerOne.x + playerOne.width);               
+    //verify if the ball's lower edge is between the player's height
     bool downBetweenPlayer;
-    downBetweenPlayer = ball.x > playerOne.x && ball.x + ball.width < playerOne.x + playerOne.width;
+    downBetweenPlayer = (ball.x > playerOne.x) && (ball.x + ball.width < playerOne.x + playerOne.width);
         
-        if(playerHit || upBetweenPlayer || downBetweenPlayer){
+        if(playerBetween || upBetweenPlayer || downBetweenPlayer){
             if(ball.y>playerOne.y+playerOne.width/2.0){
+                //the ball hits the player from above
+                //make y vel negative
                 if(ballXVel > 0.0){
                     ballYVel = ballYVel * (-1.0);
                 } 
             }
             else{ 
+                //the ball hits the player from the bottom
+                //make y vel positive
                 if(ballYVel < 0.0){
                     ballYVel = ballYVel * (-1.0);
                 }
@@ -60,52 +66,66 @@ void checkCollisionOne(){
         }
 
         else{  
-            int dist;
-            dist = ball.y + ball.height / 2 - (player.y + player.height / 2.0);
+            //ball hits from up
+            //Calculate the distance the ball is from the center of the player pad
+            float dist;
+            dist = ball.y + ball.height / 2.0 - (playerOne.y + playerOne.height / 2.0);
 
-            int deltaVel;
+            //Map the dist value in proportion to the maxVel of the ball
+            float deltaVel;
             deltaVel =  (dist / 50.0) * 10.0;
 
+            //Update ball's yVel accordingly
             ballYVel = ballYVel + deltaVel;
 
+            //Bounce the velocity in the x component
             ballXVel = ballXVel * (-1.0);
         }
     }
 }
 
 void checkCollisionTwo(){
-    if (checkCollision(ball, playerTwo) ) {
+    if (CheckCollision(ball, playerTwo) ) {
         bool playerBetween;
-        playerBetween = ball.x > playerTwo.x  && ball.x > playerTwo.x + playerTwo.width ;
+        playerBetween = (ball.x > playerTwo.x)  && (ball.x > playerTwo.x + playerTwo.width );
 
+        //verify if the ball's upper edge is between the player's height
         bool upBetweenPlayer;
-        upBetweenPlayer = ball.x + ball.width > playerTwo.x  && ball.x + ball.width < playerTwo.x + playerTwo.width;               
+        upBetweenPlayer = (ball.x + ball.width > playerTwo.x ) && (ball.x + ball.width < playerTwo.x + playerTwo.width);               
 
+        //verify if the ball's lower edge is between the player's height
         bool downBetweenPlayer;
-        downBetweenPlayer = ball.x < playerTwo.x && ball.x + ball.width > playerTwo.x + playerTwo.width;
+        downBetweenPlayer = (ball.x < playerTwo.x) && (ball.x + ball.width > playerTwo.x + playerTwo.width);
         
-        if(playerHit || upBetweenPlayer || downBetweenPlayer){
+        if(playerBetween || upBetweenPlayer || downBetweenPlayer){
             if(ball.y < playerTwo.y+playerTwo.width/2.0){
+                //the ball hits the player from above
+                //make y vel negative
                 if(ballXVel > 0.1){
                     ballYVel = ballYVel * (-1.0);
                 } 
             }
-            else{ 
+            else{ //the ball hits the player from the bottom
+                //make y vel positive
                 if(ballYVel < 0.1){
                     ballYVel = ballYVel * (-1.0);
                 }
             }
         }
 
-        else{  
-            int dist;
-            dist = ball.y + ball.height / 2.0 - (player.y + player.height / 2.0);
+        else{  //ball hits from up
+            //Calculate the distance the ball is from the center of the player pad
+            float dist;
+            dist = ball.y + ball.height / 2.0 - (playerTwo.y + playerTwo.height / 2.0);
 
-            int deltaVel;
+            //Map the dist value in proportion to the maxVel of the ball
+            float deltaVel;
             deltaVel =  (dist / 50.0) * 10.0;
 
+            //Update ball's yVel accordingly
             ballYVel = ballYVel + deltaVel;
 
+            //Bounce the velocity in the x component
             ballXVel = ballXVel * (-1.0);
         }
     }
@@ -114,6 +134,21 @@ void checkCollisionTwo(){
 void moveBall(){
     ball.x = ball.x + ballXVel;
     ball.y = ball.y + ballYVel;
+}
+
+void render() {
+    Render(playerOne);
+    Render(playerTwo);
+    Render(ball);
+    Render(scoreOne);
+    Render(scoreTwo);
+    if(playerOnePoints==3){
+            Render(oneWins);
+    }
+    if(playerTwoPoints==3){
+        Render(twoWins);
+    }
+    
 }
 
 void updateScore(){
@@ -135,28 +170,34 @@ void updateScore(){
     if(playerTwoPoints == 3){
         scoreTwo.message = "3";
     }
-    render(scoreOne);
-    render(scoreTwo);
+    Render(scoreOne);
+    Render(scoreTwo);
 }
 
 void tick(){
+    Clear();
+
     movePlayerOne();
     movePlayerTwo();
     if(gameOver==false){
         if(starting){
-            if(keyPressed(SPACE)){
+            if(KeyPressed("Space")){
                 starting = false;
+                ballXVel = 10.0;
+                ballYVel = 10.0;
             }
         }
         else{
             checkCollisionOne();
             checkCollisionTwo();
             
-            if((ball.y < 0.1 || ball.y + ball.height > 500.0)  && ball.x > 0.1 && ball.x + ball.width < 750.0){
+            //bounce from top and bottom boundaries
+            if(( (ball.y < 0.1) || (ball.y + ball.height > 500.0))  && ((ball.x > 0.1) && (ball.x + ball.width < 750.0))){
                 ballYVel = ballYVel * (-1.0);
             }
 
-            if(ball.x + ball.width >= 750.0){
+            //player one scores a point
+            if(ball.x + ball.width > 750.0){
                 playerOnePoints = playerOnePoints + 1;
                 starting = true;
                 playerOne.x = 0.0;
@@ -170,7 +211,8 @@ void tick(){
                 updateScore();
             }
 
-            if(ball.x < 1){
+            //player two scores a point
+            if(ball.x < 1.0){
                 playerTwoPoints = playerTwoPoints + 1;
                 starting = true;
                 playerOne.x = 0.0;
@@ -187,34 +229,32 @@ void tick(){
             moveBall();
 
             if(playerOnePoints == 3){
-                Text oneWins;
+               
                 oneWins.message = "PLAYER 1 WINS";
-                oneWins.message = "ffffff";
                 oneWins.x = 275.0;
                 oneWins.y = 200.0;
                 oneWins.size = 40.0;
-                render(oneWins);
+                Render(oneWins);
                 gameOver = true;
             }
 
             if(playerTwoPoints == 3){
-                Text twoWins;
                 twoWins.message = "PLAYER 2 WINS";
-                twoWins.message = "ffffff";
                 twoWins.x = 275.0;
                 twoWins.y = 200.0;
                 twoWins.size = 40.0;
-                render(twoWins);
+                Render(twoWins);
                 gameOver = true;
             }
         } 
     }
+    render();
+    Update();
 
 }
 
 void main(){
-
-    Background bg;
+    
 
     playerOnePoints = 0;
     playerTwoPoints = 0;
@@ -225,27 +265,23 @@ void main(){
     ballXVel = 10.0;
     ballYVel = 10.0;
 
-    bg.color = "000000";
-    bg.width = 730.0;
-    bg.height = 500.0;
 
-    setBackground(bg);
 
     ball.width  = 30.0;
     ball.height = 30.0;
     ball.color = "ffffff";
-    ball.x = 20.0;
+    ball.x = 21.0;
     ball.y = 235.0;
 
     playerOne.color = "ffffff";
     playerOne.width = 20.0;
-    playerOne.height = 50.0;
+    playerOne.height = 100.0;
     playerOne.x = 0.0;
     playerOne.y = 225.0;
     
     playerTwo.color = "ffffff";
     playerTwo.width = 20.0;
-    playerTwo.height = 50.0;
+    playerTwo.height = 100.0;
     playerTwo.x = 710.0;
     playerTwo.y = 225.0;
 
@@ -253,12 +289,12 @@ void main(){
     scoreOne.size = 30.0;
     scoreOne.x = 300.0;
     scoreOne.y = 10.0;
-    render(scoreOne);
+    Render(scoreOne);
     scoreTwo.message = "0";
     scoreTwo.size = 30.0;
     scoreTwo.x = 330.0;
     scoreTwo.y = 10.0;
-    render(scoreTwo);
+    Render(scoreTwo);
     
     while(true){
         tick();

@@ -16,12 +16,13 @@ _digit: '0' - '9';
 _id : _letter {(_letter | _digit)};
 _integer: _digit {_digit};
 _float: _digit {_digit} '.' _digit {_digit};
-_string: '"' {_digit | _letter | ' ' | '#' |'!' | '?'} '"';
+_string: '"' {_digit | _letter | ' ' | '#' |'!' | '?' | '.'} '"';
 _true: 't' 'r' 'u' 'e';
 _false: 'f' 'a' 'l' 's' 'e';
 _boolean: _true | _false;
 
 !ws : ' ' | '\t' | '\n' | '\r';
+!comment : '/' '/' { . } '\n';
 
 program: 'p' 'r' 'o' 'g' 'r' 'a' 'm';
 inttype: 'i' 'n' 't';
@@ -209,6 +210,7 @@ Factor
 Assign
     : id equals Expression                                     << ast.NewAssignWithoutAttr($0, $2) >>
 	| Attribute equals Expression                              << ast.NewAssignWithAttr($0, $2) >>
+    | ListElem equals Expression                               << ast.NewAssignWithIndex($0, $2) >>
     ;
 
 Write

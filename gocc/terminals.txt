@@ -40,5 +40,4 @@ ctechar
 ctebool
 leftsqrbracket
 rightsqrbracket
-list
 dot

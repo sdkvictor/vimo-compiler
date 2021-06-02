@@ -1,0 +1,52 @@
+program test3;
+
+{
+
+}
+
+void sq(Square s) {
+    s.y = 123.0;
+    print(s);
+}
+
+Text getText() {
+    Text t1;
+    t1.y = 123.123;
+
+    return t1;
+}
+
+void main(){
+    Square temp;
+    Square[10] arrSquares;
+    temp.color = "rojo";
+    temp.x = 5.5;
+    sq(temp);
+
+    arrSquares[3] = temp;
+
+    print(arrSquares[3]);
+
+    Circle[7] c;
+    Circle c1;
+    c1.x = 3.4;
+
+    c[1] = c1;
+
+    print(c[1]);
+
+
+    Image[7] im;
+    Image im1;
+    im1.x = 3.4;
+    im1.image = "foto";
+
+    im[1] = im1;
+
+    print(im[1]);
+
+    Text t;
+    t = getText();
+
+    print(t.y);
+}

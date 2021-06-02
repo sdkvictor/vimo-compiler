@@ -1,0 +1,14 @@
+program test3;
+
+{
+    int i;
+}
+
+void tick(){
+    int x;
+}
+
+
+void main(){
+    tick();
+}

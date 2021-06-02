@@ -1,0 +1,31 @@
+program test3;
+
+{
+    float i;
+}
+
+int bigger(int a, int b) {
+    int x;
+    x = 10000;
+    if (a > b) {
+        print("Returning A");
+        return a;
+    }
+    print("Returning B");
+    return b;
+}
+
+void tick(){
+
+}
+
+void main(){
+    int x, y;
+    x = 33;
+    y = 10;
+    int z;
+    z = 45;
+    int big;
+    big = bigger(x, y);
+    print(big);
+}

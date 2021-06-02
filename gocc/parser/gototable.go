@@ -288,7 +288,7 @@ var gotoTab = gotoTable{
 		-1, // VarsOp
 		-1, // Vars
 		-1, // VarsDec
-		24, // Ids
+		23, // Ids
 		-1, // Params
 		-1, // ParamsAux
 		-1, // Functions
@@ -733,6 +733,40 @@ var gotoTab = gotoTable{
 		-1, // Ids
 		-1, // Params
 		-1, // ParamsAux
+		25, // Functions
+		27, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		9,  // BasicType
+		15, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		26, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S22
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
@@ -756,40 +790,6 @@ var gotoTab = gotoTable{
 		-1, // Varcte
 		-1, // ListElem
 		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S22
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		26, // Functions
-		28, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		9,  // BasicType
-		15, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		27, // Type
 		-1, // Attribute
 	},
 	gotoRow{ // S23
@@ -874,8 +874,8 @@ var gotoTab = gotoTable{
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
-		32, // BasicType
-		38, // Object
+		-1, // BasicType
+		-1, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
@@ -1002,7 +1002,7 @@ var gotoTab = gotoTable{
 		-1, // VarsOp
 		-1, // Vars
 		-1, // VarsDec
-		-1, // Ids
+		33, // Ids
 		-1, // Params
 		-1, // ParamsAux
 		-1, // Functions
@@ -1034,41 +1034,7 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		45, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S31
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		46, // Vars
+		34, // Vars
 		-1, // VarsDec
 		-1, // Ids
 		-1, // Params
@@ -1096,6 +1062,40 @@ var gotoTab = gotoTable{
 		-1, // Varcte
 		-1, // ListElem
 		8,  // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S31
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
 		-1, // Attribute
 	},
 	gotoRow{ // S32
@@ -1241,15 +1241,15 @@ var gotoTab = gotoTable{
 		-1, // Vars
 		-1, // VarsDec
 		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
+		38, // Params
+		39, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		15, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
@@ -1265,7 +1265,7 @@ var gotoTab = gotoTable{
 		-1, // CallFunctionAux
 		-1, // Varcte
 		-1, // ListElem
-		-1, // Type
+		37, // Type
 		-1, // Attribute
 	},
 	gotoRow{ // S37
@@ -1415,7 +1415,7 @@ var gotoTab = gotoTable{
 		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
-		-1, // Block
+		44, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // BasicType
@@ -1446,14 +1446,14 @@ var gotoTab = gotoTable{
 		-1, // VarsDec
 		-1, // Ids
 		-1, // Params
-		-1, // ParamsAux
+		45, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		15, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
@@ -1469,42 +1469,42 @@ var gotoTab = gotoTable{
 		-1, // CallFunctionAux
 		-1, // Varcte
 		-1, // ListElem
-		-1, // Type
+		37, // Type
 		-1, // Attribute
 	},
 	gotoRow{ // S43
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
+		48, // Vars
+		50, // VarsDec
 		-1, // Ids
 		-1, // Params
 		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
+		51, // BlockAux
+		52, // Statement
+		9,  // BasicType
+		15, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
 		-1, // Term
 		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
+		53, // Assign
+		58, // Write
+		54, // Condition
+		55, // Return
+		56, // For
+		57, // While
+		59, // CallFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		61, // ListElem
+		49, // Type
+		60, // Attribute
 	},
 	gotoRow{ // S44
 		-1, // S'
@@ -1515,13 +1515,13 @@ var gotoTab = gotoTable{
 		-1, // Ids
 		-1, // Params
 		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
+		67, // Functions
+		27, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
-		-1, // BasicType
-		-1, // Object
+		9,  // BasicType
+		15, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
@@ -1537,7 +1537,7 @@ var gotoTab = gotoTable{
 		-1, // CallFunctionAux
 		-1, // Varcte
 		-1, // ListElem
-		-1, // Type
+		26, // Type
 		-1, // Attribute
 	},
 	gotoRow{ // S45
@@ -1649,15 +1649,15 @@ var gotoTab = gotoTable{
 		-1, // Vars
 		-1, // VarsDec
 		-1, // Ids
-		50, // Params
-		51, // ParamsAux
+		-1, // Params
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
-		9,  // BasicType
-		15, // Object
+		-1, // BasicType
+		-1, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
@@ -1673,7 +1673,7 @@ var gotoTab = gotoTable{
 		-1, // CallFunctionAux
 		-1, // Varcte
 		-1, // ListElem
-		49, // Type
+		-1, // Type
 		-1, // Attribute
 	},
 	gotoRow{ // S49
@@ -1682,7 +1682,7 @@ var gotoTab = gotoTable{
 		-1, // VarsOp
 		-1, // Vars
 		-1, // VarsDec
-		-1, // Ids
+		72, // Ids
 		-1, // Params
 		-1, // ParamsAux
 		-1, // Functions
@@ -1782,35 +1782,35 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
+		48, // Vars
+		50, // VarsDec
 		-1, // Ids
 		-1, // Params
 		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
+		74, // BlockAux
+		52, // Statement
+		9,  // BasicType
+		15, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
 		-1, // Term
 		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
+		53, // Assign
+		58, // Write
+		54, // Condition
+		55, // Return
+		56, // For
+		57, // While
+		59, // CallFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		61, // ListElem
+		49, // Type
+		60, // Attribute
 	},
 	gotoRow{ // S53
 		-1, // S'
@@ -1823,7 +1823,7 @@ var gotoTab = gotoTable{
 		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
-		56, // Block
+		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
 		-1, // BasicType
@@ -1854,14 +1854,14 @@ var gotoTab = gotoTable{
 		-1, // VarsDec
 		-1, // Ids
 		-1, // Params
-		57, // ParamsAux
+		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
-		9,  // BasicType
-		15, // Object
+		-1, // BasicType
+		-1, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
@@ -1877,42 +1877,42 @@ var gotoTab = gotoTable{
 		-1, // CallFunctionAux
 		-1, // Varcte
 		-1, // ListElem
-		49, // Type
+		-1, // Type
 		-1, // Attribute
 	},
 	gotoRow{ // S55
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
-		60, // Vars
-		62, // VarsDec
+		-1, // Vars
+		-1, // VarsDec
 		-1, // Ids
 		-1, // Params
 		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
-		63, // BlockAux
-		64, // Statement
-		9,  // BasicType
-		15, // Object
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
 		-1, // Term
 		-1, // Factor
-		65, // Assign
-		70, // Write
-		66, // Condition
-		67, // Return
-		68, // For
-		69, // While
-		71, // CallFunction
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
 		-1, // CallFunctionAux
 		-1, // Varcte
 		-1, // ListElem
-		61, // Type
-		72, // Attribute
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S56
 		-1, // S'
@@ -1923,13 +1923,13 @@ var gotoTab = gotoTable{
 		-1, // Ids
 		-1, // Params
 		-1, // ParamsAux
-		78, // Functions
-		28, // FunctionsAux
+		-1, // Functions
+		-1, // FunctionsAux
 		-1, // Block
 		-1, // BlockAux
 		-1, // Statement
-		9,  // BasicType
-		15, // Object
+		-1, // BasicType
+		-1, // Object
 		-1, // Expression
 		-1, // Operations
 		-1, // Exp
@@ -1945,7 +1945,7 @@ var gotoTab = gotoTable{
 		-1, // CallFunctionAux
 		-1, // Varcte
 		-1, // ListElem
-		27, // Type
+		-1, // Type
 		-1, // Attribute
 	},
 	gotoRow{ // S57
@@ -2090,7 +2090,7 @@ var gotoTab = gotoTable{
 		-1, // VarsOp
 		-1, // Vars
 		-1, // VarsDec
-		82, // Ids
+		-1, // Ids
 		-1, // Params
 		-1, // ParamsAux
 		-1, // Functions
@@ -2190,35 +2190,35 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
-		60, // Vars
-		62, // VarsDec
+		-1, // Vars
+		-1, // VarsDec
 		-1, // Ids
 		-1, // Params
 		-1, // ParamsAux
 		-1, // Functions
 		-1, // FunctionsAux
 		-1, // Block
-		84, // BlockAux
-		64, // Statement
-		9,  // BasicType
-		15, // Object
-		-1, // Expression
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		84, // Expression
 		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		65, // Assign
-		70, // Write
-		66, // Condition
-		67, // Return
-		68, // For
-		69, // While
-		71, // CallFunction
+		85, // Exp
+		86, // Term
+		87, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		83, // CallFunction
 		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		61, // Type
-		72, // Attribute
+		88, // Varcte
+		90, // ListElem
+		-1, // Type
+		89, // Attribute
 	},
 	gotoRow{ // S65
 		-1, // S'
@@ -2323,106 +2323,106 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S68
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		102, // Expression
+		-1,  // Operations
+		103, // Exp
+		104, // Term
+		105, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		101, // CallFunction
+		109, // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
+		-1,  // Type
+		107, // Attribute
 	},
 	gotoRow{ // S69
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		115, // Expression
+		-1,  // Operations
+		85,  // Exp
+		86,  // Term
+		87,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		83,  // CallFunction
+		-1,  // CallFunctionAux
+		88,  // Varcte
+		90,  // ListElem
+		-1,  // Type
+		89,  // Attribute
 	},
 	gotoRow{ // S70
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		119, // Expression
+		-1,  // Operations
+		120, // Exp
+		121, // Term
+		122, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		118, // CallFunction
+		-1,  // CallFunctionAux
+		123, // Varcte
+		125, // ListElem
+		-1,  // Type
+		124, // Attribute
 	},
 	gotoRow{ // S71
 		-1, // S'
@@ -2561,38 +2561,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S75
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		92,  // Expression
-		-1,  // Operations
-		93,  // Exp
-		94,  // Term
-		95,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		91,  // CallFunction
-		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
-		-1,  // Type
-		97,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S76
 		-1, // S'
@@ -2629,72 +2629,72 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S77
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		133, // Expression
+		-1,  // Operations
+		85,  // Exp
+		86,  // Term
+		87,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		83,  // CallFunction
+		-1,  // CallFunctionAux
+		88,  // Varcte
+		90,  // ListElem
+		-1,  // Type
+		89,  // Attribute
 	},
 	gotoRow{ // S78
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		134, // Expression
+		-1,  // Operations
+		85,  // Exp
+		86,  // Term
+		87,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		83,  // CallFunction
+		-1,  // CallFunctionAux
+		88,  // Varcte
+		90,  // ListElem
+		-1,  // Type
+		89,  // Attribute
 	},
 	gotoRow{ // S79
 		-1,  // S'
@@ -2712,23 +2712,23 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		110, // Expression
+		138, // Expression
 		-1,  // Operations
-		111, // Exp
-		112, // Term
-		113, // Factor
+		139, // Exp
+		140, // Term
+		141, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		109, // CallFunction
-		116, // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
 		-1,  // Type
-		115, // Attribute
+		143, // Attribute
 	},
 	gotoRow{ // S80
 		-1,  // S'
@@ -2746,23 +2746,23 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		123, // Expression
+		150, // Expression
 		-1,  // Operations
-		93,  // Exp
-		94,  // Term
-		95,  // Factor
+		139, // Exp
+		140, // Term
+		141, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		91,  // CallFunction
+		137, // CallFunction
 		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
+		142, // Varcte
+		144, // ListElem
 		-1,  // Type
-		97,  // Attribute
+		143, // Attribute
 	},
 	gotoRow{ // S81
 		-1, // S'
@@ -2799,38 +2799,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S82
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		154, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S83
 		-1, // S'
@@ -2901,6 +2901,40 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S85
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		156, // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
+	},
+	gotoRow{ // S86
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
@@ -2934,107 +2968,73 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // Attribute
 	},
-	gotoRow{ // S86
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		126, // Expression
-		-1,  // Operations
-		93,  // Exp
-		94,  // Term
-		95,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		91,  // CallFunction
-		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
-		-1,  // Type
-		97,  // Attribute
-	},
 	gotoRow{ // S87
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		130, // Expression
-		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S88
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		142, // Expression
-		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S89
 		-1, // S'
@@ -3071,38 +3071,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S90
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		146, // Expression
-		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S91
 		-1, // S'
@@ -3173,38 +3173,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S93
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		148, // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
-		-1,  // Type
-		-1,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S94
 		-1, // S'
@@ -3275,72 +3275,72 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S96
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		164, // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		61,  // ListElem
+		-1,  // Type
+		60,  // Attribute
 	},
 	gotoRow{ // S97
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		165, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S98
 		-1, // S'
@@ -3377,38 +3377,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S99
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		169, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S100
 		-1, // S'
@@ -3513,6 +3513,40 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S103
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		171, // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
+	},
+	gotoRow{ // S104
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
@@ -3546,73 +3580,39 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // Attribute
 	},
-	gotoRow{ // S104
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
-		156, // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
-		-1,  // Type
-		157, // Attribute
-	},
 	gotoRow{ // S105
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		158, // Expression
-		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S106
 		-1, // S'
@@ -3649,38 +3649,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S107
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		162, // Expression
-		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S108
 		-1, // S'
@@ -3785,38 +3785,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S111
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		164, // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
-		-1,  // Type
-		-1,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S112
 		-1, // S'
@@ -3989,38 +3989,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S117
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		180, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S118
 		-1, // S'
@@ -4091,38 +4091,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S120
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		182, // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S121
 		-1, // S'
@@ -4261,38 +4261,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S125
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		171, // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		9,   // BasicType
-		15,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
-		61,  // Type
-		-1,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S126
 		-1, // S'
@@ -4363,38 +4363,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S128
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		176, // Expression
-		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S129
 		-1, // S'
@@ -4465,40 +4465,6 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S131
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		178, // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
-		-1,  // Type
-		-1,  // Attribute
-	},
-	gotoRow{ // S132
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
@@ -4531,6 +4497,40 @@ var gotoTab = gotoTable{
 		-1, // ListElem
 		-1, // Type
 		-1, // Attribute
+	},
+	gotoRow{ // S132
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		187, // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		9,   // BasicType
+		15,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		49,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S133
 		-1, // S'
@@ -4635,38 +4635,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S136
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		191, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S137
 		-1, // S'
@@ -4737,38 +4737,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S139
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		193, // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S140
 		-1, // S'
@@ -4873,72 +4873,72 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S143
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		110, // Expression
-		-1,  // Operations
-		111, // Exp
-		112, // Term
-		113, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		109, // CallFunction
-		185, // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
-		-1,  // Type
-		115, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S144
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		189, // Expression
-		-1,  // Operations
-		190, // Exp
-		191, // Term
-		192, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		188, // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
-		-1,  // Type
-		194, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S145
 		-1, // S'
@@ -5043,38 +5043,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S148
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		203, // Expression
-		-1,  // Operations
-		93,  // Exp
-		94,  // Term
-		95,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		91,  // CallFunction
-		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
-		-1,  // Type
-		97,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S149
 		-1, // S'
@@ -5160,23 +5160,23 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Expression
+		102, // Expression
 		-1,  // Operations
-		204, // Exp
-		94,  // Term
-		95,  // Factor
+		103, // Exp
+		104, // Term
+		105, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		91,  // CallFunction
-		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
+		101, // CallFunction
+		200, // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
 		-1,  // Type
-		97,  // Attribute
+		107, // Attribute
 	},
 	gotoRow{ // S152
 		-1,  // S'
@@ -5194,91 +5194,91 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Expression
+		201, // Expression
 		-1,  // Operations
-		205, // Exp
-		94,  // Term
-		95,  // Factor
+		120, // Exp
+		121, // Term
+		122, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		91,  // CallFunction
+		118, // CallFunction
 		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
+		123, // Varcte
+		125, // ListElem
 		-1,  // Type
-		97,  // Attribute
+		124, // Attribute
 	},
 	gotoRow{ // S153
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		206, // Term
-		95,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		91,  // CallFunction
-		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
-		-1,  // Type
-		97,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S154
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		207, // Term
-		95,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		91,  // CallFunction
-		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
-		-1,  // Type
-		97,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S155
 		-1, // S'
@@ -5330,23 +5330,23 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		209, // Expression
+		204, // Expression
 		-1,  // Operations
-		93,  // Exp
-		94,  // Term
-		95,  // Factor
+		85,  // Exp
+		86,  // Term
+		87,  // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		91,  // CallFunction
+		83,  // CallFunction
 		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
+		88,  // Varcte
+		90,  // ListElem
 		-1,  // Type
-		97,  // Attribute
+		89,  // Attribute
 	},
 	gotoRow{ // S157
 		-1, // S'
@@ -5432,23 +5432,23 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		110, // Expression
+		-1,  // Expression
 		-1,  // Operations
-		111, // Exp
-		112, // Term
-		113, // Factor
+		205, // Exp
+		86,  // Term
+		87,  // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		109, // CallFunction
-		213, // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
+		83,  // CallFunction
+		-1,  // CallFunctionAux
+		88,  // Varcte
+		90,  // ListElem
 		-1,  // Type
-		115, // Attribute
+		89,  // Attribute
 	},
 	gotoRow{ // S160
 		-1,  // S'
@@ -5466,161 +5466,25 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		214, // Expression
+		-1,  // Expression
 		-1,  // Operations
-		190, // Exp
-		191, // Term
-		192, // Factor
+		206, // Exp
+		86,  // Term
+		87,  // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		188, // CallFunction
+		83,  // CallFunction
 		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
+		88,  // Varcte
+		90,  // ListElem
 		-1,  // Type
-		194, // Attribute
+		89,  // Attribute
 	},
 	gotoRow{ // S161
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S162
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S163
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		110, // Expression
-		-1,  // Operations
-		111, // Exp
-		112, // Term
-		113, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		109, // CallFunction
-		217, // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
-		-1,  // Type
-		115, // Attribute
-	},
-	gotoRow{ // S164
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		218, // Expression
-		-1,  // Operations
-		111, // Exp
-		112, // Term
-		113, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		109, // CallFunction
-		-1,  // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
-		-1,  // Type
-		115, // Attribute
-	},
-	gotoRow{ // S165
 		-1,  // S'
 		-1,  // Programa
 		-1,  // VarsOp
@@ -5638,21 +5502,157 @@ var gotoTab = gotoTable{
 		-1,  // Object
 		-1,  // Expression
 		-1,  // Operations
-		219, // Exp
-		112, // Term
-		113, // Factor
+		-1,  // Exp
+		207, // Term
+		87,  // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		109, // CallFunction
+		83,  // CallFunction
 		-1,  // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
+		88,  // Varcte
+		90,  // ListElem
 		-1,  // Type
-		115, // Attribute
+		89,  // Attribute
+	},
+	gotoRow{ // S162
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		208, // Term
+		87,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		83,  // CallFunction
+		-1,  // CallFunctionAux
+		88,  // Varcte
+		90,  // ListElem
+		-1,  // Type
+		89,  // Attribute
+	},
+	gotoRow{ // S163
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S164
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S165
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S166
 		-1,  // S'
@@ -5670,23 +5670,23 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Expression
+		102, // Expression
 		-1,  // Operations
-		220, // Exp
-		112, // Term
-		113, // Factor
+		103, // Exp
+		104, // Term
+		105, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		109, // CallFunction
-		-1,  // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
+		101, // CallFunction
+		212, // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
 		-1,  // Type
-		115, // Attribute
+		107, // Attribute
 	},
 	gotoRow{ // S167
 		-1,  // S'
@@ -5704,57 +5704,57 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Expression
+		213, // Expression
 		-1,  // Operations
-		-1,  // Exp
-		221, // Term
-		113, // Factor
+		120, // Exp
+		121, // Term
+		122, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		109, // CallFunction
+		118, // CallFunction
 		-1,  // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
+		123, // Varcte
+		125, // ListElem
 		-1,  // Type
-		115, // Attribute
+		124, // Attribute
 	},
 	gotoRow{ // S168
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		222, // Term
-		113, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		109, // CallFunction
-		-1,  // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
-		-1,  // Type
-		115, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S169
 		-1, // S'
@@ -5791,106 +5791,106 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S170
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		102, // Expression
+		-1,  // Operations
+		103, // Exp
+		104, // Term
+		105, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		101, // CallFunction
+		216, // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
+		-1,  // Type
+		107, // Attribute
 	},
 	gotoRow{ // S171
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		217, // Expression
+		-1,  // Operations
+		103, // Exp
+		104, // Term
+		105, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		101, // CallFunction
+		-1,  // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
+		-1,  // Type
+		107, // Attribute
 	},
 	gotoRow{ // S172
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		218, // Exp
+		104, // Term
+		105, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		101, // CallFunction
+		-1,  // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
+		-1,  // Type
+		107, // Attribute
 	},
 	gotoRow{ // S173
 		-1,  // S'
@@ -5908,23 +5908,23 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		110, // Expression
+		-1,  // Expression
 		-1,  // Operations
-		111, // Exp
-		112, // Term
-		113, // Factor
+		219, // Exp
+		104, // Term
+		105, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		109, // CallFunction
-		224, // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
+		101, // CallFunction
+		-1,  // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
 		-1,  // Type
-		115, // Attribute
+		107, // Attribute
 	},
 	gotoRow{ // S174
 		-1,  // S'
@@ -5942,57 +5942,57 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		225, // Expression
+		-1,  // Expression
 		-1,  // Operations
-		190, // Exp
-		191, // Term
-		192, // Factor
+		-1,  // Exp
+		220, // Term
+		105, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		188, // CallFunction
+		101, // CallFunction
 		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
+		106, // Varcte
+		108, // ListElem
 		-1,  // Type
-		194, // Attribute
+		107, // Attribute
 	},
 	gotoRow{ // S175
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		221, // Term
+		105, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		101, // CallFunction
+		-1,  // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
+		-1,  // Type
+		107, // Attribute
 	},
 	gotoRow{ // S176
 		-1, // S'
@@ -6029,38 +6029,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S177
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		102, // Expression
+		-1,  // Operations
+		103, // Exp
+		104, // Term
+		105, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		101, // CallFunction
+		223, // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
+		-1,  // Type
+		107, // Attribute
 	},
 	gotoRow{ // S178
 		-1,  // S'
@@ -6078,125 +6078,125 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		229, // Expression
+		224, // Expression
 		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
+		120, // Exp
+		121, // Term
+		122, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		129, // CallFunction
+		118, // CallFunction
 		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
+		123, // Varcte
+		125, // ListElem
 		-1,  // Type
-		135, // Attribute
+		124, // Attribute
 	},
 	gotoRow{ // S179
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		230, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S180
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		231, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S181
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		232, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S182
 		-1,  // S'
@@ -6214,23 +6214,23 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		-1,  // Expression
+		227, // Expression
 		-1,  // Operations
-		-1,  // Exp
-		233, // Term
-		133, // Factor
+		120, // Exp
+		121, // Term
+		122, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		129, // CallFunction
+		118, // CallFunction
 		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
+		123, // Varcte
+		125, // ListElem
 		-1,  // Type
-		135, // Attribute
+		124, // Attribute
 	},
 	gotoRow{ // S183
 		-1,  // S'
@@ -6243,234 +6243,30 @@ var gotoTab = gotoTable{
 		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
-		235, // Block
+		-1,  // Block
 		-1,  // BlockAux
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
 		-1,  // Expression
 		-1,  // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
+		228, // Exp
+		121, // Term
+		122, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		118, // CallFunction
 		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
+		123, // Varcte
+		125, // ListElem
 		-1,  // Type
-		-1,  // Attribute
+		124, // Attribute
 	},
 	gotoRow{ // S184
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S185
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S186
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S187
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		240, // Expression
-		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
-		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
-	},
-	gotoRow{ // S188
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S189
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S190
 		-1,  // S'
 		-1,  // Programa
 		-1,  // VarsOp
@@ -6487,22 +6283,226 @@ var gotoTab = gotoTable{
 		-1,  // BasicType
 		-1,  // Object
 		-1,  // Expression
-		242, // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
+		-1,  // Operations
+		229, // Exp
+		121, // Term
+		122, // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		-1,  // CallFunction
+		118, // CallFunction
 		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
+		123, // Varcte
+		125, // ListElem
 		-1,  // Type
-		-1,  // Attribute
+		124, // Attribute
+	},
+	gotoRow{ // S185
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		230, // Term
+		122, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		118, // CallFunction
+		-1,  // CallFunctionAux
+		123, // Varcte
+		125, // ListElem
+		-1,  // Type
+		124, // Attribute
+	},
+	gotoRow{ // S186
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		231, // Term
+		122, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		118, // CallFunction
+		-1,  // CallFunctionAux
+		123, // Varcte
+		125, // ListElem
+		-1,  // Type
+		124, // Attribute
+	},
+	gotoRow{ // S187
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
+	},
+	gotoRow{ // S188
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		102, // Expression
+		-1,  // Operations
+		103, // Exp
+		104, // Term
+		105, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		101, // CallFunction
+		233, // CallFunctionAux
+		106, // Varcte
+		108, // ListElem
+		-1,  // Type
+		107, // Attribute
+	},
+	gotoRow{ // S189
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		234, // Expression
+		-1,  // Operations
+		120, // Exp
+		121, // Term
+		122, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		118, // CallFunction
+		-1,  // CallFunctionAux
+		123, // Varcte
+		125, // ListElem
+		-1,  // Type
+		124, // Attribute
+	},
+	gotoRow{ // S190
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S191
 		-1, // S'
@@ -6573,208 +6573,208 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S193
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		238, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S194
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		239, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S195
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		240, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S196
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		241, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S197
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		242, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S198
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		244, // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S199
 		-1, // S'
@@ -7083,40 +7083,6 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S208
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		247, // Expression
-		-1,  // Operations
-		93,  // Exp
-		94,  // Term
-		95,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		91,  // CallFunction
-		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
-		-1,  // Type
-		97,  // Attribute
-	},
-	gotoRow{ // S209
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp
@@ -7150,7 +7116,7 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // Attribute
 	},
-	gotoRow{ // S210
+	gotoRow{ // S209
 		-1,  // S'
 		-1,  // Programa
 		-1,  // VarsOp
@@ -7166,25 +7132,25 @@ var gotoTab = gotoTable{
 		-1,  // Statement
 		-1,  // BasicType
 		-1,  // Object
-		249, // Expression
+		247, // Expression
 		-1,  // Operations
-		93,  // Exp
-		94,  // Term
-		95,  // Factor
+		85,  // Exp
+		86,  // Term
+		87,  // Factor
 		-1,  // Assign
 		-1,  // Write
 		-1,  // Condition
 		-1,  // Return
 		-1,  // For
 		-1,  // While
-		91,  // CallFunction
+		83,  // CallFunction
 		-1,  // CallFunctionAux
-		96,  // Varcte
-		103, // ListElem
+		88,  // Varcte
+		90,  // ListElem
 		-1,  // Type
-		97,  // Attribute
+		89,  // Attribute
 	},
-	gotoRow{ // S211
+	gotoRow{ // S210
 		-1,  // S'
 		-1,  // Programa
 		-1,  // VarsOp
@@ -7195,7 +7161,7 @@ var gotoTab = gotoTable{
 		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
-		251, // Block
+		249, // Block
 		-1,  // BlockAux
 		-1,  // Statement
 		-1,  // BasicType
@@ -7217,6 +7183,40 @@ var gotoTab = gotoTable{
 		-1,  // ListElem
 		-1,  // Type
 		-1,  // Attribute
+	},
+	gotoRow{ // S211
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S212
 		-1, // S'
@@ -7967,38 +7967,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S234
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		60,  // Vars
-		62,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		257, // BlockAux
-		64,  // Statement
-		9,   // BasicType
-		15,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
-		65,  // Assign
-		70,  // Write
-		66,  // Condition
-		67,  // Return
-		68,  // For
-		69,  // While
-		71,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
-		61,  // Type
-		72,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S235
 		-1, // S'
@@ -8069,72 +8069,72 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S237
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		110, // Expression
-		-1,  // Operations
-		111, // Exp
-		112, // Term
-		113, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		109, // CallFunction
-		260, // CallFunctionAux
-		114, // Varcte
-		122, // ListElem
-		-1,  // Type
-		115, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S238
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		261, // Expression
-		-1,  // Operations
-		190, // Exp
-		191, // Term
-		192, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		188, // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
-		-1,  // Type
-		194, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S239
 		-1, // S'
@@ -8239,174 +8239,174 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S242
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		264, // Expression
-		-1,  // Operations
-		190, // Exp
-		191, // Term
-		192, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		188, // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
-		-1,  // Type
-		194, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S243
 		-1,  // S'
 		-1,  // Programa
 		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
+		48,  // Vars
+		50,  // VarsDec
 		-1,  // Ids
 		-1,  // Params
 		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
+		257, // BlockAux
+		52,  // Statement
+		9,   // BasicType
+		15,  // Object
 		-1,  // Expression
 		-1,  // Operations
-		265, // Exp
-		191, // Term
-		192, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		188, // CallFunction
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		53,  // Assign
+		58,  // Write
+		54,  // Condition
+		55,  // Return
+		56,  // For
+		57,  // While
+		59,  // CallFunction
 		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
-		-1,  // Type
-		194, // Attribute
+		-1,  // Varcte
+		61,  // ListElem
+		49,  // Type
+		60,  // Attribute
 	},
 	gotoRow{ // S244
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		266, // Exp
-		191, // Term
-		192, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		188, // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
-		-1,  // Type
-		194, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S245
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		267, // Term
-		192, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		188, // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
-		-1,  // Type
-		194, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S246
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		268, // Term
-		192, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		188, // CallFunction
-		-1,  // CallFunctionAux
-		193, // Varcte
-		200, // ListElem
-		-1,  // Type
-		194, // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S247
 		-1, // S'
@@ -8446,35 +8446,35 @@ var gotoTab = gotoTable{
 		-1,  // S'
 		-1,  // Programa
 		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
+		48,  // Vars
+		50,  // VarsDec
 		-1,  // Ids
 		-1,  // Params
 		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
 		-1,  // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		270, // Expression
+		261, // BlockAux
+		52,  // Statement
+		9,   // BasicType
+		15,  // Object
+		-1,  // Expression
 		-1,  // Operations
-		131, // Exp
-		132, // Term
-		133, // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		129, // CallFunction
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		53,  // Assign
+		58,  // Write
+		54,  // Condition
+		55,  // Return
+		56,  // For
+		57,  // While
+		59,  // CallFunction
 		-1,  // CallFunctionAux
-		134, // Varcte
-		141, // ListElem
-		-1,  // Type
-		135, // Attribute
+		-1,  // Varcte
+		61,  // ListElem
+		49,  // Type
+		60,  // Attribute
 	},
 	gotoRow{ // S249
 		-1, // S'
@@ -8511,38 +8511,38 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S250
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		60,  // Vars
-		62,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		-1,  // Block
-		273, // BlockAux
-		64,  // Statement
-		9,   // BasicType
-		15,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
-		65,  // Assign
-		70,  // Write
-		66,  // Condition
-		67,  // Return
-		68,  // For
-		69,  // While
-		71,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
-		61,  // Type
-		72,  // Attribute
+		-1, // S'
+		-1, // Programa
+		-1, // VarsOp
+		-1, // Vars
+		-1, // VarsDec
+		-1, // Ids
+		-1, // Params
+		-1, // ParamsAux
+		-1, // Functions
+		-1, // FunctionsAux
+		-1, // Block
+		-1, // BlockAux
+		-1, // Statement
+		-1, // BasicType
+		-1, // Object
+		-1, // Expression
+		-1, // Operations
+		-1, // Exp
+		-1, // Term
+		-1, // Factor
+		-1, // Assign
+		-1, // Write
+		-1, // Condition
+		-1, // Return
+		-1, // For
+		-1, // While
+		-1, // CallFunction
+		-1, // CallFunctionAux
+		-1, // Varcte
+		-1, // ListElem
+		-1, // Type
+		-1, // Attribute
 	},
 	gotoRow{ // S251
 		-1, // S'
@@ -8793,7 +8793,7 @@ var gotoTab = gotoTable{
 		-1,  // ParamsAux
 		-1,  // Functions
 		-1,  // FunctionsAux
-		275, // Block
+		263, // Block
 		-1,  // BlockAux
 		-1,  // Statement
 		-1,  // BasicType
@@ -8817,38 +8817,38 @@ var gotoTab = gotoTable{
 		-1,  // Attribute
 	},
 	gotoRow{ // S259
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		265, // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		267, // ListElem
+		-1,  // Type
+		266, // Attribute
 	},
 	gotoRow{ // S260
 		-1, // S'
@@ -9157,140 +9157,140 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S269
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		273, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S270
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		274, // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		-1,  // Expression
+		-1,  // Operations
+		-1,  // Exp
+		-1,  // Term
+		-1,  // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		-1,  // CallFunction
+		-1,  // CallFunctionAux
+		-1,  // Varcte
+		-1,  // ListElem
+		-1,  // Type
+		-1,  // Attribute
 	},
 	gotoRow{ // S271
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		275, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S272
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
+		-1,  // S'
+		-1,  // Programa
+		-1,  // VarsOp
+		-1,  // Vars
+		-1,  // VarsDec
+		-1,  // Ids
+		-1,  // Params
+		-1,  // ParamsAux
+		-1,  // Functions
+		-1,  // FunctionsAux
+		-1,  // Block
+		-1,  // BlockAux
+		-1,  // Statement
+		-1,  // BasicType
+		-1,  // Object
+		276, // Expression
+		-1,  // Operations
+		139, // Exp
+		140, // Term
+		141, // Factor
+		-1,  // Assign
+		-1,  // Write
+		-1,  // Condition
+		-1,  // Return
+		-1,  // For
+		-1,  // While
+		137, // CallFunction
+		-1,  // CallFunctionAux
+		142, // Varcte
+		144, // ListElem
+		-1,  // Type
+		143, // Attribute
 	},
 	gotoRow{ // S273
 		-1, // S'
@@ -9395,142 +9395,6 @@ var gotoTab = gotoTable{
 		-1, // Attribute
 	},
 	gotoRow{ // S276
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S277
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S278
-		-1,  // S'
-		-1,  // Programa
-		-1,  // VarsOp
-		-1,  // Vars
-		-1,  // VarsDec
-		-1,  // Ids
-		-1,  // Params
-		-1,  // ParamsAux
-		-1,  // Functions
-		-1,  // FunctionsAux
-		280, // Block
-		-1,  // BlockAux
-		-1,  // Statement
-		-1,  // BasicType
-		-1,  // Object
-		-1,  // Expression
-		-1,  // Operations
-		-1,  // Exp
-		-1,  // Term
-		-1,  // Factor
-		-1,  // Assign
-		-1,  // Write
-		-1,  // Condition
-		-1,  // Return
-		-1,  // For
-		-1,  // While
-		-1,  // CallFunction
-		-1,  // CallFunctionAux
-		-1,  // Varcte
-		-1,  // ListElem
-		-1,  // Type
-		-1,  // Attribute
-	},
-	gotoRow{ // S279
-		-1, // S'
-		-1, // Programa
-		-1, // VarsOp
-		-1, // Vars
-		-1, // VarsDec
-		-1, // Ids
-		-1, // Params
-		-1, // ParamsAux
-		-1, // Functions
-		-1, // FunctionsAux
-		-1, // Block
-		-1, // BlockAux
-		-1, // Statement
-		-1, // BasicType
-		-1, // Object
-		-1, // Expression
-		-1, // Operations
-		-1, // Exp
-		-1, // Term
-		-1, // Factor
-		-1, // Assign
-		-1, // Write
-		-1, // Condition
-		-1, // Return
-		-1, // For
-		-1, // While
-		-1, // CallFunction
-		-1, // CallFunctionAux
-		-1, // Varcte
-		-1, // ListElem
-		-1, // Type
-		-1, // Attribute
-	},
-	gotoRow{ // S280
 		-1, // S'
 		-1, // Programa
 		-1, // VarsOp

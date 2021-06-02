@@ -13,7 +13,6 @@ VarsOp: {
 	floattype
 	imagetype
 	inttype
-	list
 	squaretype
 	stringtype
 	texttype
@@ -26,7 +25,6 @@ Vars: {
 	floattype
 	imagetype
 	inttype
-	list
 	squaretype
 	stringtype
 	texttype
@@ -39,7 +37,6 @@ VarsDec: {
 	floattype
 	imagetype
 	inttype
-	list
 	squaretype
 	stringtype
 	texttype
@@ -56,7 +53,6 @@ Params: {
 	floattype
 	imagetype
 	inttype
-	list
 	squaretype
 	stringtype
 	texttype
@@ -69,7 +65,6 @@ ParamsAux: {
 	floattype
 	imagetype
 	inttype
-	list
 	squaretype
 	stringtype
 	texttype
@@ -82,7 +77,6 @@ Functions: {
 	floattype
 	imagetype
 	inttype
-	list
 	squaretype
 	stringtype
 	texttype
@@ -96,7 +90,6 @@ FunctionsAux: {
 	floattype
 	imagetype
 	inttype
-	list
 	squaretype
 	stringtype
 	texttype
@@ -116,7 +109,6 @@ BlockAux: {
 	if
 	imagetype
 	inttype
-	list
 	print
 	return
 	squaretype
@@ -135,7 +127,6 @@ Statement: {
 	if
 	imagetype
 	inttype
-	list
 	print
 	return
 	squaretype
@@ -251,7 +242,6 @@ Type: {
 	floattype
 	imagetype
 	inttype
-	list
 	squaretype
 	stringtype
 	texttype

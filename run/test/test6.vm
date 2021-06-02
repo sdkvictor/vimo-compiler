@@ -1,0 +1,82 @@
+program test3;
+
+{
+    Text txt;
+    Circle c;
+    Circle s,  s2;
+    Image i;
+    bool col;
+}
+
+void tick(){
+    Clear();
+
+    if(CheckCollision(s, s2)){
+        col = true;
+    }
+
+    if(KeyPressed("Right")){
+        s.x = s.x + 1.0;   
+    }
+    if(KeyPressed("Up")){
+        s.y = s.y + 1.0;   
+    } 
+    
+    c.x = c.x + 0.5;
+    i.y = i.y - 2.3;
+    render();
+    Update();
+}
+
+
+void render() {
+    Render(s);
+    Render(s2);
+    Render(c);
+    //Render(i);
+    Render(txt);
+}
+
+
+void main(){
+    col = false;
+
+    s.width = 100.0;
+    s.height = 100.0;
+    s.color = "42f551";
+    s.x = 300.0;
+    s.y = 300.0;
+
+    s2.width = 100.0;
+    s2.height = 100.0;
+    s2.color = "42f551";
+    s2.x = 700.0;
+    s2.y = 300.0;
+
+    c.width = 100.0;
+    c.height = 100.0;
+    c.color = "85123D";
+    c.x = 300.0;
+    c.y = 600.0;
+
+    
+    i.width = 100.0;
+    i.height = 100.0;
+    i.image = "discord.png";
+    i.x = 500.0;
+    i.y = 500.0;
+
+    int ciclos;
+    ciclos = 0;
+
+    
+    txt.message = "GAME START";
+    txt.x = 500.0;
+    txt.y = 500.0;
+
+    while (col == false) {
+        tick();
+    }
+
+
+}

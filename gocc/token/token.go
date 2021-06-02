@@ -160,9 +160,9 @@ var TokMap = TokenMap{
 		"ctebool",
 		"leftsqrbracket",
 		"rightsqrbracket",
-		"list",
 		"dot",
 		"colon",
+		"list",
 	},
 
 	idMap: map[string]Type{
@@ -208,8 +208,8 @@ var TokMap = TokenMap{
 		"ctebool":          39,
 		"leftsqrbracket":   40,
 		"rightsqrbracket":  41,
-		"list":             42,
-		"dot":              43,
-		"colon":            44,
+		"dot":              42,
+		"colon":            43,
+		"list":             44,
 	},
 }

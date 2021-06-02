@@ -223,6 +223,8 @@ func isOperationFromSemanticCube(s string) bool {
 		return true
 	case "==":
 		return true
+	case "!=":
+		return true
 	case "=":
 		return true
 	case "&&":

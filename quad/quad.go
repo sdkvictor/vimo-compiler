@@ -14,10 +14,10 @@ const (
 	Sub
 	Mult
 	Div
-	Mod
 	Lt
 	Gt
 	Equal
+	Assign
 	And
 	Or
 	Not
@@ -28,13 +28,22 @@ const (
 	Era
 	Param
 	Call
-	Ins
-	App
-	Lst
-	GeLst
-	PaLst
-	Print
-	Assign
+	CheckBound
+	AddAddr
+	AssignIndex // This assigns a value to a given index
+	AssignIndexInv // This assigns an index to a given value
+	Init
+		
+	Render 
+    
+    KeyPressed
+    Print
+    CheckCollision
+    Pow
+    Sqrt
+	Clear
+	Update
+
 	Invalid
 )
 
@@ -48,8 +57,6 @@ func (o Operation) String() string {
 		return "*"
 	case Div:
 		return "/"
-	case Mod:
-		return "%"
 	case Lt:
 		return "<"
 	case Gt:
@@ -76,20 +83,34 @@ func (o Operation) String() string {
 		return "Era"
 	case Param:
 		return "Param"
-	case Ins:
-		return "Ins"
-	case App:
-		return "App"
-	case GeLst:
-		return "GeLst"
-	case Lst:
-		return "Lst"
-	case PaLst:
-		return "PaLst"
 	case Print:
 		return "Print"
 	case Assign:
 		return "Assign"
+	case CheckBound:
+		return "CheckBound"
+	case AddAddr:
+		return "AddAddr"
+	case AssignIndex:
+		return "AssignIndex"
+	case AssignIndexInv:
+		return "AssignIndexInv"
+	case Init:
+		return "Init"
+	case Render:
+		return "Render"
+	case KeyPressed:
+		return "KeyPressed"
+	case CheckCollision:
+		return "CheckCollision"
+	case Pow:
+		return "Pow"
+	case Sqrt:
+		return "Sqrt"
+	case Clear:
+		return "Clear"
+	case Update:
+		return "Update"
 	}
 
 	return ""
@@ -105,36 +126,6 @@ func GetOperation(s string) Operation {
 		return Mult
 	case "/":
 		return Div
-	case "%":
-		return Mod
-	case "<":
-		return Lt
-	case ">":
-		return Gt
-	case "equal":
-		return Equal
-	case "and":
-		return And
-	case "or":
-		return Or
-	case "!":
-		return Not
-
-	return Invalid
-}
-
-func StringToOperation(s string) Operation {
-	switch s {
-	case "+":
-		return Add
-	case "-":
-		return Sub
-	case "*":
-		return Mult
-	case "/":
-		return Div
-	case "%":
-		return Mod
 	case "<":
 		return Lt
 	case ">":
@@ -161,16 +152,93 @@ func StringToOperation(s string) Operation {
 		return Era
 	case "Param":
 		return Param
-	case "GeLst":
-		return GeLst
-	case "Lst":
-		return Lst
-	case "PaLst":
-		return PaLst
 	case "Print":
 		return Print
 	case "Assign":
 		return Assign
+	case "Render":
+		return Render
+	case "CheckBound":
+		return CheckBound
+	case "AddAddr":
+		return AddAddr
+	case "AssignIndex":
+		return AssignIndex
+	case "AssignIndexInv":
+		return AssignIndexInv
+	case "Init":
+		return Init
+	case "KeyPressed":
+		return KeyPressed
+	case "CheckCollision":
+		return CheckCollision
+	case "Pow":
+		return Pow
+	case "Sqrt":
+		return Sqrt
+	case "Clear":
+		return Clear
+	case "Update":
+		return Update
+	}
+
+	return Invalid
+}
+
+func StringToOperation(s string) Operation {
+	switch s {
+	case "+":
+		return Add
+	case "-":
+		return Sub
+	case "*":
+		return Mult
+	case "/":
+		return Div
+	case "<":
+		return Lt
+	case ">":
+		return Gt
+	case "Equal":
+		return Equal
+	case "And":
+		return And
+	case "Or":
+		return Or
+	case "!":
+		return Not
+	case "GotoT":
+		return GotoT
+	case "GotoF":
+		return GotoF
+	case "Goto":
+		return Goto
+	case "Ret":
+		return Ret
+	case "Call":
+		return Call
+	case "Era":
+		return Era
+	case "Param":
+		return Param
+	case "Print":
+		return Print
+	case "Assign":
+		return Assign
+	case "Render":
+		return Render
+	case "KeyPressed":
+		return KeyPressed
+	case "CheckCollision":
+		return CheckCollision
+	case "Pow":
+		return Pow
+	case "Sqrt":
+		return Sqrt
+	case "Clear":
+		return Clear
+	case "Update":
+		return Update
 	}
 
 	return Invalid
