@@ -161,9 +161,9 @@ func (e *Engine) IntersectCircle(s1, s2 objects.Circle) bool{
 
 func (e *Engine) IntersectCS(s1 objects.Circle, s2 objects.Square) bool{
 	r1 := pixel.R(s1.X(), s1.Y(), s1.X() + s1.Width(), s1.Y() + s1.Height())
-	
+	//fmt.Printf(r1.String())
 	r2 := pixel.R(s2.X(), s2.Y(), s2.X() + s2.Width(), s2.Y() + s2.Height())
-	
+	//fmt.Printf(r2.String())
 	return r1.Intersects(r2)
 
 }

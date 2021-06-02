@@ -9,6 +9,7 @@ program FirstVideogame;
     Circle myCircle;
     Image myImage;
     Text myText;
+    bool gameRunning;
 }
 
 // Method to update all objects each frame
@@ -16,7 +17,16 @@ void tick() {
     // Method to clear all the elements on the window
     Clear();
 
-    // Here you can write code that updates the objects
+    // Here you can write code that updates the objects 
+
+    // Call of the function in charge of moving the square
+    moveSquare();
+
+    // Call of the function to check if the square and circle collide
+    objectsCollide();
+
+    // Call of the function in charge of moving the circle
+    moveCircle();
 
     // Call of the function that draws the objects on the window
     render();
@@ -58,8 +68,49 @@ void objectsAssignment() {
 void render() {
     Render(mySquare);
     Render(myCircle);
-    Render(myImage);
+    //Render(myImage);
     Render(myText);
+}
+
+// Method to move the square
+void moveSquare() {
+    if(KeyPressed("W")){
+        mySquare.y = mySquare.y + 10.0;
+    }
+    if(KeyPressed("A")){
+        mySquare.x = mySquare.x - 10.0;
+    }
+    if(KeyPressed("S")){
+        mySquare.y = mySquare.y - 10.0;
+    }
+    if(KeyPressed("D")){
+        mySquare.x = mySquare.x + 10.0;
+    }
+}
+
+// Method to move the circle
+void moveCircle() {
+    if(KeyPressed("Up")){
+        myCircle.y = myCircle.y + 10.0;
+    }
+    if(KeyPressed("Left")){
+        myCircle.x = myCircle.x - 10.0;
+    }
+    if(KeyPressed("Down")){
+        myCircle.y = myCircle.y - 10.0;
+    }
+    if(KeyPressed("Right")){
+        myCircle.x = myCircle.x + 10.0;
+    }
+}
+
+// Method in charge of detecting a collision between the circle 
+// and the square and ending the game in case that happens
+void objectsCollide() {
+    if (CheckCollision(myCircle, mySquare)) {
+        myText.message = "GAME OVER";
+        gameRunning = false;
+    }
 }
 
 // Main function, where you call all the needed functions
@@ -67,8 +118,10 @@ void main() {
     // Call of the function to declare all the attributes of the objects
     objectsAssignment();
 
+    gameRunning = true;
+
     // While loop to update all the objects each frame
-    while(true){
+    while(gameRunning){
         tick();
     }
     
