@@ -1,32 +1,32 @@
 1 LR-1 conflicts: 
-	S127
-		symbol: inttype
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
-			Shift(10)
-		symbol: circletype
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
-			Shift(16)
-		symbol: backgroundtype
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
-			Shift(19)
-		symbol: imagetype
-			Shift(17)
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
-		symbol: texttype
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
-			Shift(18)
-		symbol: list
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
-			Shift(20)
-		symbol: floattype
-			Shift(11)
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+	S132
 		symbol: booltype
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
 			Shift(12)
 		symbol: stringtype
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
 			Shift(13)
+		symbol: imagetype
+			Shift(18)
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
+		symbol: inttype
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
+			Shift(10)
+		symbol: floattype
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
+			Shift(11)
+		symbol: circletype
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
+			Shift(17)
+		symbol: texttype
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
+			Shift(19)
+		symbol: backgroundtype
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
+			Shift(20)
+		symbol: chartype
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
+			Shift(14)
 		symbol: squaretype
-			Reduce(5:Vars : Type Ids semicolon	<<  >>)
-			Shift(15)
+			Reduce(5:Vars : Type Ids semicolon	<< ast.NewVarsList(X[0], X[1]) >>)
+			Shift(16)

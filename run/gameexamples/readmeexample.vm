@@ -1,0 +1,75 @@
+program FirstVideogame;
+
+// Global variables declaration
+{
+    // Declaring the objects as global objects, you can also
+    // declare them inside a function as local variables, 
+    // that depends on you.
+    Square mySquare;
+    Circle myCircle;
+    Image myImage;
+    Text myText;
+}
+
+// Method to update all objects each frame
+void tick() {
+    // Method to clear all the elements on the window
+    Clear();
+
+    // Here you can write code that updates the objects
+
+    // Call of the function that draws the objects on the window
+    render();
+
+    // Method to update the window with the new rendered objects in the next frame
+    Update();
+}
+
+// Method to assign all the attributes of all the objects
+void objectsAssignment() {
+    // Square attributes setup, only has the following attributes
+    mySquare.x = 10.0;
+    mySquare.y = 200.0;
+    mySquare.width = 50.0;
+    mySquare.height = 50.0;
+    mySquare.color = "ffffff";
+
+    // Circle attributes setup, only has the following attributes
+    myCircle.x = 700.0;
+    myCircle.y = 200.0;
+    myCircle.width = 50.0;
+    myCircle.height = 50.0;
+    myCircle.color = "808080";
+
+    // Image attributes setup, only has the following attributes
+    myImage.image = "discord.png";
+    myImage.x = 350.0;
+    myImage.y = 200.0;
+    myImage.width = 50.0;
+    myImage.height = 50.0;
+
+    // Text attributes setup, only has the following attributes
+    myText.message = "GAME RUNNING";
+    myText.x = 310.0;
+    myText.y = 450.0;
+}
+
+// Method to draw all the objects on the window
+void render() {
+    Render(mySquare);
+    Render(myCircle);
+    Render(myImage);
+    Render(myText);
+}
+
+// Main function, where you call all the needed functions
+void main() {
+    // Call of the function to declare all the attributes of the objects
+    objectsAssignment();
+
+    // While loop to update all the objects each frame
+    while(true){
+        tick();
+    }
+    
+}

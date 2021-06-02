@@ -7,7 +7,7 @@ import (
 )
 
 
-
+// Program structure represents the program file content, which contains all the functions and variables
 type Program struct {
     functions 	[]*Function
 	id 			string
@@ -21,6 +21,11 @@ func (p *Program) Functions() []*Function {
 func (p *Program) Id() string {
 	return p.id
 }
+
+func (p *Program) Vars() []*directories.VarEntry {
+	return p.vars
+}
+
 /*
 
 type Object struct {
@@ -30,6 +35,8 @@ type Object struct {
 	tok *token.Token
 }
 */
+
+// Function structure is the node that contains all the functions' information
 type Function struct {
 	id        	string
 	key       	string
@@ -83,7 +90,6 @@ type Statement interface {
 }
 
 
-
 type Factor struct {
 	exp 	*Expression
 	cv 		Constant	
@@ -94,7 +100,7 @@ func (f *Factor) Expression() *Expression {
 	return f.exp
 }
 
-func (f *Factor) ConstantValue() Constant {
+func (f *Factor) Constant() Constant {
 	return f.cv
 }
 
@@ -159,6 +165,7 @@ func (e *Expression) Token() *token.Token {
 type Attribute struct {
 	objId string
 	varId string
+	index *Expression
 	tok *token.Token
 }
 
@@ -189,6 +196,10 @@ func (a Attribute) isListElem() bool {
 
 func (a *Attribute) Token() *token.Token{
 	return a.tok
+}
+
+func (a *Attribute) Index() *Expression {
+	return a.index
 }
 
 type ListElem struct{
@@ -495,7 +506,7 @@ func (r *Return) Token() *token.Token {
 type For struct {
 	init 	*Assign
 	cond 	*Expression
-	op 		*Expression
+	op 		*Assign
 	blck 	[]Statement
 	tok 	*token.Token
 }
@@ -508,7 +519,7 @@ func (f *For) Condition() *Expression {
 	return f.cond
 }
 
-func (f *For) Operation() *Expression {
+func (f *For) Operation() *Assign {
 	return f.op
 }
 
@@ -619,11 +630,11 @@ type FunctionCall struct {
 	tok 	*token.Token
 }
 
-func (fc *FunctionCall) Id() string {
+func (fc FunctionCall) Id() string {
 	return fc.id
 }
 
-func (fc *FunctionCall) Params() []*Expression {
+func (fc FunctionCall) Params() []*Expression {
 	return fc.params
 }
 
@@ -631,52 +642,51 @@ func (fc FunctionCall) isVars() bool {
 	return false
 }
 
-
-func (fc *FunctionCall) isAssign() bool {
+func (fc FunctionCall) isAssign() bool {
 	return false
 }
 
-func (fc *FunctionCall) isCondition() bool {
+func (fc FunctionCall) isCondition() bool {
 	return false
 }
 
-func (fc *FunctionCall) isWrite() bool {
+func (fc FunctionCall) isWrite() bool {
 	return false
 }
 
-func (fc *FunctionCall) isReturn() bool {
+func (fc FunctionCall) isReturn() bool {
 	return false
 }
 
-func (fc *FunctionCall) isFor() bool {
+func (fc FunctionCall) isFor() bool {
 	return false
 }
 
-func (fc *FunctionCall) isWhile() bool {
+func (fc FunctionCall) isWhile() bool {
 	return false
 }
 
-func (fc *FunctionCall) isFunctionCall() bool {
+func (fc FunctionCall) isFunctionCall() bool {
 	return true
 }
 
-func (fc *FunctionCall) isPredefinedFunction() bool {
+func (fc FunctionCall) isPredefinedFunction() bool {
 	return false
 }
 
-func (fc *FunctionCall) isConstantValue() bool {
-	return true
-}
-
-func (fc *FunctionCall) isAttribute() bool {
+func (fc FunctionCall) isConstantValue() bool {
 	return false
 }
 
-func (fc *FunctionCall) isListElem() bool {
+func (fc FunctionCall) isAttribute() bool {
 	return false
 }
 
-func (fc *FunctionCall) Token() *token.Token {
+func (fc FunctionCall) isListElem() bool {
+	return false
+}
+
+func (fc FunctionCall) Token() *token.Token {
 	return fc.tok
 }
 /*

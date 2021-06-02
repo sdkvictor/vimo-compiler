@@ -16,12 +16,13 @@ _digit: '0' - '9';
 _id : _letter {(_letter | _digit)};
 _integer: _digit {_digit};
 _float: _digit {_digit} '.' _digit {_digit};
-_string: '"' {_digit | _letter | ' ' | '#' |'!' | '?'} '"';
+_string: '"' {_digit | _letter | ' ' | '#' |'!' | '?' | '.'} '"';
 _true: 't' 'r' 'u' 'e';
 _false: 'f' 'a' 'l' 's' 'e';
 _boolean: _true | _false;
 
 !ws : ' ' | '\t' | '\n' | '\r';
+!comment : '/' '/' { . } '\n';
 
 program: 'p' 'r' 'o' 'g' 'r' 'a' 'm';
 inttype: 'i' 'n' 't';
@@ -146,7 +147,7 @@ BlockAux
 
 Statement
     : VarsDec                       << ast.NewStatement($0) >>
-    | Assign                        << ast.NewStatement($0) >>
+    | Assign semicolon              << ast.NewStatement($0) >>
     | Condition                     << ast.NewStatement($0) >>
     | Return                        << ast.NewStatement($0) >>
     | For                           << ast.NewStatement($0) >>
@@ -161,7 +162,7 @@ BasicType
     | booltype                      << ast.NewType($0) >>
     | stringtype                    << ast.NewType($0) >>
     | chartype                      << ast.NewType($0) >>
-    | Object                        << ast.NewType($0) >>
+    | Object                        << ($0), nil >>
     ;
 
 Object
@@ -207,8 +208,9 @@ Factor
     ;
 
 Assign
-    : id equals Expression semicolon                                    << ast.NewAssignWithoutAttr($0, $2) >>
-	| Attribute equals Expression semicolon                             << ast.NewAssignWithAttr($0, $2) >>
+    : id equals Expression                                     << ast.NewAssignWithoutAttr($0, $2) >>
+	| Attribute equals Expression                              << ast.NewAssignWithAttr($0, $2) >>
+    | ListElem equals Expression                               << ast.NewAssignWithIndex($0, $2) >>
     ;
 
 Write
@@ -226,7 +228,7 @@ Return
     ;
 
 For
-    : for leftparenthesis Assign Expression semicolon Expression rightparenthesis Block << ast.NewFor($0, $2, $3, $5, $7) >>
+    : for leftparenthesis Assign semicolon Expression semicolon Assign rightparenthesis Block << ast.NewFor($0, $2, $4, $6, $8) >>
     ;
 
 While
@@ -260,7 +262,7 @@ ListElem
     ;
 Type 
     : BasicType                                                         << ($0), nil>>
-    | list leftsqrbracket BasicType rightsqrbracket                     << ast.AppendType($2) >>
+    | BasicType leftsqrbracket cteint rightsqrbracket                   << ast.NewTypeArray($0, $2) >>
     ;
 
 Attribute 

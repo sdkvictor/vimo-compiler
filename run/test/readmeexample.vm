@@ -1,0 +1,14 @@
+program HelloWorld;
+
+{
+  string s;
+}
+
+void printHelloWorld() {
+  s = "Hello World";
+  print(s);
+}
+
+void main() {
+  printHelloWorld();
+}

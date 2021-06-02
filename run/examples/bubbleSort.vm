@@ -1,0 +1,47 @@
+program BubbleSort;
+
+{
+  int i;
+}
+
+void printList(int[10] arr){
+    int i;
+    for (i = 0; i < 10; i = i + 1) {
+        print(arr[i]);
+    }
+}
+
+void bubbleSort(int[10] arr){
+  int i, j;
+  for(i=0; i<9; i=i+1){
+      for(j=0; j<10 - i - 1; j=j+1){
+          if(arr[j]>arr[j+1]){
+              int tmp, tmp2;
+              tmp = arr[j+1];
+              tmp2 = arr[j];
+              arr[j+1] = tmp2;
+              arr[j] = tmp;
+          }
+      }
+  }
+  printList(arr);
+}
+
+void main() {
+  int[10] unsortedList;
+  unsortedList[0] = 5;
+  unsortedList[1] = 2;
+  unsortedList[2] = 3;
+  unsortedList[3] = 10;
+  unsortedList[4] = 7;
+  unsortedList[5] = 1;
+  unsortedList[6] = 4;
+  unsortedList[7] = 8;
+  unsortedList[8] = 6;
+  unsortedList[9] = 9;
+  
+  print("Unsorted list");
+  printList(unsortedList);
+  print("Sorted list");
+  bubbleSort(unsortedList);
+}

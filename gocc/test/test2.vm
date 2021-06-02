@@ -1,0 +1,38 @@
+program test2;
+{ 
+    int GI;
+    float GF;
+    string GS;
+    char GS;
+    bool GB;
+}
+
+void tick(){
+
+}
+
+int func(int x){
+    x = 2;
+    return 2;
+}
+
+void main(){
+    bool gameover;
+    int i;
+    if(true){
+        tick();
+        i = x + 5 + func(i) * qwery * (3 + 100);
+        if(x){
+            for(i=0 ; i<10; i+1){
+                print(xd);
+            }
+        }
+        else{
+            tick(i);
+        }
+    }
+    else{
+        
+    }
+    
+}

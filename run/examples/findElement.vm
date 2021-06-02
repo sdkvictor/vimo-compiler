@@ -1,0 +1,30 @@
+program FindElement;
+
+{
+  int i;
+}
+
+int find(int n, int[10] arr){
+    for(i = 0; i < 10; i = i + 1) {
+        if(arr[i] == n) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void main() {
+  int[10] unsortedList;
+  unsortedList[0] = 5;
+  unsortedList[1] = 2;
+  unsortedList[2] = 3;
+  unsortedList[3] = 10;
+  unsortedList[4] = 7;
+  unsortedList[5] = 1;
+  unsortedList[6] = 4;
+  unsortedList[7] = 8;
+  unsortedList[8] = 6;
+  unsortedList[9] = 9;
+
+  print(find(4, unsortedList));
+}

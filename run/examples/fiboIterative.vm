@@ -1,0 +1,27 @@
+program FiboIterative;
+
+{
+    int i;
+}
+
+int fibIt(int n) {
+    int a, b, tmp;
+    a = 0;
+    b = 1;
+
+    if (n < 2) {
+        return n;
+    }
+
+    for (i = 2; i < n; i = i+1) {
+        tmp = a + b;
+        a = b;
+        b = tmp;
+    }
+
+    return b;
+}
+
+void main() {
+  print(fibIt(5));
+}

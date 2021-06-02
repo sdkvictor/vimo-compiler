@@ -1,6 +1,7 @@
 package ast
 
 import (
+	"strconv"
 	"github.com/sdkvictor/golang-compiler/directories"
 	"github.com/sdkvictor/golang-compiler/gocc/token"
 	"github.com/sdkvictor/golang-compiler/types"
@@ -194,37 +195,37 @@ func NewType(t interface{}) (*types.Type, error) { //OK
 	}
 
 	if tstring == "int" {
-		return types.NewDataType(types.Int, 0), nil
+		return types.NewDataType(types.Int, 0, 0), nil
 	}
 	if tstring == "string" {
-		return types.NewDataType(types.String, 0), nil
+		return types.NewDataType(types.String, 0, 0), nil
 	}
 	if tstring == "bool" {
-		return types.NewDataType(types.Bool, 0), nil
+		return types.NewDataType(types.Bool, 0, 0), nil
 	}
 	if tstring == "float" {
-		return types.NewDataType(types.Float, 0), nil
+		return types.NewDataType(types.Float, 0, 0), nil
 	}
 	if tstring == "char" {
-		return types.NewDataType(types.Char, 0), nil
+		return types.NewDataType(types.Char, 0, 0), nil
 	}
 	if tstring == "void" {
-		return types.NewDataType(types.Void, 0), nil
+		return types.NewDataType(types.Void, 0, 0), nil
 	}
 	if tstring == "Square" {
-		return types.NewObjectType(types.Square, 0), nil
+		return types.NewObjectType(types.Square, 0, 0), nil
 	}
 	if tstring == "Circle" {
-		return types.NewObjectType(types.Circle, 0), nil
+		return types.NewObjectType(types.Circle, 0, 0), nil
 	}
 	if tstring == "Image" {
-		return types.NewObjectType(types.Image, 0), nil
+		return types.NewObjectType(types.Image, 0, 0), nil
 	}
 	if tstring == "Text" {
-		return types.NewObjectType(types.Text, 0), nil
+		return types.NewObjectType(types.Text, 0, 0), nil
 	}
 	if tstring == "Background" {
-		return types.NewObjectType(types.Background, 0), nil
+		return types.NewObjectType(types.Background, 0, 0), nil
 	}
 
 	return nil, errutil.Newf("Invalid type for type. Expected BasicType or ObjectType enum")
@@ -232,16 +233,30 @@ func NewType(t interface{}) (*types.Type, error) { //OK
 
 
 // AppendType
-func AppendType(typ interface{}) (*types.Type, error) { // OK?
+func NewTypeArray(typ, size interface{}) (*types.Type, error) { // OK?
 	t, ok := typ.(*types.Type)
 	if !ok {
 		return nil, errutil.Newf("Invalid type for typ. Expected *types.Type")
 	}
+	
+	s, ok := size.(*token.Token)
+	if !ok {
+		return nil, errutil.Newf("Invalid type for size. Expected token")
+	}
+
+	sint, err := strconv.Atoi(string(s.Lit))
+	if err != nil {
+		return nil, errutil.Newf("Cannot parse %s to int", string(s.Lit)) 
+	}
+
+	if sint < 1 {
+		return nil, errutil.Newf("%+v: Cannot declare array of size less than 1", s)
+	}
 
 	if t.IsObject() {
-		return types.NewObjectType(t.Object(), t.List()+1), nil
+		return types.NewObjectType(t.Object(), 1, sint), nil
 	} else {
-		return types.NewDataType(t.Basic(), t.List()+1), nil
+		return types.NewDataType(t.Basic(), 1, sint), nil
 	}
 }
 
@@ -309,7 +324,7 @@ func NewConstantBool(value interface{}) (*ConstantValue, error) {
 
 	v := string(val.Lit)
 
-	return &ConstantValue{types.NewDataType(types.Bool, 0), v, val}, nil
+	return &ConstantValue{types.NewDataType(types.Bool, 0, 0), v, val}, nil
 }
 
 // NewConstantInt
@@ -321,7 +336,7 @@ func NewConstantInt(value interface{}) (*ConstantValue, error) {
 
 	v := string(val.Lit)
 
-	return &ConstantValue{types.NewDataType(types.Int, 0), v, val}, nil
+	return &ConstantValue{types.NewDataType(types.Int, 0, 0), v, val}, nil
 }
 
 func NewConstantId(value interface{}) (*ConstantValue, error) {
@@ -332,7 +347,7 @@ func NewConstantId(value interface{}) (*ConstantValue, error) {
 
 	v := string(val.Lit)
 
-	return &ConstantValue{types.NewDataType(types.Int, 0), v, val}, nil
+	return &ConstantValue{types.NewDataType(types.Int, 0, 0), v, val}, nil
 }
 
 // NewConstantFloat
@@ -344,7 +359,7 @@ func NewConstantFloat(value interface{}) (*ConstantValue, error) {
 
 	v := string(val.Lit)
 
-	return &ConstantValue{types.NewDataType(types.Float, 0), v, val}, nil
+	return &ConstantValue{types.NewDataType(types.Float, 0, 0), v, val}, nil
 }
 
 // NewConstantChar
@@ -356,7 +371,7 @@ func NewConstantChar(value interface{}) (*ConstantValue, error) {
 
 	v := string(val.Lit)
 
-	return &ConstantValue{types.NewDataType(types.Char, 0), v, val}, nil
+	return &ConstantValue{types.NewDataType(types.Char, 0, 0), v, val}, nil
 }
 
 // NewConstantString
@@ -369,7 +384,7 @@ func NewConstantString(str interface{}) (*ConstantValue, error) {
 
 	valstr := string(val.Lit)
 	
-	return &ConstantValue{types.NewDataType(types.String, 0), valstr, val}, nil
+	return &ConstantValue{types.NewDataType(types.String, 0, 0), valstr, val}, nil
 }
 
 // NewReturn
@@ -436,12 +451,12 @@ func NewFor(tok, init, cond, op, block interface{}) (*For, error) {
 
 	c, ok := cond.(*Expression)
 	if !ok {
-		return nil, errutil.Newf("Invalid type for cond. Expected Expression")
+		return nil, errutil.Newf("Invalid type for cond. Expected Expression, got %T", cond)
 	}
 
-	o, ok := op.(*Expression)
+	o, ok := op.(*Assign)
 	if !ok {
-		return nil, errutil.Newf("Invalid type for operation. Expected Expression")
+		return nil, errutil.Newf("Invalid type for operation. Expected Assign")
 	}
 
 	b, ok := block.([]Statement)
@@ -477,7 +492,7 @@ func NewAssignWithoutAttr(id, exp interface{}) (*Assign, error) {
 		return nil, errutil.Newf("Invalid type for assign expression. Expected Expression")
 	}
 
-	a := &Attribute{idstr, "", i}
+	a := &Attribute{idstr, "", nil, i}
 
 	return &Assign{a, e, i}, nil
 }
@@ -497,6 +512,22 @@ func NewAssignWithAttr(attr, exp interface{}) (*Assign, error) {
 	return &Assign{a, e, a.tok}, nil
 }
 
+func NewAssignWithIndex(le, exp interface{}) (*Assign, error) {
+	listelem, ok := le.(*ListElem)
+	if !ok {
+		return nil, errutil.Newf("Invalid type for list element. Expected ListElem")
+	}
+
+	e, ok := exp.(*Expression)
+	if !ok {
+		return nil, errutil.Newf("Invalid type for assign expression. Expected Expression")
+	}
+
+	attr := &Attribute{listelem.Id(), "", listelem.Index(), listelem.Token()}
+
+	return &Assign{attr, e, attr.Token()}, nil
+}
+
 func NewAttribute(id1, id2 interface{}) (*Attribute, error) {
 	id1t, ok := id1.(*token.Token)
 	if !ok {
@@ -508,7 +539,7 @@ func NewAttribute(id1, id2 interface{}) (*Attribute, error) {
 		return nil, errutil.Newf("Invalid type for obj attribute. Expected token, got %T", id2)
 	}
 
-	return &Attribute{string(id1t.Lit), string(id2t.Lit), id1t}, nil
+	return &Attribute{string(id1t.Lit), string(id2t.Lit), nil, id1t}, nil
 }
 
 // NewCondition
