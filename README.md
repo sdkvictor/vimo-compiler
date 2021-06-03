@@ -190,7 +190,7 @@ Update() | This method must be always present after rendering the objects. This 
 Clear() | This method must be always present before rendering the objects. This is shown in more detail in the example of the section Game Engine.
 Print() | This method can receive as well a function call in case the function that is called returns a basic type.
 Pow() | This method can only be used with float numbers. It receives two parameters, the first one is the base and the second one is the power.
-Sqrt() | This method can only be used with a float numbers. It receives only one parameter, which is the number you want to get the square root from.
+Sqrt() | This method can only be used with a float number. It receives only one parameter, which is the number you want to get the square root from.
 
 <!-- USAGE -->
 ## Usage
@@ -1021,7 +1021,7 @@ void main() {
 
 <!-- VIDEO TUTORIAL -->
 ## Video Tutorial
-A video tutorial that shows how to create a file, write code and run it to see the output can be found here.
+A video tutorial that shows how to create a file, write code and run it to see the output can be found [here](https://www.youtube.com/watch?v=hwT5YB1-V-s).
 
 <!-- CONTRIBUTING -->
 ## Contributing

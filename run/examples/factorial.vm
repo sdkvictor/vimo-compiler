@@ -1,0 +1,19 @@
+program factorial;
+
+{
+
+}
+
+int fac(int n){
+    if(n == 1){
+        return 1;
+    }
+    else{
+        return n * fac(n - 1);
+    }
+}
+
+void main(){
+    print(fac(5));
+
+}

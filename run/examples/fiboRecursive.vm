@@ -19,5 +19,5 @@ int fib(int n) {
 }
 
 void main() {
-  print(fib(5));
+  print(fib(8));
 }

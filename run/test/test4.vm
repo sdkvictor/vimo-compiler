@@ -1,7 +1,10 @@
 program test3;
 
 {
-    int i;
+    Square s1;
+    Circle c1;
+    float f;
+
 }
 
 void tick(){
@@ -10,5 +13,11 @@ void tick(){
 
 
 void main(){
-    tick();
+    Square s2;
+    Square c2;
+    f = 2.0;
+    s2.x = f;
+    s2.y = f;
+    print(s2.x + s2.y);
+
 }
