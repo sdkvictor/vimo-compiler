@@ -38,7 +38,7 @@ func generateCodeProgram(program *ast.Program, ctx *GenerationContext) error {
 
 func generateCodeGlobals(globals *directories.VarDirectory, ctx *GenerationContext) error {
 	for _, ve := range globals.Table() {
-		if ve.Type().List() > 1 {
+		if ve.Type().List() > 0 {
 			nt := ve.Type().Copy()
 			nt.DecreaseList()
 			typeint, err := strconv.ParseInt(nt.String(), 16, 64)
