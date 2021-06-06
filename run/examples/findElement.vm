@@ -27,4 +27,5 @@ void main() {
   unsortedList[9] = 9;
 
   print(find(4, unsortedList));
+  print(find(0, unsortedList));
 }

@@ -58,6 +58,7 @@ func (g *Generator) Quadruples() []*quad.Quadruple {
 // Generate creates a new quadruple with the given parameters
 func (g *Generator) Generate(op quad.Operation, a1, a2, r mem.Address) {
 	g.quads = append(g.quads, quad.NewQuadruple(op, a1, a2, r))
+	//fmt.Printf("%d: Operation: %s %d %d %d\n", g.icounter, op, a1, a2, r)
 	g.icounter++
 }
 

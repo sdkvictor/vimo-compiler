@@ -114,7 +114,7 @@ func (vm *VirtualMachine) printOutput(v interface{}) {
 func (vm *VirtualMachine) executeNextInstruction() error {
 	q := vm.quads[vm.ip]
 
-	fmt.Printf("%d: Operation: %s %d %d %d\n", vm.ip, q.Op().String(), q.Lop(), q.Rop(), q.R())
+	//fmt.Printf("%d: Operation: %s %d %d %d\n", vm.ip, q.Op().String(), q.Lop(), q.Rop(), q.R())
 
 	switch q.Op() {
 	case quad.Add:

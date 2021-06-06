@@ -1,7 +1,7 @@
 program BubbleSort;
 
 {
-  int i;
+  
 }
 
 void printList(int[10] arr){
@@ -44,4 +44,5 @@ void main() {
   printList(unsortedList);
   print("Sorted list");
   bubbleSort(unsortedList);
+
 }

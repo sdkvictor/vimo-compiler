@@ -1,0 +1,19 @@
+program factorialiterativo;
+
+{
+
+}
+
+int facIt(int n){
+    int i;
+    int res;
+    res = 1;
+    for(i=1;i<n+1;i=i+1){
+        res = res * i;
+    }
+    return res;
+}
+
+void main(){
+    print(facIt(5));
+}

@@ -4,6 +4,7 @@ program FiboRecursive;
     int i;
 }
 
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
 int fib(int n) {
     if (n == 2) {
         return 1;
@@ -19,5 +20,5 @@ int fib(int n) {
 }
 
 void main() {
-  print(fib(8));
+  print(fib(20));
 }

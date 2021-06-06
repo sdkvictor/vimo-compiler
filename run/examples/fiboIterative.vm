@@ -4,6 +4,7 @@ program FiboIterative;
     int i;
 }
 
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
 int fibIt(int n) {
     int a, b, tmp;
     a = 0;
@@ -23,5 +24,6 @@ int fibIt(int n) {
 }
 
 void main() {
-  print(fibIt(5));
+  print(fibIt(12));
 }
+
