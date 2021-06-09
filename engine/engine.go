@@ -189,6 +189,8 @@ func (e *Engine) KeyPressed(k string) bool {
 		return e.win.Pressed(pixelgl.KeyBackspace)
 	case "Esc":
 		return e.win.Pressed(pixelgl.KeyEscape)
+	case "MouseLeft":
+		return e.win.JustPressed(pixelgl.MouseButtonLeft)
 	}
 	return false;
 }

@@ -1,30 +1,24 @@
-program globals;
+program mouseTest;
 
 {
-    
+    bool mouse;
 }
 
-int retint(int x){
-    xd()
-    return xd(x);
+void tick(){
+    Clear();
+    if(KeyPressed("MouseLeft")){
+        mouse = true;
+    }
+    Update();
 }
-int xd(x){
-    return x;
-}
+
 void main(){
-    dsd = 1 + 2;
-    dsd
-    print(retint(2);
-    
+    mouse = false;
+    while(mouse==false){
+        tick();
+    }
 }
 
-ar  
-
-
-main
-
-
-pending
 
 
 
