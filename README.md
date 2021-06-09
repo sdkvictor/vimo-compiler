@@ -595,6 +595,7 @@ This section contains the code syntax, the detailed usage of the predefined meth
 "Backspace" | Represents the backspace key.
 "Esc" | Represents the Esc key.
 "A - Z" | Any letter from the english alphabet can be represented by a capital letter (Example: "A").
+"MouseLeft" | Represents the left mouse button.
 
 
 #### Basic structure of a program.
