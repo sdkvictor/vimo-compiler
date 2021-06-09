@@ -139,6 +139,56 @@ func (e *Engine) KeyPressed(k string) bool {
 		return e.win.Pressed(pixelgl.KeyS)
 	case "D":
 		return e.win.Pressed(pixelgl.KeyD)
+	case "Q":
+		return e.win.Pressed(pixelgl.KeyQ)
+	case "E":
+		return e.win.Pressed(pixelgl.KeyE)
+	case "R":
+		return e.win.Pressed(pixelgl.KeyR)
+	case "T":
+		return e.win.Pressed(pixelgl.KeyT)
+	case "Y":
+		return e.win.Pressed(pixelgl.KeyY)
+	case "U":
+		return e.win.Pressed(pixelgl.KeyU)
+	case "I":
+		return e.win.Pressed(pixelgl.KeyI)
+	case "O":
+		return e.win.Pressed(pixelgl.KeyO)
+	case "P":
+		return e.win.Pressed(pixelgl.KeyP)
+	case "F":
+		return e.win.Pressed(pixelgl.KeyF)
+	case "G":
+		return e.win.Pressed(pixelgl.KeyG)
+	case "H":
+		return e.win.Pressed(pixelgl.KeyH)
+	case "J":
+		return e.win.Pressed(pixelgl.KeyJ)
+	case "K":
+		return e.win.Pressed(pixelgl.KeyK)
+	case "L":
+		return e.win.Pressed(pixelgl.KeyL)
+	case "Z":
+		return e.win.Pressed(pixelgl.KeyZ)
+	case "X":
+		return e.win.Pressed(pixelgl.KeyX)
+	case "C":
+		return e.win.Pressed(pixelgl.KeyC)
+	case "V":
+		return e.win.Pressed(pixelgl.KeyV)
+	case "B":
+		return e.win.Pressed(pixelgl.KeyB)
+	case "N":
+		return e.win.Pressed(pixelgl.KeyN)
+	case "M":
+		return e.win.Pressed(pixelgl.KeyM)
+	case "Enter":
+		return e.win.Pressed(pixelgl.KeyEnter)
+	case "Backspace":
+		return e.win.Pressed(pixelgl.KeyBackspace)
+	case "Esc":
+		return e.win.Pressed(pixelgl.KeyEscape)
 	}
 	return false;
 }
