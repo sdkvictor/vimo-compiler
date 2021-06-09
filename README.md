@@ -591,10 +591,11 @@ This section contains the code syntax, the detailed usage of the predefined meth
 "Down" | Represents the down arrow key.
 "Right | Represents the right arrow key.
 "Space" | Represents the space key.
-"W" | Represents the W key.
-"A" | Represents the A key.
-"S" | Represents the S key.
-"D" | Represents the D key.
+"Enter" | Represents the enter key.
+"Backspace" | Represents the backspace key.
+"Esc" | Represents the Esc key.
+"A - Z" | Any letter from the english alphabet can be represented by a capital letter (Example: "A").
+
 
 #### Basic structure of a program.
 It is the same as in a normal program as shown before, the only difference is that the predefined objects must be used to draw them on the window as shown in the following example.
